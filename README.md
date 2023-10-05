@@ -34,3 +34,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+Delta Sharing Configuration
+==============================
+
+| Name                   | Environment Variable | Required | Description                                                                      |
+|:----------------------:|:--------------------:|:--------:|----------------------------------------------------------------------------------|
+| `nextauth_url`         | NEXTAUTH_URL         | yes      | Your canonical URL                                                               |
+| `nextauth_secret`      | NEXTAUTH_SECRET      | yes      | Your NextAuth JWT encryption secret                                              |
+| `google_client_id`     | GOOGLE_CLIENT_ID     | yes      | Google API client ID for OIDC                                                    |
+| `google_client_secret` | GOOGLE_CLIENT_SECRET | yes      | Google API client secret for OIDC                                                |

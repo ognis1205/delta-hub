@@ -3,5 +3,19 @@
     "plugin:@typescript-eslint/recommended",
     "next/core-web-vitals",
     "prettier"
-  ]
+  ],
+  "rules": {
+    "no-unused-vars": "off",
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_"
+      }
+    ],
+    "@next/next/no-document-import-in-page": "off"
+  }
 }
