@@ -12,7 +12,7 @@ export type Props = Omit<ImageProps, 'src'>;
 const Component: FC<Props> = (props: Props) => (
   <Image
     objectFit='contain'
-    src='/logo.png'
+    src='/images/logo.png'
     alt='Logo'
     {...props}
   />
