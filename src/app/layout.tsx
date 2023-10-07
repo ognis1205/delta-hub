@@ -2,13 +2,14 @@
  * @fileoverview Defines root layout.
  * @copyright Shingo OKAWA 2023
  */
-//import './globals.css';
 import type { Metadata } from 'next';
+import { FC } from 'react';
 import { Inter } from 'next/font/google';
+import { Providers } from '@/app/providers';
 
 export const metadata: Metadata = {
   title: 'Delta Catalog',
-  description: 'Delta Catalog',
+  description: 'Delta Catalog for Delta Sharing',
 };
 
 const inter = Inter({ subsets: ['latin'] });
@@ -17,10 +18,14 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Layout = ({ children }: Props) => (
+const Layout: FC<Props> = ({ children }: Props) => (
   <html lang="en">
-    <body className={inter.className}>{children}</body>
+    <body className={inter.className}>
+      <Providers>{children}</Providers>
+    </body>
   </html>
 );
+
+Layout.displayName = 'RootLayout';
 
 export default Layout;
