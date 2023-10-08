@@ -7,13 +7,13 @@
 import { FC } from 'react';
 import { Image, ImageProps } from '@chakra-ui/react';
 
-export type Props = Omit<ImageProps, 'src'>;
+export type Props = Omit<ImageProps, 'src' | 'alt' | 'objectFit'>;
 
 const Component: FC<Props> = (props: Props) => (
   <Image
-    objectFit='contain'
-    src='/images/logo.png'
-    alt='Logo'
+    src={'/images/logo.png'}
+    alt={'Logo'}
+    objectFit={'contain'}
     {...props}
   />
 );

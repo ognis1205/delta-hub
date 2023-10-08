@@ -5,7 +5,7 @@
 import type { Metadata } from 'next';
 import { FC } from 'react';
 import { Inter } from 'next/font/google';
-import { Providers } from '@/app/providers';
+import Providers from '@/app/providers';
 
 export const metadata: Metadata = {
   title: 'Delta Catalog',
@@ -19,7 +19,7 @@ type Props = {
 };
 
 const Layout: FC<Props> = ({ children }: Props) => (
-  <html lang="en">
+  <html lang={'en'}>
     <body className={inter.className}>
       <Providers>{children}</Providers>
     </body>
