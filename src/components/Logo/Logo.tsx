@@ -1,6 +1,6 @@
 /**
  * @fileoverview Defines Logo.
- * @copyright Shingo OKAWA 2022
+ * @copyright Shingo OKAWA 2023
  */
 'use client';
 

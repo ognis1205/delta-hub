@@ -16,6 +16,7 @@ import {
 import Link from 'next/link';
 
 import { Logo } from '@/components/Logo';
+import { GoogleSignIn } from '@/components/GoogleSignIn';
 
 const Page: FC<Record<string, never>> = () => (
   <Flex align={'center'} justify={'center'} h={'100vh'} w={'full'}>
@@ -27,6 +28,7 @@ const Page: FC<Record<string, never>> = () => (
       align={'center'}
       textAlign={'center'}>
       <Logo boxSize={[100, 150, 200]} />
+      <GoogleSignIn variant={'outline'} />
       <Stack spacing={2}>
         <Heading>Oops! Something went wrong</Heading>
         <Text>
