@@ -12,7 +12,7 @@ import { signIn } from 'next-auth/react';
 export type Props = Omit<ButtonProps, 'children' | 'onClick'>;
 
 const Component: FC<Props> = (props: Props) => {
-  const login = () => signIn('google', { callbackUrl: process.env.NEXTAUTH_CALLBACK_URL as string });
+  const login = () => signIn('google', { callbackUrl: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/dashboard` });
 
   return (
     <Button
@@ -20,7 +20,7 @@ const Component: FC<Props> = (props: Props) => {
       {...props}
     >
       <Icon as={FcGoogle} w={7} h={7} mr={2} />
-      <Text ontSize={'sm'}>
+      <Text fontSize={'sm'}>
         Continue with Google
       </Text>
     </Button>

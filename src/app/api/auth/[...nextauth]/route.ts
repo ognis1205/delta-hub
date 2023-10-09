@@ -10,13 +10,16 @@ type ClientType = {
   clientSecret: string;
 };
 
-export const nextAuthOptions: NextAuthOptions = {
+const nextAuthOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     } as ClientType),
   ],
+// secret: process.env.NEXTAUTH_SECRET,
 };
 
-export default NextAuth(nextAuthOptions);
+const handler = NextAuth(nextAuthOptions);
+
+export { handler as GET, handler as POST };

@@ -7,16 +7,27 @@
 import { FC } from 'react';
 import { Image, ImageProps } from '@chakra-ui/react';
 
-export type Props = Omit<ImageProps, 'src' | 'alt' | 'objectFit'>;
+import { when } from '@/utils';
 
-const Component: FC<Props> = (props: Props) => (
-  <Image
-    src={'/images/logo.png'}
-    alt={'Logo'}
-    objectFit={'contain'}
-    {...props}
-  />
-);
+export type Props = Omit<ImageProps, 'src' | 'alt' | 'objectFit'> & {
+  color?: string;
+};
+
+const Component: FC<Props> = ({ color = 'color', ...props } : Props) => {
+  const src = when(color)
+    .on(v => v === 'white', () => '/images/logo-white.png')
+    .on(v => v === 'black', () => '/images/logo-black.png')
+    .otherwise(() => '/images/logo.png')
+
+  return (
+    <Image
+      src={src}
+      alt={'Logo'}
+      objectFit={'contain'}
+      {...props}
+    />
+  );
+};
 
 Component.displayName = 'Logo';
 
