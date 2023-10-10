@@ -5,6 +5,7 @@
 'use client';
 
 import { FC } from 'react';
+//import { BrowserRouter } from 'react-router-dom';
 import { SessionProvider } from 'next-auth/react';
 import { CacheProvider } from '@chakra-ui/next-js';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
@@ -43,7 +44,9 @@ type Props = {
 const Providers: FC<Props> = ({ children }: Props) => (
   <SessionProvider>
     <CacheProvider>
+      {/*<BrowserRouter>*/}
       <ChakraProvider theme={theme}>{children}</ChakraProvider>
+      {/*</BrowserRouter>*/}
     </CacheProvider>
   </SessionProvider>
 );

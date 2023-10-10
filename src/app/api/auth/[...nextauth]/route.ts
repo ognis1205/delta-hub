@@ -15,7 +15,7 @@ type ClientType = {
       prompt: string;
       access_type: string;
       response_type: string;
-    }
+    };
   };
 };
 
@@ -23,17 +23,17 @@ const refresh = async (jwt: JWT): Promise<JWT> => {
   try {
     const response = await fetch(
       'https://oauth2.googleapis.com/token?' +
-      new URLSearchParams({
-        client_id: process.env.GOOGLE_CLIENT_ID as string,
-        client_secret: process.env.GOOGLE_CLIENT_SECRET as string,
-        grant_type: 'refresh_token',
-        refresh_token: jwt.refreshToken,
-      }),
+        new URLSearchParams({
+          client_id: process.env.GOOGLE_CLIENT_ID as string,
+          client_secret: process.env.GOOGLE_CLIENT_SECRET as string,
+          grant_type: 'refresh_token',
+          refresh_token: jwt.refreshToken,
+        }),
       {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        method: 'POST'
+        method: 'POST',
       },
     );
 
@@ -51,7 +51,7 @@ const refresh = async (jwt: JWT): Promise<JWT> => {
     logger.error(e);
     return {
       ...jwt,
-      error: 'RefreshAccessTokenError'
+      error: 'RefreshAccessTokenError',
     };
   }
 };
@@ -66,8 +66,8 @@ const nextAuthOptions: NextAuthOptions = {
           prompt: 'consent',
           access_type: 'offline',
           response_type: 'code',
-        }
-      }
+        },
+      },
     } as ClientType),
   ],
   secret: process.env.NEXTAUTH_SECRET,
@@ -99,7 +99,7 @@ const nextAuthOptions: NextAuthOptions = {
       session.access_token = token.accessToken as string;
       session.error = token.error as string;
       return session;
-    }
+    },
   },
 };
 

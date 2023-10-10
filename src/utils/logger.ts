@@ -21,16 +21,28 @@ class Logger {
     console.log(`${header} ${message}`);
 
   public info = (value: Error | string): void =>
-    this.log(Chalk.blue(new Date(Date.now()), '[INFO]'), this.getMessage(value));
+    this.log(
+      Chalk.blue(new Date(Date.now()), '[INFO]'),
+      this.getMessage(value),
+    );
 
   public success = (value: Error | string): void =>
-    this.log(Chalk.green(new Date(Date.now()), '[SUCCESS]'), this.getMessage(value));
+    this.log(
+      Chalk.green(new Date(Date.now()), '[SUCCESS]'),
+      this.getMessage(value),
+    );
 
   public warn = (value: Error | string): void =>
-    this.log(Chalk.yellow(new Date(Date.now()), '[WARN]'), this.getMessage(value));
+    this.log(
+      Chalk.yellow(new Date(Date.now()), '[WARN]'),
+      this.getMessage(value),
+    );
 
   public error = (value: Error | string): void =>
-    this.log(Chalk.red(new Date(Date.now()), '[ERROR]'), this.getMessage(value));
+    this.log(
+      Chalk.red(new Date(Date.now()), '[ERROR]'),
+      this.getMessage(value),
+    );
 }
 
 const LOGGER = new Logger();

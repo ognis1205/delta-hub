@@ -27,7 +27,8 @@ const Page: NextPage<Record<string, never>> = () => (
         spacing={6}
         maxW={'lg'}
         align={'center'}
-        textAlign={'center'}>
+        textAlign={'center'}
+      >
         <Logo boxSize={100} />
         <Stack spacing={2}>
           <Heading size={'md'}>Oops! Something went wrong</Heading>
@@ -40,7 +41,8 @@ const Page: NextPage<Record<string, never>> = () => (
             href="/"
             colorScheme={'deltaColor1'}
             rounded={'full'}
-            as={Link}>
+            as={Link}
+          >
             Back to home
           </Button>
         </Flex>
