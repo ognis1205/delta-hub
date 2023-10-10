@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Home.
+ * @fileoverview Defines home.
  * @copyright Shingo OKAWA 2023
  */
 'use client';

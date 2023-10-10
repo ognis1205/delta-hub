@@ -3,7 +3,7 @@
  * @copyright Shingo OKAWA 2023
  */
 import type { Metadata } from 'next';
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { Inter } from 'next/font/google';
 import Providers from '@/app/providers';
 
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const inter = Inter({ subsets: ['latin'] });
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 const Layout: FC<Props> = ({ children }: Props) => (

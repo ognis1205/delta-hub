@@ -7,7 +7,7 @@
 import { FC } from 'react';
 import { Image, ImageProps } from '@chakra-ui/react';
 
-import { when } from '@/utils';
+import { when } from '@/utils/misc';
 
 export type Props = Omit<ImageProps, 'src' | 'alt' | 'objectFit'> & {
   color?: string;

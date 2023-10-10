@@ -1,7 +1,17 @@
+/**
+ * @fileoverview Defines dashboard.
+ * @copyright Shingo OKAWA 2023
+ */
+'use client';
+
 import Image from 'next/image';
 import styles from './page.module.css';
+import { useSession } from 'next-auth/react';
 
 export default function Page() {
+  const { data: session } = useSession();
+  console.log(session);
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
