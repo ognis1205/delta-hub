@@ -6,7 +6,8 @@
 
 import { FC } from 'react';
 import { usePathname } from 'next/navigation';
-import { Flex, Heading } from '@chakra-ui/react';
+import { useSession } from 'next-auth/react';
+import { Flex, Heading, Avatar, Text } from '@chakra-ui/react';
 
 import { Logo } from '@/components/Logo';
 import { default as Item, Props as ItemProps } from './Item';
@@ -17,6 +18,7 @@ export type Props = {
 
 const Component: FC<Props> = ({ items }: Props) => {
   const pathname = usePathname();
+  const { data: session } = useSession();
 
   return (
     <Flex
@@ -53,6 +55,12 @@ const Component: FC<Props> = ({ items }: Props) => {
           </Flex>
         </Flex>
       </Flex>
+      {session && session.user && (
+        <Flex flexDir={'column'} alignItems={'center'} mb={10} mt={5}>
+          <Avatar my={2} src={session.user.image} />
+          <Text textAlign={'center'}>{session.user.name}</Text>
+        </Flex>
+      )}
     </Flex>
   );
 };

@@ -4,102 +4,53 @@
  */
 'use client';
 
-import Image from 'next/image';
-import styles from './page.module.css';
+import { NextPage } from 'next';
 import { useSession } from 'next-auth/react';
+import { Heading, Text, Flex } from '@chakra-ui/react';
 
-export default function Page() {
+import { ShareStats } from '@/containers/ShareStats';
+
+const Page: NextPage<Record<string, never>> = () => {
   const { data: session } = useSession();
-  console.log(session);
+
+  const labels = [
+    'Sep. 29',
+    'Sep. 30',
+    'Oct. 1',
+    'Oct. 2',
+    'Oct. 3',
+    'Oct. 4',
+    'Oct. 5',
+    'Oct. 6',
+    'Oct. 7',
+    'Oct. 8',
+    'Oct. 9',
+    'Oct. 10',
+    'Oct. 11',
+    'Oct. 12',
+  ];
+
+  const stats = [17, 30, 22, 27, 25, 26, 39, 23, 19, 22, 13, 25, 16, 39];
 
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <>
+      <Heading size={'md'} fontWeight="normal" mb={4} letterSpacing="tight">
+        Welcome back,&nbsp;
+        {session && session.user && (
+          <Flex display="inline-flex" fontWeight="bold">
+            {session.user.name}
+          </Flex>
+        )}
+      </Heading>
+      <Text color="gray" fontSize="sm">
+        Your Shares
+      </Text>
+      <Text fontWeight="bold" fontSize="lg">{stats.reduce((acc, x) => acc + x, 0)}&nbsp;[#]</Text>
+      <ShareStats stats={stats} labels={labels} />
+    </>
   );
-}
+};
+
+Page.displayName = 'Home';
+
+export default Page;

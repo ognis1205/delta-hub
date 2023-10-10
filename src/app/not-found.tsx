@@ -38,7 +38,7 @@ const Page: NextPage<Record<string, never>> = () => (
         </Stack>
         <Flex>
           <Button
-            href="/"
+            href={'/'}
             colorScheme={'deltaColor1'}
             rounded={'full'}
             as={Link}
