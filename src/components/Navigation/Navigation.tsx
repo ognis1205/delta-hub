@@ -10,13 +10,13 @@ import { useSession } from 'next-auth/react';
 import { Flex, Heading, Avatar, Text } from '@chakra-ui/react';
 
 import { Logo } from '@/components/Logo';
-import { default as Item, Props as ItemProps } from './Item';
+import { default as Link, Props as LinkProps } from './Link';
 
 export type Props = {
-  items: ItemProps[];
+  links: LinkProps[];
 };
 
-const Component: FC<Props> = ({ items }: Props) => {
+const Component: FC<Props> = ({ links }: Props) => {
   const pathname = usePathname();
   const { data: session } = useSession();
 
@@ -49,8 +49,8 @@ const Component: FC<Props> = ({ items }: Props) => {
             wrap={['wrap', 'wrap', 'nowrap', 'nowrap', 'nowrap']}
             justifyContent={'center'}
           >
-            {items.map((props: ItemProps, index: number) => (
-              <Item key={index} isActive={props.href === pathname} {...props} />
+            {links.map((props: LinkProps, index: number) => (
+              <Link key={index} isActive={props.href === pathname} {...props} />
             ))}
           </Flex>
         </Flex>

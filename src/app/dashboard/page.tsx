@@ -8,7 +8,8 @@ import { NextPage } from 'next';
 import { useSession } from 'next-auth/react';
 import { Heading, Text, Flex } from '@chakra-ui/react';
 
-import { ShareStats } from '@/containers/ShareStats';
+import { Statistics } from '@/containers/Statistics';
+import { Recipients } from '@/containers/Recipients';
 
 const Page: NextPage<Record<string, never>> = () => {
   const { data: session } = useSession();
@@ -30,7 +31,34 @@ const Page: NextPage<Record<string, never>> = () => {
     'Oct. 12',
   ];
 
-  const stats = [17, 30, 22, 27, 25, 26, 39, 23, 19, 22, 13, 25, 16, 39];
+  const data = [17, 30, 22, 27, 25, 26, 39, 23, 19, 22, 13, 25, 16, 39];
+
+  const recipients = [
+    {
+      imgSrc:
+        session && session.user ? session.user.image : '/images/no-image.png',
+      name: session && session.user ? session.user.name : 'N/A',
+      date: 'Oct 12, 2023 at 18:00pm',
+      share: 'Test Share 1',
+      email: session && session.user ? session.user.email : 'N/A',
+    },
+    {
+      imgSrc:
+        session && session.user ? session.user.image : '/images/no-image.png',
+      name: session && session.user ? session.user.name : 'N/A',
+      date: 'Oct 12, 2023 at 18:00pm',
+      share: 'Test Share 1',
+      email: session && session.user ? session.user.email : 'N/A',
+    },
+    {
+      imgSrc:
+        session && session.user ? session.user.image : '/images/no-image.png',
+      name: session && session.user ? session.user.name : 'N/A',
+      date: 'Oct 12, 2023 at 18:00pm',
+      share: 'Test Share 1',
+      email: session && session.user ? session.user.email : 'N/A',
+    },
+  ];
 
   return (
     <>
@@ -45,8 +73,11 @@ const Page: NextPage<Record<string, never>> = () => {
       <Text color="gray" fontSize="sm">
         Your Shares
       </Text>
-      <Text fontWeight="bold" fontSize="lg">{stats.reduce((acc, x) => acc + x, 0)}&nbsp;[#]</Text>
-      <ShareStats stats={stats} labels={labels} />
+      <Text fontWeight="bold" fontSize="lg">
+        {data.reduce((acc, x) => acc + x, 0)}&nbsp;[#]
+      </Text>
+      <Statistics data={data} labels={labels} />
+      <Recipients monthYear={'Oct 2023'} recipients={recipients} />
     </>
   );
 };

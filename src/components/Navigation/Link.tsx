@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Item.
+ * @fileoverview Defines Link.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -54,6 +54,6 @@ const Component: FC<Props> = ({ title, icon, href, isActive }: Props) => (
   </Flex>
 );
 
-Component.displayName = 'NavigationItem';
+Component.displayName = 'NavigationLink';
 
 export default Component;

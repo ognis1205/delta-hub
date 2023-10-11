@@ -7,7 +7,7 @@ import { Flex } from '@chakra-ui/react';
 
 import { Navigation } from '@/components/Navigation';
 
-const navigationItems = [
+const links = [
   {
     title: 'Home',
     icon: 'home' as const,
@@ -47,7 +47,7 @@ const Layout: FC<Props> = ({ children }: Props) => (
     overflow="hidden"
   >
     {/* Column 1 */}
-    <Navigation items={navigationItems} />
+    <Navigation links={links} />
     {/* Column 2 */}
     <Flex
       w={['100%', '100%', '60%', '60%', '55%']}

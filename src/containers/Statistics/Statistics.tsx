@@ -34,20 +34,19 @@ ChartJS.register(
 
 export type Props = {
   labels: string[];
-  stats: number[];
+  data: number[];
 };
 
-const Component: FC<Props> = ({ labels, stats }: Props) => {
-  const [color] = useToken('colors', [
-    'deltaColor1.400',
-  ]);
+const Component: FC<Props> = ({ labels, data }: Props) => {
+  const [color] = useToken('colors', ['deltaColor1.400']);
+
   const [r, g, b] = hex2rgb(color);
 
-  const data = {
+  const barData = {
     labels: labels,
     datasets: [
       {
-        data: stats,
+        data: data,
         backgroundColor: `rgba(${r}, ${g}, ${b}, 0.6)`,
         borderColor: `rgba(${r}, ${g}, ${b}, 0.6)`,
         order: 1,
@@ -76,7 +75,7 @@ const Component: FC<Props> = ({ labels, stats }: Props) => {
     },
   };
 
-  return <Bar data={data} options={options} />;
+  return <Bar data={barData} options={options} />;
 };
 
 Component.displayName = 'ShareStats';
