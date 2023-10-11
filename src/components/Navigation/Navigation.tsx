@@ -21,13 +21,7 @@ const Component: FC<Props> = ({ links }: Props) => {
   const { data: session } = useSession();
 
   return (
-    <Flex
-      w={['100%', '100%', '10%', '15%', '15%']}
-      flexDir={'column'}
-      alignItems={'center'}
-      backgroundColor={'deltaColor2.900'}
-      color={'white'}
-    >
+    <>
       <Flex
         flexDir={'column'}
         h={[null, null, '100vh']}
@@ -61,7 +55,7 @@ const Component: FC<Props> = ({ links }: Props) => {
           <Text textAlign={'center'}>{session.user.name}</Text>
         </Flex>
       )}
-    </Flex>
+    </>
   );
 };
 

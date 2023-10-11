@@ -6,6 +6,9 @@ import { FC, ReactNode } from 'react';
 import { Flex } from '@chakra-ui/react';
 
 import { Navigation } from '@/components/Navigation';
+import { Left } from '@/layouts/Left';
+import { Main } from '@/layouts/Main';
+import { Right } from '@/layouts/Right';
 
 const links = [
   {
@@ -46,18 +49,12 @@ const Layout: FC<Props> = ({ children }: Props) => (
     flexDir={['column', 'column', 'row']}
     overflow="hidden"
   >
-    {/* Column 1 */}
-    <Navigation links={links} />
+    <Left>
+      <Navigation links={links} />
+    </Left>
+    <Main>{children}</Main>
     {/* Column 2 */}
-    <Flex
-      w={['100%', '100%', '60%', '60%', '55%']}
-      p={'3%'}
-      flexDir={'column'}
-      overflow={'auto'}
-      minH={'100vh'}
-    >
-      {children}
-    </Flex>
+    <Right></Right>
   </Flex>
 );
 
