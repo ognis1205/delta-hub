@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Navigation.
+ * @fileoverview Defines Navigate.
  * @copyright Shingo OKAWA 2023
  */
 'use client';

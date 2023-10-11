@@ -8,7 +8,7 @@ import { FC, ReactNode } from 'react';
 import { useSession } from 'next-auth/react';
 import { Flex } from '@chakra-ui/react';
 
-import { Navigation } from '@/components/Navigation';
+import { Navigate } from '@/components/Navigate';
 import { Search } from '@/components/Search';
 import { Profile } from '@/containers/Profile';
 import { Share } from '@/containers/Share';
@@ -59,7 +59,7 @@ const Layout: FC<Props> = ({ children }: Props) => {
       overflow="hidden"
     >
       <Left>
-        <Navigation links={links} />
+        <Navigate links={links} />
       </Left>
       <Main>{children}</Main>
       <Right>
