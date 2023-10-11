@@ -1,10 +1,11 @@
 Delta Catalog Client
 ==============================
 
- delta-catalog-ts is a TypeScript-based Delta Sharing client that includes administration functionality.
+delta-catalog-ts is a TypeScript-based Delta Sharing client that includes administration functionality.
+This is a work in progress, and many parts of the implementation are merely mock-ups [12/10/2023].
 
 <p align="center">
-  <img src="" width="85%"/>
+  <img src="./dev/images/screen.gif" width="85%"/>
 </p>
 
 Delta Catalog Configuration
