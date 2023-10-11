@@ -26,7 +26,7 @@ export type Props = {
   recipients: RecipientProps[];
 };
 
-const Component: FC<Props> = ({ monthYear, recipients }: Props) => {
+const Container: FC<Props> = ({ monthYear, recipients }: Props) => {
   const [display, changeDisplay] = useState('hide');
 
   return (
@@ -82,6 +82,6 @@ const Component: FC<Props> = ({ monthYear, recipients }: Props) => {
   );
 };
 
-Component.displayName = 'Recipients';
+Container.displayName = 'Recipients';
 
-export default Component;
+export default Container;

@@ -37,7 +37,7 @@ export type Props = {
   data: number[];
 };
 
-const Component: FC<Props> = ({ labels, data }: Props) => {
+const Container: FC<Props> = ({ labels, data }: Props) => {
   const [color] = useToken('colors', ['deltaColor1.400']);
 
   const [r, g, b] = hex2rgb(color);
@@ -78,6 +78,6 @@ const Component: FC<Props> = ({ labels, data }: Props) => {
   return <Bar data={barData} options={options} />;
 };
 
-Component.displayName = 'ShareStats';
+Container.displayName = 'ShareStats';
 
-export default Component;
+export default Container;

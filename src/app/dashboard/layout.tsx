@@ -6,6 +6,7 @@ import { FC, ReactNode } from 'react';
 import { Flex } from '@chakra-ui/react';
 
 import { Navigation } from '@/components/Navigation';
+import { Search } from '@/components/Search';
 import { Left } from '@/layouts/Left';
 import { Main } from '@/layouts/Main';
 import { Right } from '@/layouts/Right';
@@ -53,8 +54,9 @@ const Layout: FC<Props> = ({ children }: Props) => (
       <Navigation links={links} />
     </Left>
     <Main>{children}</Main>
-    {/* Column 2 */}
-    <Right></Right>
+    <Right>
+      <Search notifies={2} />
+    </Right>
   </Flex>
 );
 
