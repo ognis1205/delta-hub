@@ -2,11 +2,15 @@
  * @fileoverview Defines dashboard layout.
  * @copyright Shingo OKAWA 2023
  */
+'use client';
+
 import { FC, ReactNode } from 'react';
+import { useSession } from 'next-auth/react';
 import { Flex } from '@chakra-ui/react';
 
 import { Navigation } from '@/components/Navigation';
 import { Search } from '@/components/Search';
+import { Profile } from '@/containers/Profile';
 import { Left } from '@/layouts/Left';
 import { Main } from '@/layouts/Main';
 import { Right } from '@/layouts/Right';
@@ -43,22 +47,33 @@ type Props = {
   children: ReactNode;
 };
 
-const Layout: FC<Props> = ({ children }: Props) => (
-  <Flex
-    h={[null, null, '100vh']}
-    maxW="2000px"
-    flexDir={['column', 'column', 'row']}
-    overflow="hidden"
-  >
-    <Left>
-      <Navigation links={links} />
-    </Left>
-    <Main>{children}</Main>
-    <Right>
-      <Search notifies={2} />
-    </Right>
-  </Flex>
-);
+const Layout: FC<Props> = ({ children }: Props) => {
+  const { data: session } = useSession();
+
+  return (
+    <Flex
+      h={[null, null, '100vh']}
+      maxW="2000px"
+      flexDir={['column', 'column', 'row']}
+      overflow="hidden"
+    >
+      <Left>
+        <Navigation links={links} />
+      </Left>
+      <Main>{children}</Main>
+      <Right>
+        <Search notifies={2} />
+        <Profile
+          image={session && session.user ? session.user.image : 'N/A'}
+          name={session && session.user ? session.user.name : 'N/A'}
+          email={session && session.user ? session.user.email : 'N/A'}
+          shares={343}
+          recipients={13}
+        />
+      </Right>
+    </Flex>
+  );
+};
 
 Layout.displayName = 'DashboardLayout';
 

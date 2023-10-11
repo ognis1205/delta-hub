@@ -18,7 +18,7 @@ export type Props = {
   notifies: number;
 };
 
-const Container: FC<Props> = ({ notifies }: Props) => (
+const Component: FC<Props> = ({ notifies }: Props) => (
   <Flex alignContent={'center'}>
     <InputGroup
       backgroundColor={'white'}
@@ -43,7 +43,7 @@ const Container: FC<Props> = ({ notifies }: Props) => (
     <Flex
       w={30}
       h={25}
-      backgroundColor={'deltaColor2.400'}
+      backgroundColor={'deltaColor2.500'}
       borderRadius={'50%'}
       color={'white'}
       align={'center'}
@@ -58,6 +58,6 @@ const Container: FC<Props> = ({ notifies }: Props) => (
   </Flex>
 );
 
-Container.displayName = 'Search';
+Component.displayName = 'Search';
 
-export default Container;
+export default Component;
