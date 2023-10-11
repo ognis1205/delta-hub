@@ -11,6 +11,7 @@ import { Flex } from '@chakra-ui/react';
 import { Navigation } from '@/components/Navigation';
 import { Search } from '@/components/Search';
 import { Profile } from '@/containers/Profile';
+import { Share } from '@/containers/Share';
 import { Left } from '@/layouts/Left';
 import { Main } from '@/layouts/Main';
 import { Right } from '@/layouts/Right';
@@ -64,11 +65,22 @@ const Layout: FC<Props> = ({ children }: Props) => {
       <Right>
         <Search notifies={2} />
         <Profile
-          image={session && session.user ? session.user.image : 'N/A'}
+          image={
+            session && session.user
+              ? session.user.image
+              : '/images/no-image.png'
+          }
           name={session && session.user ? session.user.name : 'N/A'}
           email={session && session.user ? session.user.email : 'N/A'}
           shares={343}
           recipients={13}
+        />
+        <Share
+          avatars={Array(5).fill(
+            session && session.user
+              ? session.user.image
+              : '/images/no-image.png',
+          )}
         />
       </Right>
     </Flex>

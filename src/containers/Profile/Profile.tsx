@@ -31,51 +31,56 @@ const Container: FC<Props> = ({
   shares,
   recipients,
 }: Props) => (
-  <Card
-    w={'auto'}
-    display={'flex'}
-    direction={'column'}
-    align={'center'}
-    justify={'center'}
-    padding={'2'}
-  >
-    <CardHeader
+  <>
+    <Heading as={'h2'} size={'lg'} mb={4} letterSpacing={'tight'}>
+      Your Profile
+    </Heading>
+    <Card
+      w={'auto'}
       display={'flex'}
-      flexDirection={'column'}
-      gap={'1'}
-      alignItems={'center'}
+      direction={'column'}
+      align={'center'}
+      justify={'center'}
+      padding={'2'}
     >
-      <Avatar src={image} />
-      <Heading size={'md'}>{name}</Heading>
-      <Text>{email}</Text>
-    </CardHeader>
-    <CardBody display={'flex'} flexDirection={'column'} gap={'2'}>
-      <HStack w={'100%'} justify={'space-evenly'}>
-        <Flex
-          fontSize={'sm'}
-          justify={'center'}
-          align={'center'}
-          direction={'column'}
-        >
-          <Text casing={'capitalize'} fontWeight={'bold'}>
-            Shares
-          </Text>
-          <Text>{shares}&nbsp;[#]</Text>
-        </Flex>
-        <Flex
-          fontSize={'sm'}
-          justify={'center'}
-          align={'center'}
-          direction={'column'}
-        >
-          <Text casing={'capitalize'} fontWeight={'bold'}>
-            Recipients
-          </Text>
-          <Text>{recipients}&nbsp;[#]</Text>
-        </Flex>
-      </HStack>
-    </CardBody>
-  </Card>
+      <CardHeader
+        display={'flex'}
+        flexDirection={'column'}
+        gap={'1'}
+        alignItems={'center'}
+      >
+        <Avatar src={image} />
+        <Heading size={'md'}>{name}</Heading>
+        <Text>{email}</Text>
+      </CardHeader>
+      <CardBody display={'flex'} flexDirection={'column'} gap={'2'}>
+        <HStack w={'100%'} justify={'space-evenly'}>
+          <Flex
+            fontSize={'sm'}
+            justify={'center'}
+            align={'center'}
+            direction={'column'}
+          >
+            <Text casing={'capitalize'} fontWeight={'bold'}>
+              Shares
+            </Text>
+            <Text>{shares}&nbsp;[#]</Text>
+          </Flex>
+          <Flex
+            fontSize={'sm'}
+            justify={'center'}
+            align={'center'}
+            direction={'column'}
+          >
+            <Text casing={'capitalize'} fontWeight={'bold'}>
+              Recipients
+            </Text>
+            <Text>{recipients}&nbsp;[#]</Text>
+          </Flex>
+        </HStack>
+      </CardBody>
+    </Card>
+  </>
 );
 
 Container.displayName = 'Profile';

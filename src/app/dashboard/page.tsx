@@ -62,7 +62,13 @@ const Page: NextPage<Record<string, never>> = () => {
 
   return (
     <>
-      <Heading size={'md'} fontWeight="normal" mb={4} letterSpacing="tight">
+      <Heading
+        as={'h2'}
+        size={'lg'}
+        fontWeight="normal"
+        mb={4}
+        letterSpacing="tight"
+      >
         Welcome back,&nbsp;
         {session && session.user && (
           <Flex display="inline-flex" fontWeight="bold">
