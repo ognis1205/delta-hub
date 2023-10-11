@@ -34,6 +34,7 @@ const Component: FC<Props> = ({ notifies }: Props) => (
       <Input type={'number'} placeholder={'Search'} borderRadius={'10px'} />
     </InputGroup>
     <IconButton
+      aria-label={'Notifications'}
       icon={<FiBell />}
       fontSize={'sm'}
       bgColor={'white'}
