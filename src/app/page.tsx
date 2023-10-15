@@ -15,8 +15,9 @@ import {
 } from '@chakra-ui/react';
 import { NextPage } from 'next';
 
+import { Component as DeltaSharingLogo } from '@/atoms/DeltaSharingLogo';
 import { GoogleSignIn } from '@/components/GoogleSignIn';
-import { Logo } from '@/components/Logo';
+
 
 const Page: NextPage<Record<string, never>> = () => {
   const [deltaColor1_500, deltaColor2_500] = useToken('colors', [
@@ -43,7 +44,7 @@ const Page: NextPage<Record<string, never>> = () => {
           align={'center'}
           textAlign={'center'}
         >
-          <Logo boxSize={100} color={'white'} />
+          <DeltaSharingLogo boxSize={100} theme={'white'} />
           <Stack spacing={2}>
             <Heading size={'md'}>Log in to your account</Heading>
             <Text fontSize={'sm'}>Start sharing your thoughts and data</Text>

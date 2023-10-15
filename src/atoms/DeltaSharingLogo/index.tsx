@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Logo atom.
+ * @fileoverview Defines Delta Sharing Logo atom.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -15,7 +15,10 @@ export type Props = Omit<ImageProps, 'src' | 'alt' | 'objectFit'> & {
   theme?: Theme;
 };
 
-export const Component: FC<Props> = ({ theme = 'color' as const, ...props }: Props) => (
+export const Component: FC<Props> = ({
+  theme = 'color' as const,
+  ...props
+}: Props) => (
   <Image
     {...props}
     src={when(theme)
@@ -27,7 +30,7 @@ export const Component: FC<Props> = ({ theme = 'color' as const, ...props }: Pro
         (v) => v === 'black',
         () => '/images/logo-black.png',
       )
-      .otherwise(() => '/images/logo.png',)}
+      .otherwise(() => '/images/logo.png')}
     alt={'Delta Sharing'}
     objectFit={'contain'}
   />
