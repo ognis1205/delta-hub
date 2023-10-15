@@ -4,10 +4,10 @@
  */
 'use client';
 
-import { FC } from 'react';
 import { Button, ButtonProps, Icon, Text } from '@chakra-ui/react';
-import { FcGoogle } from 'react-icons/fc';
 import { signIn } from 'next-auth/react';
+import { FC } from 'react';
+import { FcGoogle } from 'react-icons/fc';
 
 export type Props = Omit<ButtonProps, 'children' | 'onClick'>;
 

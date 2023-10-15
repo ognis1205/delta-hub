@@ -4,7 +4,6 @@
  */
 'use client';
 
-import { FC } from 'react';
 import {
   Flex,
   InputGroup,
@@ -12,6 +11,7 @@ import {
   Input,
   IconButton,
 } from '@chakra-ui/react';
+import { FC } from 'react';
 import { FiSearch, FiBell } from 'react-icons/fi';
 
 export type Props = {

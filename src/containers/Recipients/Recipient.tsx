@@ -4,8 +4,8 @@
  */
 'use client';
 
-import { FC } from 'react';
 import { Tr, Td, Flex, Avatar, Heading, Text } from '@chakra-ui/react';
+import { FC } from 'react';
 
 export type Props = {
   imgSrc: string;

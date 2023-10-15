@@ -4,7 +4,6 @@
  */
 'use client';
 
-import { NextPage } from 'next';
 import {
   Container,
   Stack,
@@ -13,6 +12,7 @@ import {
   Text,
   Button,
 } from '@chakra-ui/react';
+import { NextPage } from 'next';
 import Link from 'next/link';
 
 import { Logo } from '@/components/Logo';

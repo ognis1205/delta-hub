@@ -4,7 +4,6 @@
  */
 'use client';
 
-import { NextPage } from 'next';
 import {
   Box,
   Container,
@@ -14,9 +13,10 @@ import {
   Text,
   useToken,
 } from '@chakra-ui/react';
+import { NextPage } from 'next';
 
-import { Logo } from '@/components/Logo';
 import { GoogleSignIn } from '@/components/GoogleSignIn';
+import { Logo } from '@/components/Logo';
 
 const Page: NextPage<Record<string, never>> = () => {
   const [deltaColor1_500, deltaColor2_500] = useToken('colors', [

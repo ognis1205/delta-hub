@@ -4,11 +4,11 @@
  */
 'use client';
 
-import { FC } from 'react';
 //import { BrowserRouter } from 'react-router-dom';
-import { SessionProvider } from 'next-auth/react';
 import { CacheProvider } from '@chakra-ui/next-js';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { SessionProvider } from 'next-auth/react';
+import { FC } from 'react';
 
 const colors = {
   deltaColor1: {

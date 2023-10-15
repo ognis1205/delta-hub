@@ -4,7 +4,6 @@
  */
 'use client';
 
-import { FC } from 'react';
 import {
   Flex,
   Heading,
@@ -16,6 +15,7 @@ import {
   Input,
   Button,
 } from '@chakra-ui/react';
+import { FC } from 'react';
 import { FiPlus, FiShare2, FiMail } from 'react-icons/fi';
 
 export type Props = {
@@ -53,13 +53,7 @@ const Container: FC<Props> = ({ avatars }: Props) => (
       </InputLeftElement>
       <Input type={'text'} placeholder={'share'} />
     </InputGroup>
-    <Button
-      mt={4}
-      bgColor={'blackAlpha.900'}
-      color={'white'}
-      p={7}
-      borderRadius={15}
-    >
+    <Button mt={4} colorScheme={'deltaColor1'} p={7} borderRadius={15}>
       Share
     </Button>
   </>

@@ -4,7 +4,6 @@
  */
 'use client';
 
-import { FC, useState } from 'react';
 import {
   Flex,
   Heading,
@@ -17,6 +16,7 @@ import {
   Th,
   Tbody,
 } from '@chakra-ui/react';
+import { FC, useState } from 'react';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
 import { default as Recipient, Props as RecipientProps } from './Recipient';

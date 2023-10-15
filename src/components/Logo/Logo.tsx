@@ -4,8 +4,8 @@
  */
 'use client';
 
-import { FC } from 'react';
 import { Image, ImageProps } from '@chakra-ui/react';
+import { FC } from 'react';
 
 import { when } from '@/utils/misc';
 

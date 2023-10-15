@@ -2,10 +2,12 @@
  * @fileoverview Defines root layout.
  * @copyright Shingo OKAWA 2023
  */
-import type { Metadata } from 'next';
-import { FC, ReactNode } from 'react';
 import { Inter } from 'next/font/google';
+import { FC, ReactNode } from 'react';
+
 import Providers from '@/app/providers';
+
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Delta Catalog',

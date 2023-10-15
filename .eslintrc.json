@@ -1,6 +1,7 @@
 {
   "extends": [
     "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
     "next/core-web-vitals",
     "prettier"
   ],
@@ -16,6 +17,25 @@
         "destructuredArrayIgnorePattern": "^_"
       }
     ],
-    "@next/next/no-document-import-in-page": "off"
+    "@next/next/no-document-import-in-page": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling"],
+          "object",
+          "type",
+          "index"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
   }
 }

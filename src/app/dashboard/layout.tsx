@@ -4,9 +4,9 @@
  */
 'use client';
 
-import { FC, ReactNode } from 'react';
-import { useSession } from 'next-auth/react';
 import { Flex } from '@chakra-ui/react';
+import { useSession } from 'next-auth/react';
+import { FC, ReactNode } from 'react';
 
 import { Navigate } from '@/components/Navigate';
 import { Search } from '@/components/Search';
@@ -58,9 +58,15 @@ const Layout: FC<Props> = ({ children }: Props) => {
       flexDir={['column', 'column', 'row']}
       overflow="hidden"
     >
-      <Left>
+      <Flex
+        w={['100%', '100%', '10%', '15%', '15%']}
+        flexDir={'column'}
+        alignItems={'center'}
+        backgroundColor={'deltaColor2.900'}
+        color={'white'}
+      >
         <Navigate links={links} />
-      </Left>
+      </Flex>
       <Main>{children}</Main>
       <Right>
         <Search notifies={2} />

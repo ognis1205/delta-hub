@@ -4,8 +4,6 @@
  */
 'use client';
 
-import { FC } from 'react';
-import { FiDownload } from 'react-icons/fi';
 import {
   Tr,
   Td,
@@ -17,6 +15,8 @@ import {
 } from '@chakra-ui/react';
 import axios from 'axios';
 import fileDownload from 'js-file-download';
+import { FC } from 'react';
+import { FiDownload } from 'react-icons/fi';
 
 export type Props = {
   imgSrc: string;

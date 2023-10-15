@@ -4,8 +4,9 @@
  */
 'use client';
 
-import { FC } from 'react';
+import { Flex, Link as ChakraLink, Icon, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import { FC } from 'react';
 import {
   FiHome,
   FiShare2,
@@ -13,7 +14,6 @@ import {
   FiFilePlus,
   FiSettings,
 } from 'react-icons/fi';
-import { Flex, Link as ChakraLink, Icon, Text } from '@chakra-ui/react';
 
 const icons = {
   home: FiHome,

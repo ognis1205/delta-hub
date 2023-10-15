@@ -4,12 +4,13 @@
  */
 'use client';
 
-import { FC } from 'react';
+import { Flex, Heading, Avatar, Text } from '@chakra-ui/react';
 import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
-import { Flex, Heading, Avatar, Text } from '@chakra-ui/react';
+import { FC } from 'react';
 
 import { Logo } from '@/components/Logo';
+
 import { default as Link, Props as LinkProps } from './Link';
 
 export type Props = {

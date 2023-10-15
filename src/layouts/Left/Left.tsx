@@ -4,8 +4,8 @@
  */
 'use client';
 
-import { FC, ReactNode } from 'react';
 import { Flex } from '@chakra-ui/react';
+import { FC, ReactNode } from 'react';
 
 export type Props = {
   children: ReactNode;

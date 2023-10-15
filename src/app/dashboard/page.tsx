@@ -4,12 +4,12 @@
  */
 'use client';
 
+import { Heading, Text, Flex } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import { useSession } from 'next-auth/react';
-import { Heading, Text, Flex } from '@chakra-ui/react';
 
-import { Statistics } from '@/containers/Statistics';
 import { Recipients } from '@/containers/Recipients';
+import { Statistics } from '@/containers/Statistics';
 
 const Page: NextPage<Record<string, never>> = () => {
   const { data: session } = useSession();

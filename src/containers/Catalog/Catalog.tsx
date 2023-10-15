@@ -4,7 +4,6 @@
  */
 'use client';
 
-import { FC } from 'react';
 import {
   Flex,
   Heading,
@@ -15,6 +14,7 @@ import {
   Tbody,
   TableContainer,
 } from '@chakra-ui/react';
+import { FC } from 'react';
 
 import { default as Share, Props as ShareProps } from './Share';
 
