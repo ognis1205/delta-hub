@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines GoogleSignIn atom.
+ * @fileoverview Defines Google Signin molecule.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -8,6 +8,8 @@ import { Button, ButtonProps, Icon, Text } from '@chakra-ui/react';
 import { signIn } from 'next-auth/react';
 import { FC } from 'react';
 import { FcGoogle } from 'react-icons/fc';
+
+import { GoogleIcon } from '';
 
 export type Props = Omit<ButtonProps, 'children' | 'onClick'>;
 

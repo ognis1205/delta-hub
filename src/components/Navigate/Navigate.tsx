@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { FC } from 'react';
 
-import { Component as DeltaSharingLogo } from '@/atoms/DeltaSharingLogo';
+import { Component as Logo } from '@/atoms/Logo';
 
 import { default as Link, Props as LinkProps } from './Link';
 
@@ -37,7 +37,7 @@ const Component: FC<Props> = ({ links }: Props) => {
             alignSelf={'center'}
             letterSpacing={'tight'}
           >
-            <DeltaSharingLogo boxSize={[50, 50, 50, 75, 75]} />
+            <Logo boxSize={[50, 50, 50, 75, 75]} />
           </Heading>
           <Flex
             flexDir={['row', 'row', 'column', 'column', 'column']}

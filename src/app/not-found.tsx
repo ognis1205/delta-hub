@@ -15,7 +15,7 @@ import {
 import { NextPage } from 'next';
 import Link from 'next/link';
 
-import { Component as DeltaSharingLogo } from '@/atoms/DeltaSharingLogo';
+import { Component as Logo } from '@/atoms/Logo';
 
 const Page: NextPage<Record<string, never>> = () => (
   <Flex align={'center'} justify={'center'} h={'100vh'} w={'full'}>
@@ -27,7 +27,7 @@ const Page: NextPage<Record<string, never>> = () => (
       align={'center'}
       textAlign={'center'}
     >
-      <DeltaSharingLogo boxSize={100} />
+      <Logo boxSize={100} />
       <Stack spacing={2}>
         <Heading size={'md'}>Oops! Something went wrong</Heading>
         <Text fontSize={'sm'}>

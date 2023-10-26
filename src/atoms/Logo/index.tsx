@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Delta Sharing Logo atom.
+ * @fileoverview Defines Logo atom.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
