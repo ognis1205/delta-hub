@@ -1,12 +1,8 @@
 Delta Catalog Client
 ==============================
 
-delta-catalog-ts is a TypeScript-based Delta Sharing client that includes administration functionality.
-This is a work in progress, and many parts of the implementation are merely mock-ups [12/10/2023].
-
-<p align="center">
-  <img src="./dev/images/screen.gif" width="85%"/>
-</p>
+This repository is used for a sandbox around oauth 2.0 for now. The actual UI is being implemented in another
+repository. I will replace the whole source code here with the actual implementation in the near future.
 
 Delta Catalog Configuration
 ==============================
