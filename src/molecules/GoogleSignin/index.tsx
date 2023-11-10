@@ -9,7 +9,7 @@ import { signIn } from 'next-auth/react';
 import { FC } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 
-import { GoogleIcon } from '';
+import { Component as GoogleIcon } from '@/atoms/GoogleIcon';
 
 export type Props = Omit<ButtonProps, 'children' | 'onClick'>;
 
@@ -21,7 +21,7 @@ export const Component: FC<Props> = (props: Props) => {
 
   return (
     <Button onClick={login} {...props}>
-      <Icon as={FcGoogle} w={7} h={7} mr={2} />
+      <GoogleIcon w={7} h={7} mr={2} />
       <Text fontSize={'sm'}>Continue with Google</Text>
     </Button>
   );
