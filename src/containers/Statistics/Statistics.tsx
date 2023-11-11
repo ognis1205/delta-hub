@@ -19,7 +19,7 @@ import {
 import { FC } from 'react';
 import { Bar } from 'react-chartjs-2';
 
-import { hex2rgb } from '@/utils/chart';
+import { hex2rgb } from '@/utils/misc';
 
 ChartJS.register(
   CategoryScale,

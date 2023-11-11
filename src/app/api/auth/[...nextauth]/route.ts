@@ -6,6 +6,7 @@ import NextAuth, { NextAuthOptions, JWT } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
 import logger from '@/utils/logger';
+import google_oauth2 from '@/utils/axios';
 
 type ClientType = {
   clientId: string;
@@ -21,20 +22,13 @@ type ClientType = {
 
 const refresh = async (jwt: JWT): Promise<JWT> => {
   try {
-    const response = await fetch(
-      'https://oauth2.googleapis.com/token?' +
-        new URLSearchParams({
-          client_id: process.env.GOOGLE_CLIENT_ID as string,
-          client_secret: process.env.GOOGLE_CLIENT_SECRET as string,
-          grant_type: 'refresh_token',
-          refresh_token: jwt.refreshToken,
-        }),
-      {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        method: 'POST',
-      },
+    const response = await google_oauth2.post(
+      'token?' + new URLSearchParams({
+        client_id: process.env.GOOGLE_CLIENT_ID as string,
+        client_secret: process.env.GOOGLE_CLIENT_SECRET as string,
+        grant_type: 'refresh_token',
+        refresh_token: jwt.refreshToken,
+      })
     );
 
     const refreshedTokens = await response.json();

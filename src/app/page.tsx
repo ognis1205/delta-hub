@@ -16,7 +16,7 @@ import {
 import { NextPage } from 'next';
 
 import { Component as Logo } from '@/atoms/Logo';
-import { GoogleSignIn } from '@/components/GoogleSignIn';
+import { Component as GoogleSignIn } from '@/molecules/GoogleSignIn';
 
 
 const Page: NextPage<Record<string, never>> = () => {
