@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const DELTA_SHARING_SERVER_URL = process.env.DELTA_SHARING_SERVER_IP_ADDR;
+const DELTA_SHARING_BASE_URL = process.env.DELTA_SHARING_BASE_URL;
 
 const nextConfig = {
   reactStrictMode: true,
@@ -8,8 +8,8 @@ const nextConfig = {
       {
         //	source: '/api/catalog/:path*',
         source: "/api/sharing/:path*",
-        //	destination: `${DELTA_SHARING_SERVER_IP_ADDR}/catalog/:path*`,
-        destination: `${DELTA_SHARING_SERVER_URL}/sharing/:path*`,
+        //	destination: `${DELTA_SHARING_BASE_URL}/catalog/:path*`,
+        destination: `${DELTA_SHARING_BASE_URL}/sharing/:path*`,
       },
     ];
   },

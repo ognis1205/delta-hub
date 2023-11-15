@@ -4,10 +4,9 @@
  */
 'use client';
 
-import { Button, ButtonProps, Icon, Text } from '@chakra-ui/react';
+import { Button, ButtonProps, Text } from '@chakra-ui/react';
 import { signIn } from 'next-auth/react';
 import { FC } from 'react';
-import { FcGoogle } from 'react-icons/fc';
 
 import { Component as GoogleIcon } from '@/atoms/GoogleIcon';
 

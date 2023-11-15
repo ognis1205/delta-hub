@@ -16,6 +16,7 @@ import {
 import { NextPage } from 'next';
 
 import { Component as Logo } from '@/atoms/Logo';
+import { Component as GithubSignIn } from '@/molecules/GithubSignIn';
 import { Component as GoogleSignIn } from '@/molecules/GoogleSignIn';
 
 const Page: NextPage<Record<string, never>> = () => {
@@ -48,9 +49,10 @@ const Page: NextPage<Record<string, never>> = () => {
             <Heading size={'md'}>Log in to your account</Heading>
             <Text fontSize={'sm'}>Start sharing your thoughts and data</Text>
           </Stack>
-          <Flex>
+          <Stack spacing={2}>
             <GoogleSignIn />
-          </Flex>
+            <GithubSignIn />
+          </Stack>
         </Stack>
       </Flex>
     </Box>

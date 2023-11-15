@@ -2,7 +2,8 @@
  * @fileoverview Defined Next Auth OpenID Connect route.
  * @copyright Shingo OKAWA 2023
  */
-import NextAuth, { NextAuthOptions, JWT, Account } from 'next-auth';
+import NextAuth, { NextAuthOptions, JWT, Account, Provider } from 'next-auth';
+import GitHubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
 
 import { GoogleOAuth2 } from '@/utils/axios';
@@ -22,7 +23,7 @@ type ClientType = {
   };
 };
 
-const refresh = async (jwt: JWT): Promise<JWT> => {
+const refresh_google_oauth2 = async (jwt: JWT): Promise<JWT> => {
   try {
     const response: AxiosResponse<Account> = await GoogleOAuth2.post(
       'token?' +
@@ -33,7 +34,6 @@ const refresh = async (jwt: JWT): Promise<JWT> => {
           refresh_token: jwt.refreshToken,
         }),
     );
-
     return {
       ...jwt,
       accessToken: response.data.access_token,
@@ -50,11 +50,27 @@ const refresh = async (jwt: JWT): Promise<JWT> => {
   }
 };
 
+const refresh_github_oauth2 = async (jwt: JWT): Promise<JWT> => {
+  logger.info('GitHub does not support OAuth2.0 refresh token grant type');
+  return jwt;
+};
+
 const nextAuthOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+      authorization: {
+        params: {
+          prompt: 'consent',
+          access_type: 'offline',
+          response_type: 'code',
+        },
+      },
+    } as ClientType),
+    GitHubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID as string,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
       authorization: {
         params: {
           prompt: 'consent',
@@ -81,7 +97,13 @@ const nextAuthOptions: NextAuthOptions = {
         return jwt;
       }
       // Access token has expired, try to update it.
-      return refresh(jwt as JWT);
+      if (account?.provider === 'google') {
+        return refresh_google_oauth2(jwt as JWT);
+      } else if (account?.provider === 'github') {
+        return refresh_github_oauth2(jwt as JWT);
+      } else {
+        return jwt;
+      }
     },
     async session({ session, token }) {
       session.user = {

@@ -8,13 +8,15 @@ The authentication flow of `yet-another-delta-sharing-rs` will be completely dif
 Delta Catalog Configuration
 ==============================
 
-| Name                       | Environment Variable     | Required | Description                                                                      |
-|:--------------------------:|:------------------------:|:--------:|----------------------------------------------------------------------------------|
-| `nextauth_url`             | NEXTAUTH_URL             | yes      | Your canonical URL                                                               |
-| `nextauth_secret`          | NEXTAUTH_SECRET          | yes      | Your NextAuth JWT encryption secret                                              |
-| `google_client_id`         | GOOGLE_CLIENT_ID         | yes      | Google API client ID for OIDC                                                    |
-| `google_client_secret`     | GOOGLE_CLIENT_SECRET     | yes      | Google API client secret for OIDC                                                |
-| `delta_sharing_server_url` | DELTA_SHARING_SERVER_URL | yes      | Delta Sharing RS Backend URL                                                     |
+| Name                     | Environment Variable   | Required | Description                                                                      |
+|:------------------------:|:----------------------:|:--------:|----------------------------------------------------------------------------------|
+| `nextauth_url`           | NEXTAUTH_URL           | yes      | Your canonical URL                                                               |
+| `nextauth_secret`        | NEXTAUTH_SECRET        | yes      | Your NextAuth JWT encryption secret                                              |
+| `google_client_id`       | GOOGLE_CLIENT_ID       | yes      | Google API client ID for OIDC                                                    |
+| `google_client_secret`   | GOOGLE_CLIENT_SECRET   | yes      | Google API client secret for OIDC                                                |
+| `github_client_id`       | GITHUB_CLIENT_ID       | yes      | GitHub API client ID for OIDC                                                    |
+| `github_client_secret`   | GITHUB_CLIENT_SECRET   | yes      | GitHub API client secret for OIDC                                                |
+| `delta_sharing_base_url` | DELTA_SHARING_BASE_URL | yes      | Delta Sharing RS Backend URL                                                     |
 
 Obtaining Authentication Credentials
 ==============================
@@ -22,10 +24,16 @@ Obtaining Authentication Credentials
 To use Google's OAuth 2.0 with Delta Catalog via NextAuth, you will need Google's OAuth 2.0 authentication credentials, which include a client ID and client secret. Here is the process for obtaining them:
 
 1. Access the Google Developer Console.
-2. Agree to the usage of Google Cloud.
-3. Create a new project.
-4. Create the OAuth consent screen.
-5. Register your application and obtain authentication credentials (client ID and client secret).
+2. Create a new project.
+3. Create the OAuth consent screen.
+4. Register your application and obtain authentication credentials (client ID and client secret).
+
+To use GitHub's OAuth 2.0 with Delta Catalog via NextAuth, you will need GitHub's OAuth 2.0 authentication credentials, which include a client ID and client secret. Here is the process for obtaining them:
+
+1. Access the GitHub Developer Settings.
+2. Create a new OAuth App.
+3. Create the OAuth consent screen.
+4. Register your application and obtain authentication credentials (client ID and client secret).
 
 Getting the JWT Secret
 ==============================

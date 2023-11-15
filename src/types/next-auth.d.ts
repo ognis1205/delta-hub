@@ -6,7 +6,10 @@
 import NextAuth from 'next-auth';
 
 declare module 'next-auth' {
+  type Provider = 'google' | 'github';
+
   interface Account {
+    provider: Provider;
     access_token: string;
     refresh_token: string;
     expires_in: number;
