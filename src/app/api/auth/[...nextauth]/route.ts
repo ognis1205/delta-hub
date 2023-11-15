@@ -2,11 +2,13 @@
  * @fileoverview Defined Next Auth OpenID Connect route.
  * @copyright Shingo OKAWA 2023
  */
-import NextAuth, { NextAuthOptions, JWT } from 'next-auth';
+import NextAuth, { NextAuthOptions, JWT, Account } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
+import { GoogleOAuth2 } from '@/utils/axios';
 import logger from '@/utils/logger';
-import google_oauth2 from '@/utils/axios';
+
+import type { AxiosResponse } from 'axios';
 
 type ClientType = {
   clientId: string;
@@ -22,23 +24,21 @@ type ClientType = {
 
 const refresh = async (jwt: JWT): Promise<JWT> => {
   try {
-    const response = await google_oauth2.post(
-      'token?' + new URLSearchParams({
-        client_id: process.env.GOOGLE_CLIENT_ID as string,
-        client_secret: process.env.GOOGLE_CLIENT_SECRET as string,
-        grant_type: 'refresh_token',
-        refresh_token: jwt.refreshToken,
-      })
+    const response: AxiosResponse<Account> = await GoogleOAuth2.post(
+      'token?' +
+        new URLSearchParams({
+          client_id: process.env.GOOGLE_CLIENT_ID as string,
+          client_secret: process.env.GOOGLE_CLIENT_SECRET as string,
+          grant_type: 'refresh_token',
+          refresh_token: jwt.refreshToken,
+        }),
     );
-
-    const refreshedTokens = await response.json();
-    if (!response.ok) throw refreshedTokens;
 
     return {
       ...jwt,
-      accessToken: refreshedTokens.access_token,
-      accessTokenExpires: Date.now() + refreshedTokens.expires_in * 1000,
-      refreshToken: refreshedTokens.refresh_token ?? jwt.refreshToken,
+      accessToken: response.data.access_token,
+      accessTokenExpires: Date.now() + response.data.expires_in * 1000,
+      refreshToken: response.data.refresh_token ?? jwt.refreshToken,
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (e: any) {

@@ -13,7 +13,6 @@ import { Component as Logo } from '@/atoms/Logo';
 
 import { default as Link, Props as LinkProps } from './Link';
 
-
 export type Props = {
   links: LinkProps[];
 };

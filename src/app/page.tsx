@@ -18,7 +18,6 @@ import { NextPage } from 'next';
 import { Component as Logo } from '@/atoms/Logo';
 import { Component as GoogleSignIn } from '@/molecules/GoogleSignIn';
 
-
 const Page: NextPage<Record<string, never>> = () => {
   const [deltaColor1_500, deltaColor2_500] = useToken('colors', [
     'deltaColor1.500',

@@ -2,7 +2,7 @@
  * @fileoverview Defines logger.
  * @copyright Shingo OKAWA 2023
  */
-import Chalk from 'chalk';
+import { default as Chalk } from 'chalk';
 
 class Logger {
   private isError = (value: Error | string): value is Error => {

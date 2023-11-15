@@ -8,12 +8,13 @@ The authentication flow of `yet-another-delta-sharing-rs` will be completely dif
 Delta Catalog Configuration
 ==============================
 
-| Name                   | Environment Variable | Required | Description                                                                      |
-|:----------------------:|:--------------------:|:--------:|----------------------------------------------------------------------------------|
-| `nextauth_url`         | NEXTAUTH_URL         | yes      | Your canonical URL                                                               |
-| `nextauth_secret`      | NEXTAUTH_SECRET      | yes      | Your NextAuth JWT encryption secret                                              |
-| `google_client_id`     | GOOGLE_CLIENT_ID     | yes      | Google API client ID for OIDC                                                    |
-| `google_client_secret` | GOOGLE_CLIENT_SECRET | yes      | Google API client secret for OIDC                                                |
+| Name                       | Environment Variable     | Required | Description                                                                      |
+|:--------------------------:|:------------------------:|:--------:|----------------------------------------------------------------------------------|
+| `nextauth_url`             | NEXTAUTH_URL             | yes      | Your canonical URL                                                               |
+| `nextauth_secret`          | NEXTAUTH_SECRET          | yes      | Your NextAuth JWT encryption secret                                              |
+| `google_client_id`         | GOOGLE_CLIENT_ID         | yes      | Google API client ID for OIDC                                                    |
+| `google_client_secret`     | GOOGLE_CLIENT_SECRET     | yes      | Google API client secret for OIDC                                                |
+| `delta_sharing_server_url` | DELTA_SHARING_SERVER_URL | yes      | Delta Sharing RS Backend URL                                                     |
 
 Obtaining Authentication Credentials
 ==============================

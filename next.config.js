@@ -7,11 +7,11 @@ const nextConfig = {
     return [
       {
         //	source: '/api/catalog/:path*',
-        source: '/api/sharing/:path*',
+        source: "/api/sharing/:path*",
         //	destination: `${DELTA_SHARING_SERVER_IP_ADDR}/catalog/:path*`,
         destination: `${DELTA_SHARING_SERVER_URL}/sharing/:path*`,
       },
-    ]
+    ];
   },
 };
 
