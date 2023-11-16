@@ -8,7 +8,7 @@ import { Icon, IconProps } from '@chakra-ui/react';
 import { FC } from 'react';
 import { FaGithub } from 'react-icons/fa';
 
-export type Props = Omit<IconProps, 'as'>;
+export type Props = IconProps;
 
 export const Component: FC<Props> = (props: Props) => (
   <Icon {...props} as={FaGithub} />

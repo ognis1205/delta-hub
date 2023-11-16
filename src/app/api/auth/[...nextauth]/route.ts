@@ -2,7 +2,7 @@
  * @fileoverview Defined Next Auth OpenID Connect route.
  * @copyright Shingo OKAWA 2023
  */
-import NextAuth, { NextAuthOptions, JWT, Account, Provider } from 'next-auth';
+import NextAuth, { NextAuthOptions, JWT, Account } from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
 

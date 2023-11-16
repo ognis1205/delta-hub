@@ -4,61 +4,35 @@
  */
 'use client';
 
-import {
-  Box,
-  Container,
-  Stack,
-  Flex,
-  Heading,
-  Text,
-  useToken,
-} from '@chakra-ui/react';
+import { Container, Flex, Show } from '@chakra-ui/react';
 import { NextPage } from 'next';
 
-import { Component as Logo } from '@/atoms/Logo';
-import { Component as GithubSignIn } from '@/molecules/GithubSignIn';
-import { Component as GoogleSignIn } from '@/molecules/GoogleSignIn';
+import { Component as LoginForm } from '@/organisms/LoginForm';
+import { Component as Welcome } from '@/organisms/Welcome';
 
-const Page: NextPage<Record<string, never>> = () => {
-  const [deltaColor1_500, deltaColor2_500] = useToken('colors', [
-    'deltaColor1.500',
-    'deltaColor2.500',
-  ]);
-
-  return (
-    <Box
-      color={'white'}
-      bg={`linear-gradient(75deg, ${deltaColor1_500} 0%, ${deltaColor1_500} 50%, ${deltaColor2_500} 50%, ${deltaColor2_500} 100%)`}
+const Page: NextPage<Record<string, never>> = () => (
+  <Flex flexDir={'row'}>
+    <Show above="md">
+      <Flex
+        align={'center'}
+        justify={'center'}
+        h={'100vh'}
+        w={['0%', '0%', '60%']}
+      >
+        <Welcome />
+      </Flex>
+    </Show>
+    <Flex
+      align={'center'}
+      justify={'center'}
+      h={'100vh'}
+      w={['100%', '100%', '40%']}
     >
-      <Flex as="header" position="fixed" w="100%">
-        <Heading p={8} size={'3xl'}>
-          Delta Catalog
-        </Heading>
-      </Flex>
-      <Flex align={'center'} justify={'center'} h={'100vh'} w={'full'}>
-        <Stack
-          as={Container}
-          p={8}
-          spacing={6}
-          maxW={'lg'}
-          align={'center'}
-          textAlign={'center'}
-        >
-          <Logo boxSize={100} theme={'white'} />
-          <Stack spacing={2}>
-            <Heading size={'md'}>Log in to your account</Heading>
-            <Text fontSize={'sm'}>Start sharing your thoughts and data</Text>
-          </Stack>
-          <Stack spacing={2}>
-            <GoogleSignIn />
-            <GithubSignIn />
-          </Stack>
-        </Stack>
-      </Flex>
-    </Box>
-  );
-};
+      <LoginForm as={Container} p={8} spacing={6} maxW={'xl'} />
+    </Flex>
+  </Flex>
+);
 
-Page.displayName = 'NotFound';
+Page.displayName = 'Home';
 
 export default Page;

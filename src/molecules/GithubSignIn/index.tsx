@@ -10,7 +10,10 @@ import { FC } from 'react';
 
 import { Component as GithubIcon } from '@/atoms/GithubIcon';
 
-export type Props = Omit<ButtonProps, 'children' | 'onClick'>;
+export type Props = Omit<
+  ButtonProps,
+  keyof Pick<ButtonProps, 'children' | 'onClick'>
+>;
 
 export const Component: FC<Props> = (props: Props) => {
   const login = () =>

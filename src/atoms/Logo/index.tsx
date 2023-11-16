@@ -11,7 +11,10 @@ import { when } from '@/utils/misc';
 
 export type Theme = 'white' | 'black' | 'color';
 
-export type Props = Omit<ImageProps, 'src' | 'alt' | 'objectFit'> & {
+export type Props = Omit<
+  ImageProps,
+  keyof Pick<ImageProps, 'src' | 'alt' | 'objectFit'>
+> & {
   theme?: Theme;
 };
 

@@ -10,7 +10,10 @@ import { FC } from 'react';
 
 import { Component as GoogleIcon } from '@/atoms/GoogleIcon';
 
-export type Props = Omit<ButtonProps, 'children' | 'onClick'>;
+export type Props = Omit<
+  ButtonProps,
+  keyof Pick<ButtonProps, 'children' | 'onClick'>
+>;
 
 export const Component: FC<Props> = (props: Props) => {
   const login = () =>

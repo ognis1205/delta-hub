@@ -11,7 +11,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Delta Catalog',
-  description: 'Delta Catalog for Delta Sharing',
+  description: 'Simple Yet Powerful Data Platform for Everyone',
 };
 
 const inter = Inter({ subsets: ['latin'] });

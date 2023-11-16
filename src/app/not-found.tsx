@@ -4,47 +4,32 @@
  */
 'use client';
 
-import {
-  Container,
-  Stack,
-  Flex,
-  Heading,
-  Text,
-  Button,
-} from '@chakra-ui/react';
+import { Container, Flex, Show } from '@chakra-ui/react';
 import { NextPage } from 'next';
-import Link from 'next/link';
 
-import { Component as Logo } from '@/atoms/Logo';
+import { Component as BackToHome } from '@/organisms/BackToHome';
+import { Component as Settle } from '@/organisms/Settle';
 
 const Page: NextPage<Record<string, never>> = () => (
-  <Flex align={'center'} justify={'center'} h={'100vh'} w={'full'}>
-    <Stack
-      as={Container}
-      p={8}
-      spacing={6}
-      maxW={'lg'}
-      align={'center'}
-      textAlign={'center'}
-    >
-      <Logo boxSize={100} />
-      <Stack spacing={2}>
-        <Heading size={'md'}>Oops! Something went wrong</Heading>
-        <Text fontSize={'sm'}>
-          This page didn&apos;t load Delta Catalog correctly.
-        </Text>
-      </Stack>
-      <Flex>
-        <Button
-          href={'/'}
-          colorScheme={'deltaColor1'}
-          rounded={'full'}
-          as={Link}
-        >
-          Back to home
-        </Button>
+  <Flex flexDir={'row'}>
+    <Show above="md">
+      <Flex
+        align={'center'}
+        justify={'center'}
+        h={'100vh'}
+        w={['0%', '0%', '60%']}
+      >
+        <Settle />
       </Flex>
-    </Stack>
+    </Show>
+    <Flex
+      align={'center'}
+      justify={'center'}
+      h={'100vh'}
+      w={['100%', '100%', '40%']}
+    >
+      <BackToHome as={Container} p={8} spacing={6} maxW={'xl'} />
+    </Flex>
   </Flex>
 );
 
