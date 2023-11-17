@@ -37,12 +37,3 @@ export const Component: FC<Props> = ({
   );
 
 Component.displayName = 'NavLink';
-
-
-
-
-
-
-
-
-

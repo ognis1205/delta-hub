@@ -38,7 +38,7 @@ export type Props = {
 };
 
 const Container: FC<Props> = ({ labels, data }: Props) => {
-  const [color] = useToken('colors', ['deltaColor1.400']);
+  const [color] = useToken('colors', ['DeltaColor1.400']);
 
   const [r, g, b] = hex2rgb(color);
 
