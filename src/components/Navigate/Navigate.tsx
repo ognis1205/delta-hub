@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { FC } from 'react';
 
-import { Component as Logo } from '@/atoms/Logo';
+import { Component as LogoImage } from '@/atoms/LogoImage';
 
 import { default as Link, Props as LinkProps } from './Link';
 
@@ -36,7 +36,7 @@ const Component: FC<Props> = ({ links }: Props) => {
             alignSelf={'center'}
             letterSpacing={'tight'}
           >
-            <Logo boxSize={[50, 50, 50, 75, 75]} />
+            <LogoImage boxSize={[50, 50, 50, 75, 75]} />
           </Heading>
           <Flex
             flexDir={['row', 'row', 'column', 'column', 'column']}

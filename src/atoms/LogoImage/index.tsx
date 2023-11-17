@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Logo atom.
+ * @fileoverview Defines Logo Image atom.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -39,4 +39,4 @@ export const Component: FC<Props> = ({
   />
 );
 
-Component.displayName = 'Logo';
+Component.displayName = 'LogoImage';

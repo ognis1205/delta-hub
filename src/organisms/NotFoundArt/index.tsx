@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Settle organism.
+ * @fileoverview Defines Not Found Art organism.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -7,7 +7,7 @@
 import { Box, BoxProps, AbsoluteCenter } from '@chakra-ui/react';
 import { FC } from 'react';
 
-import { Component as SettleCat } from '@/atoms/SettleCat';
+import { Component as SettleCatImage } from '@/atoms/SettleCatImage';
 
 export type Props = Omit<
   BoxProps,
@@ -39,9 +39,9 @@ export const Component: FC<Props> = (props: Props) => (
     bgRepeat={'no-repeat'}
   >
     <AbsoluteCenter>
-      <SettleCat />
+      <SettleCatImage />
     </AbsoluteCenter>
   </Box>
 );
 
-Component.displayName = 'Settle';
+Component.displayName = 'NotFoundArt';

@@ -8,7 +8,7 @@ import { Stack, StackProps, Heading, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
 import { Component as BackToHomeButton } from '@/atoms/BackToHomeButton';
-import { Component as Logo } from '@/atoms/Logo';
+import { Component as LogoImage } from '@/atoms/LogoImage';
 
 export type Props = Omit<
   StackProps,
@@ -17,7 +17,7 @@ export type Props = Omit<
 
 export const Component: FC<Props> = (props: Props) => (
   <Stack align={'center'} textAlign={'center'} {...props}>
-    <Logo boxSize={150} />
+    <LogoImage boxSize={150} />
     <Stack spacing={2}>
       <Heading size={'lg'}>Oops! Something went wrong</Heading>
       <Text fontSize={'md'}>

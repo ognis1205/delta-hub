@@ -4,33 +4,34 @@
  */
 'use client';
 
-import { Container, Flex, Show } from '@chakra-ui/react';
+import { Container, Flex } from '@chakra-ui/react';
 import { NextPage } from 'next';
 
 import { Component as BackToHome } from '@/organisms/BackToHome';
-import { Component as Settle } from '@/organisms/Settle';
+import { Component as MainPanel } from '@/organisms/MainPanel';
+import { Component as NotFoundArt } from '@/organisms/NotFoundArt';
 
 const Page: NextPage<Record<string, never>> = () => (
-  <Flex flexDir={'row'}>
-    <Show above="md">
+  <MainPanel title={'Not Found'}>
+    <Flex flexDir={'row'}>
       <Flex
         align={'center'}
         justify={'center'}
         h={'100vh'}
-        w={['0%', '0%', '60%']}
+        w={{ base: '0%', md: '60%' }}
       >
-        <Settle />
+        <NotFoundArt display={{ base: 'none', md: 'flex' }} />
       </Flex>
-    </Show>
-    <Flex
-      align={'center'}
-      justify={'center'}
-      h={'100vh'}
-      w={['100%', '100%', '40%']}
-    >
-      <BackToHome as={Container} p={8} spacing={6} maxW={'xl'} />
+      <Flex
+        align={'center'}
+        justify={'center'}
+        h={'100vh'}
+        w={{ base: '100%', md: '40%' }}
+      >
+        <BackToHome as={Container} p={8} spacing={6} maxW={'xl'} />
+      </Flex>
     </Flex>
-  </Flex>
+  </MainPanel>
 );
 
 Page.displayName = 'NotFound';

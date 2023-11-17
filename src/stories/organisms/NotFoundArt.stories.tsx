@@ -1,17 +1,17 @@
 /**
- * @fileoverview Defines @/organisms/Settle story.
+ * @fileoverview Defines @/organisms/NotFoundArt story.
  * @copyright Shingo OKAWA 2023
  */
 import { Box } from '@chakra-ui/react';
 
-import { Component as Settle } from '@/organisms/Settle';
+import { Component as NotFoundArt } from '@/organisms/NotFoundArt';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Settle',
-  component: Settle,
-} satisfies Meta<typeof Settle>;
+  title: 'NotFoundArt',
+  component: NotFoundArt,
+} satisfies Meta<typeof NotFoundArt>;
 
 type Story = StoryObj<typeof meta>;
 
@@ -19,7 +19,7 @@ export const Default: Story = {
   args: {},
   render: (args) => (
     <Box h={'100vh'}>
-      <Settle {...args} />
+      <NotFoundArt {...args} />
     </Box>
   ),
 };

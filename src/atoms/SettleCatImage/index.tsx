@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines SettleCat atom.
+ * @fileoverview Defines Settle Cat Image atom.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -21,4 +21,4 @@ export const Component: FC<Props> = (props: Props) => (
   />
 );
 
-Component.displayName = 'SettleCat';
+Component.displayName = 'SettleCatImage';

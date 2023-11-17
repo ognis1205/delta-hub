@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines WelcomeCats atom.
+ * @fileoverview Defines Welcome Cats Image atom.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -21,4 +21,4 @@ export const Component: FC<Props> = (props: Props) => (
   />
 );
 
-Component.displayName = 'WelcomeCats';
+Component.displayName = 'WelcomeCatsImage';
