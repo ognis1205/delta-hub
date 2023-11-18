@@ -39,12 +39,9 @@ const items = [
 export const Default: Story = {
   args: {
     items: items,
-    direction: { base: 'column', md: 'row' },
-    display: { base: 'none', md: 'flex' },
-    width: { base: 'full', md: 'auto' },
+    direction: 'row',
     alignItems: 'center',
     flexGrow: 1,
-    mt: { base: 4, md: 0 },
   },
   render: (args) => <NavIconList {...args} />,
 };

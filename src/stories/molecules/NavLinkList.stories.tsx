@@ -23,68 +23,86 @@ const props = {
 const items = [
   {
     ...props,
-    href: '/portfolio',
-    children: <Text>Portfolio</Text>,
+    href: '/item11',
+    children: <Text>Item1</Text>,
   },
   {
     ...props,
-    href: '/timeline',
-    children: <Text>Timeline</Text>,
+    href: '/item2',
+    children: <Text>Item2</Text>,
   },
   {
     ...props,
-    href: '/contact',
-    children: <Text>Contact</Text>,
+    href: '/item3',
+    children: <Text>Item3</Text>,
   },
   {
     ...props,
-    isExternal: true,
-    href: 'https://github.com/ognis1205/otfsg-io',
-    children: <Text>GitHub</Text>,
+    href: '/item4',
+    children: <Text>Item4</Text>,
+  },
+  {
+    ...props,
+    href: '/item5',
+    children: <Text>Item5</Text>,
+  },
+  {
+    ...props,
+    href: '/item6',
+    children: <Text>Item6</Text>,
+  },
+  {
+    ...props,
+    href: '/item7',
+    children: <Text>Item7</Text>,
+  },
+  {
+    ...props,
+    href: '/item8',
+    children: <Text>Item8</Text>,
+  },
+  {
+    ...props,
+    href: '/item9',
+    children: <Text>Item9</Text>,
   },
 ] satisfies NavLinkProps[];
 
-export const PortfolioIsActive: Story = {
+export const Item1IsActive: Story = {
   args: {
-    path: '/portfolio',
+    path: '/item1',
     activeColor: 'teal',
     items: items,
-    direction: { base: 'column', md: 'row' },
-    display: { base: 'none', md: 'flex' },
-    width: { base: 'full', md: 'auto' },
+    direction: 'row',
     alignItems: 'center',
     flexGrow: 1,
-    mt: { base: 4, md: 0 },
+    overflow: 'hidden',
   },
   render: (args) => <NavLinkList {...args} />,
 };
 
-export const TimelineIsActive: Story = {
+export const Item2IsActive: Story = {
   args: {
-    path: '/timeline',
+    path: '/item2',
     activeColor: 'teal',
     items: items,
-    direction: { base: 'column', md: 'row' },
-    display: { base: 'none', md: 'flex' },
-    width: { base: 'full', md: 'auto' },
+    direction: 'row',
     alignItems: 'center',
     flexGrow: 1,
-    mt: { base: 4, md: 0 },
+    overflow: 'hidden',
   },
   render: (args) => <NavLinkList {...args} />,
 };
 
-export const ContactIsActive: Story = {
+export const Item3IsActive: Story = {
   args: {
-    path: '/contact',
+    path: '/item3',
     activeColor: 'teal',
     items: items,
-    direction: { base: 'column', md: 'row' },
-    display: { base: 'none', md: 'flex' },
-    width: { base: 'full', md: 'auto' },
+    direction: 'row',
     alignItems: 'center',
     flexGrow: 1,
-    mt: { base: 4, md: 0 },
+    overflow: 'hidden',
   },
   render: (args) => <NavLinkList {...args} />,
 };
