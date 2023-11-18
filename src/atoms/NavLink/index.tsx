@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines NavLink atom.
+ * @fileoverview Defines Nav Link atom.
  * @copyright Shingo OKAWA 2023
  */
 'use client';

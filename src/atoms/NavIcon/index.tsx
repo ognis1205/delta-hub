@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines NavIcon atom.
+ * @fileoverview Defines Nav Icon atom.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
