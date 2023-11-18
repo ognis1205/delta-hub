@@ -6,7 +6,6 @@ import { FaHome, FaInfoCircle, FaQuestionCircle } from 'react-icons/fa';
 
 import { Component as NavIconList } from '@/molecules/NavIconList';
 
-import type { Props as NavIconProps } from '@/atoms/NavIcon';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
@@ -35,7 +34,7 @@ const items = [
     'aria-label': 'Question',
     icon: <FaQuestionCircle color={'grey'} />,
   },
-] satisfies NavIconProps[];
+];
 
 export const Default: Story = {
   args: {
