@@ -23,16 +23,10 @@ import { Component as NavLink, Props as NavLinkProps } from '@/atoms/NavLink';
 
 export type Props = StackProps & {
   path: string;
-  activeColor: string;
   items: Omit<NavLinkProps, 'isExternal'>[];
 };
 
-export const Component: FC<Props> = ({
-  path,
-  activeColor,
-  items,
-  ...props
-}: Props) => {
+export const Component: FC<Props> = ({ path, items, ...props }: Props) => {
   const [numberOfItemsDisplayed, setNumberOfItemsDisplayed] =
     useState<number>(0);
 
@@ -82,9 +76,15 @@ export const Component: FC<Props> = ({
               h={10}
               alignItems={'center'}
               visibility={i >= numberOfItemsDisplayed ? 'hidden' : undefined}
-              borderBottom={href === path ? `solid ${activeColor}` : undefined}
+              borderBottom={href === path ? 2 : undefined}
+              borderStyle={href === path ? 'solid' : undefined}
+              borderColor={href === path ? 'DeltaColor1.500' : undefined}
             >
-              <NavLink href={href} {...props}>
+              <NavLink
+                href={href}
+                {...props}
+                color={href === path ? 'SonicSilver.900' : undefined}
+              >
                 {children}
               </NavLink>
             </Flex>
@@ -106,7 +106,7 @@ export const Component: FC<Props> = ({
           </PopoverTrigger>
           <PopoverContent w={'100%'}>
             <PopoverArrow />
-            <PopoverBody p={5}>
+            <PopoverBody p={3}>
               {items
                 .slice(numberOfItemsDisplayed)
                 .map(({ href, children, ...props }, i) => {

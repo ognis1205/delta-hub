@@ -20,7 +20,7 @@ export const AsIcon: Story = {
   args: {
     popover: 'Popover',
     'aria-label': 'Icon',
-    icon: <FaHome color={'grey'} />,
+    icon: <FaHome />,
   },
   render: (args) => <NavIcon {...args} />,
 };
@@ -29,7 +29,7 @@ export const AsLink: Story = {
   args: {
     popover: 'Popover',
     'aria-label': 'Icon',
-    icon: <FaHome color={'grey'} />,
+    icon: <FaHome />,
   },
   render: (args) => (
     <NavLink href={'/'}>

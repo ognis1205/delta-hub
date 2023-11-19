@@ -10,6 +10,14 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { SessionProvider } from 'next-auth/react';
 import { FC } from 'react';
 
+import { theme as buttonTheme } from '@/utils/chakra/button';
+import { theme as linkTheme } from '@/utils/chakra/link';
+
+const components = {
+  Button: buttonTheme,
+  Link: linkTheme,
+};
+
 const colors = {
   DeltaColor1: {
     900: '#0A4E65',
@@ -44,6 +52,28 @@ const colors = {
     200: '#D2D3DB',
     100: '#EFF0F8',
   },
+  SonicSilver: {
+    900: '#181817',
+    800: '#30312F',
+    700: '#494947',
+    600: '#61625F',
+    500: '#7A7B77',
+    400: '#92938F',
+    300: '#AAACA7',
+    200: '#C3C4BF',
+    100: '#DBDDD7',
+  },
+  AntiFlashWhite: {
+    900: '#92938F',
+    800: '#AAACA7',
+    700: '#C3C4BF',
+    600: '#DBDDD7',
+    500: '#F4F6EF',
+    400: '#F5F6F0',
+    300: '#F6F7F2',
+    200: '#F7F8F3',
+    100: '#F8F9F5',
+  },
   Ivory: {
     900: '#FFFFF0',
     800: '#FFFFF3',
@@ -58,6 +88,7 @@ const colors = {
 };
 
 export const theme = extendTheme({
+  components,
   colors,
 });
 

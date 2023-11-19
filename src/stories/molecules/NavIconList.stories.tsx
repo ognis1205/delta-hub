@@ -20,19 +20,19 @@ const items = [
     href: '/',
     popover: 'Home',
     'aria-label': 'Home',
-    icon: <FaHome color={'grey'} />,
+    icon: <FaHome />,
   },
   {
     href: '/',
     popover: 'Info',
     'aria-label': 'Info',
-    icon: <FaInfoCircle color={'grey'} />,
+    icon: <FaInfoCircle />,
   },
   {
     href: '/',
     popover: 'Question',
     'aria-label': 'Question',
-    icon: <FaQuestionCircle color={'grey'} />,
+    icon: <FaQuestionCircle />,
   },
 ];
 

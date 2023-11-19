@@ -23,7 +23,7 @@ export type Props = IconButtonProps & {
 export const Component: FC<Props> = ({ popover, ...props }: Props) => (
   <Popover trigger={'hover'}>
     <PopoverTrigger>
-      <IconButton {...props} />
+      <IconButton {...props} variant={'navIcon'} />
     </PopoverTrigger>
     <PopoverContent w={'100%'} color={'white'} bg={'Russian.800'}>
       <PopoverArrow bg={'Russian.800'} />

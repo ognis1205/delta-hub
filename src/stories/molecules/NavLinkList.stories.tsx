@@ -22,8 +22,8 @@ const items = [
     href: '/item1',
     children: (
       <HStack>
-        <Icon as={FaHome} color={'grey'} />
-        <Text color={'grey'}>Item1</Text>
+        <Icon as={FaHome} />
+        <Text>Item1</Text>
       </HStack>
     ),
   },
@@ -31,8 +31,8 @@ const items = [
     href: '/item2',
     children: (
       <HStack>
-        <Icon as={FaInfoCircle} color={'grey'} />
-        <Text color={'grey'}>Item2</Text>
+        <Icon as={FaInfoCircle} />
+        <Text>Item2</Text>
       </HStack>
     ),
   },
@@ -40,8 +40,8 @@ const items = [
     href: '/item3',
     children: (
       <HStack>
-        <Icon as={FaQuestionCircle} color={'grey'} />
-        <Text color={'grey'}>Item3</Text>
+        <Icon as={FaQuestionCircle} />
+        <Text>Item3</Text>
       </HStack>
     ),
   },
@@ -49,8 +49,8 @@ const items = [
     href: '/item4',
     children: (
       <HStack>
-        <Icon as={FaHome} color={'grey'} />
-        <Text color={'grey'}>Item4</Text>
+        <Icon as={FaHome} />
+        <Text>Item4</Text>
       </HStack>
     ),
   },
@@ -58,8 +58,8 @@ const items = [
     href: '/item5',
     children: (
       <HStack>
-        <Icon as={FaInfoCircle} color={'grey'} />
-        <Text color={'grey'}>Item5</Text>
+        <Icon as={FaInfoCircle} />
+        <Text>Item5</Text>
       </HStack>
     ),
   },
@@ -67,8 +67,8 @@ const items = [
     href: '/item6',
     children: (
       <HStack>
-        <Icon as={FaQuestionCircle} color={'grey'} />
-        <Text color={'grey'}>Item6</Text>
+        <Icon as={FaQuestionCircle} />
+        <Text>Item6</Text>
       </HStack>
     ),
   },
@@ -76,8 +76,8 @@ const items = [
     href: '/item7',
     children: (
       <HStack>
-        <Icon as={FaHome} color={'grey'} />
-        <Text color={'grey'}>Item7</Text>
+        <Icon as={FaHome} />
+        <Text>Item7</Text>
       </HStack>
     ),
   },
@@ -85,8 +85,8 @@ const items = [
     href: '/item8',
     children: (
       <HStack>
-        <Icon as={FaInfoCircle} color={'grey'} />
-        <Text color={'grey'}>Item8</Text>
+        <Icon as={FaInfoCircle} />
+        <Text>Item8</Text>
       </HStack>
     ),
   },
@@ -94,8 +94,8 @@ const items = [
     href: '/item9',
     children: (
       <HStack>
-        <Icon as={FaQuestionCircle} color={'grey'} />
-        <Text color={'grey'}>Item9</Text>
+        <Icon as={FaQuestionCircle} />
+        <Text>Item9</Text>
       </HStack>
     ),
   },
@@ -104,7 +104,6 @@ const items = [
 export const Item1IsActive: Story = {
   args: {
     path: '/item1',
-    activeColor: 'teal',
     items: items,
     direction: 'row',
     alignItems: 'center',
@@ -116,7 +115,6 @@ export const Item1IsActive: Story = {
 export const Item2IsActive: Story = {
   args: {
     path: '/item2',
-    activeColor: 'teal',
     items: items,
     direction: 'row',
     alignItems: 'center',
@@ -128,7 +126,6 @@ export const Item2IsActive: Story = {
 export const Item3IsActive: Story = {
   args: {
     path: '/item3',
-    activeColor: 'teal',
     items: items,
     direction: 'row',
     alignItems: 'center',
