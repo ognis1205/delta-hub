@@ -75,8 +75,7 @@ export const Item1IsActive: Story = {
     items: items,
     direction: 'row',
     alignItems: 'center',
-    flexGrow: 1,
-    overflow: 'hidden',
+    flexWrap: 'wrap',
   },
   render: (args) => <NavLinkList {...args} />,
 };
@@ -88,8 +87,7 @@ export const Item2IsActive: Story = {
     items: items,
     direction: 'row',
     alignItems: 'center',
-    flexGrow: 1,
-    overflow: 'hidden',
+    flexWrap: 'wrap',
   },
   render: (args) => <NavLinkList {...args} />,
 };
@@ -101,8 +99,7 @@ export const Item3IsActive: Story = {
     items: items,
     direction: 'row',
     alignItems: 'center',
-    flexGrow: 1,
-    overflow: 'hidden',
+    flexWrap: 'wrap',
   },
   render: (args) => <NavLinkList {...args} />,
 };
