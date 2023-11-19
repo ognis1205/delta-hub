@@ -68,23 +68,26 @@ export const Component: FC<Props> = ({
   return (
     <Stack {...props}>
       <Stack
-        px={1}
         ref={ref}
+        pr={1}
+        spacing={5}
         direction={'row'}
         alignItems={'center'}
         overflow={'hidden'}
       >
         {items.map(({ href, children, ...props }, i) => {
           return (
-            <Box
+            <Flex
               key={i}
+              h={10}
+              alignItems={'center'}
               visibility={i >= numberOfItemsDisplayed ? 'hidden' : undefined}
               borderBottom={href === path ? `solid ${activeColor}` : undefined}
             >
               <NavLink href={href} {...props}>
                 {children}
               </NavLink>
-            </Box>
+            </Flex>
           );
         })}
       </Stack>
@@ -96,22 +99,21 @@ export const Component: FC<Props> = ({
         <Popover>
           <PopoverTrigger>
             <IconButton
+              size={'sm'}
               aria-label={'Navigation Link Menu'}
               icon={<BsThreeDots />}
             />
           </PopoverTrigger>
-          <PopoverContent>
+          <PopoverContent w={'100%'}>
             <PopoverArrow />
-            <PopoverBody>
+            <PopoverBody p={5}>
               {items
                 .slice(numberOfItemsDisplayed)
                 .map(({ href, children, ...props }, i) => {
                   return (
-                    <Box key={i}>
-                      <NavLink href={href} {...props}>
-                        {children}
-                      </NavLink>
-                    </Box>
+                    <NavLink key={i} href={href} {...props}>
+                      {children}
+                    </NavLink>
                   );
                 })}
             </PopoverBody>

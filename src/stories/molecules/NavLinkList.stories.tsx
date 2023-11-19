@@ -2,7 +2,8 @@
  * @fileoverview Defines @/molecules/NavLinkList story.
  * @copyright Shingo OKAWA 2023
  */
-import { Text } from '@chakra-ui/react';
+import { Text, Icon, HStack } from '@chakra-ui/react';
+import { FaHome, FaInfoCircle, FaQuestionCircle } from 'react-icons/fa';
 
 import { Component as NavLinkList } from '@/molecules/NavLinkList';
 
@@ -16,55 +17,87 @@ const meta = {
 
 type Story = StoryObj<typeof meta>;
 
-const props = {
-  p: 2,
-} satisfies NavLinkProps;
-
 const items = [
   {
-    ...props,
-    href: '/item11',
-    children: <Text>Item1</Text>,
+    href: '/item1',
+    children: (
+      <HStack>
+        <Icon as={FaHome} color={'grey'} />
+        <Text color={'grey'}>Item1</Text>
+      </HStack>
+    ),
   },
   {
-    ...props,
     href: '/item2',
-    children: <Text>Item2</Text>,
+    children: (
+      <HStack>
+        <Icon as={FaInfoCircle} color={'grey'} />
+        <Text color={'grey'}>Item2</Text>
+      </HStack>
+    ),
   },
   {
-    ...props,
     href: '/item3',
-    children: <Text>Item3</Text>,
+    children: (
+      <HStack>
+        <Icon as={FaQuestionCircle} color={'grey'} />
+        <Text color={'grey'}>Item3</Text>
+      </HStack>
+    ),
   },
   {
-    ...props,
     href: '/item4',
-    children: <Text>Item4</Text>,
+    children: (
+      <HStack>
+        <Icon as={FaHome} color={'grey'} />
+        <Text color={'grey'}>Item4</Text>
+      </HStack>
+    ),
   },
   {
-    ...props,
     href: '/item5',
-    children: <Text>Item5</Text>,
+    children: (
+      <HStack>
+        <Icon as={FaInfoCircle} color={'grey'} />
+        <Text color={'grey'}>Item5</Text>
+      </HStack>
+    ),
   },
   {
-    ...props,
     href: '/item6',
-    children: <Text>Item6</Text>,
+    children: (
+      <HStack>
+        <Icon as={FaQuestionCircle} color={'grey'} />
+        <Text color={'grey'}>Item6</Text>
+      </HStack>
+    ),
   },
   {
-    ...props,
     href: '/item7',
-    children: <Text>Item7</Text>,
+    children: (
+      <HStack>
+        <Icon as={FaHome} color={'grey'} />
+        <Text color={'grey'}>Item7</Text>
+      </HStack>
+    ),
   },
   {
-    ...props,
     href: '/item8',
-    children: <Text>Item8</Text>,
+    children: (
+      <HStack>
+        <Icon as={FaInfoCircle} color={'grey'} />
+        <Text color={'grey'}>Item8</Text>
+      </HStack>
+    ),
   },
   {
-    ...props,
     href: '/item9',
-    children: <Text>Item9</Text>,
+    children: (
+      <HStack>
+        <Icon as={FaQuestionCircle} color={'grey'} />
+        <Text color={'grey'}>Item9</Text>
+      </HStack>
+    ),
   },
 ] satisfies NavLinkProps[];
 
@@ -76,14 +109,8 @@ export const Item1IsActive: Story = {
     direction: 'row',
     alignItems: 'center',
     overflow: 'hidden',
-    //    flexWrap: 'wrap',
   },
-  render: (args) => (
-    <>
-      <NavLinkList {...args} />
-      <Text>Text</Text>
-    </>
-  ),
+  render: (args) => <NavLinkList {...args} />,
 };
 
 export const Item2IsActive: Story = {
@@ -94,7 +121,6 @@ export const Item2IsActive: Story = {
     direction: 'row',
     alignItems: 'center',
     overflow: 'hidden',
-    //    flexWrap: 'wrap',
   },
   render: (args) => <NavLinkList {...args} />,
 };
@@ -107,7 +133,6 @@ export const Item3IsActive: Story = {
     direction: 'row',
     alignItems: 'center',
     overflow: 'hidden',
-    //    flexWrap: 'wrap',
   },
   render: (args) => <NavLinkList {...args} />,
 };
