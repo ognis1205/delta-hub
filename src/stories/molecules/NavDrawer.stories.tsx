@@ -2,7 +2,7 @@
  * @fileoverview Defines @/molecules/NavDrawer story.
  * @copyright Shingo OKAWA 2023
  */
-import { Text, Image } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
 import { MdMenu } from 'react-icons/md';
 
 import { Component as Copyright } from '@/molecules/Copyright';
