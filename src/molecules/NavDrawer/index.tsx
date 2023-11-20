@@ -7,6 +7,9 @@
 import {
   useDisclosure,
   IconButton,
+  IconButtonProps,
+  HStack,
+  Spacer,
   Drawer,
   DrawerProps,
   DrawerBody,
@@ -14,39 +17,49 @@ import {
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
-  DrawerCloseButton,
 } from '@chakra-ui/react';
-import { FC, ReactNode, ReactElement } from 'react';
+import { FC, ReactNode } from 'react';
+import { MdClose } from 'react-icons/md';
 
-export type Props = DrawerProps & {
-  icon: ReactElement;
+export type Props = Omit<
+  IconButtonProps,
+  keyof Pick<IconButtonProps, 'onClick'>
+> & {
+  placement: DrawerProps['placement'];
   header: ReactNode;
   body: ReactNode;
   footer: ReactNode;
-  ariaLabel: string;
 };
 
 export const Component: FC<Props> = ({
-  icon,
+  placement,
   header,
   body,
   footer,
-  ariaLabel,
   ...props
 }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <IconButton aria-label={ariaLabel} icon={icon} onClick={onOpen} />
-      <Drawer {...props} onClose={onClose} isOpen={isOpen}>
+      <IconButton {...props} onClick={onOpen} />
+      <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader>{header}</DrawerHeader>
+          <DrawerHeader>
+            <HStack>
+              {header}
+              <Spacer />
+              <IconButton
+                aria-label={'Close drawer'}
+                icon={<MdClose />}
+                onClick={onClose}
+              />
+            </HStack>
+          </DrawerHeader>
           <DrawerBody>{body}</DrawerBody>
+          <DrawerFooter justifyContent={'center'}>{footer}</DrawerFooter>
         </DrawerContent>
-        <DrawerFooter>{footer}</DrawerFooter>
       </Drawer>
     </>
   );
