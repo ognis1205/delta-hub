@@ -5,19 +5,11 @@
 'use client';
 
 import {
-  //  chakra,
   Link as ChakraLink,
   LinkProps as ChakraLinkProps,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { FC } from 'react';
-
-//const ChakraNextLink = chakra(ChakraLink, {
-//  textDecoration: 'none',
-//  _hover: {
-//    textDecoration: 'none',
-//  },
-//});
 
 export type Props = Omit<ChakraLinkProps, 'as'> & {
   isExternal?: boolean;
@@ -31,7 +23,7 @@ export const Component: FC<Props> = ({
   isExternal ? (
     <ChakraLink {...props}>{children}</ChakraLink>
   ) : (
-    <ChakraLink as={NextLink} {...props} variant={'router'}>
+    <ChakraLink as={NextLink} {...props}>
       {children}
     </ChakraLink>
   );

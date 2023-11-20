@@ -5,7 +5,6 @@
 import { FaHome } from 'react-icons/fa';
 
 import { Component as NavIcon } from '@/atoms/NavIcon';
-import { Component as NavLink } from '@/atoms/NavLink';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -16,7 +15,7 @@ const meta = {
 
 type Story = StoryObj<typeof meta>;
 
-export const AsIcon: Story = {
+export const Default: Story = {
   args: {
     popover: 'Popover',
     'aria-label': 'Icon',
@@ -25,17 +24,13 @@ export const AsIcon: Story = {
   render: (args) => <NavIcon {...args} />,
 };
 
-export const AsLink: Story = {
+export const AsNavigation: Story = {
   args: {
     popover: 'Popover',
     'aria-label': 'Icon',
     icon: <FaHome />,
   },
-  render: (args) => (
-    <NavLink href={'/'}>
-      <NavIcon {...args} />
-    </NavLink>
-  ),
+  render: (args) => <NavIcon {...args} variant={'nav'} />,
 };
 
 export default meta;

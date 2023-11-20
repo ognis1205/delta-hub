@@ -4,33 +4,30 @@
  */
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 
-const navIcon = defineStyle({
-  background: 'AntiFlashWhite.500',
-  color: 'AntiFlashWhite.900',
-  border: '1px AntiFlashWhite.600',
-  boxShadow:
-    'rgba(31, 35, 40, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset',
+const menu = defineStyle({
+  background: 'white',
+  color: 'SonicSilver.700',
   _hover: {
-    background: 'AntiFlashWhite.600',
-    color: 'AntiFlashWhite.900',
+    background: 'AntiFlashWhite.200',
+    color: 'SonicSilver.900',
   },
 });
 
-const navLink = defineStyle({
+const nav = defineStyle({
   background: 'AntiFlashWhite.500',
-  color: 'SonicSilver.900',
+  color: 'SonicSilver.500',
   border: '1px AntiFlashWhite.600',
   boxShadow:
     'rgba(31, 35, 40, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset',
   _hover: {
     background: 'AntiFlashWhite.600',
-    color: 'SonicSilver.900',
+    color: 'SonicSilver.700',
   },
 });
 
 export const theme = defineStyleConfig({
   defaultProps: {
-    variant: 'navLink',
+    variant: 'menu',
   },
-  variants: { navIcon, navLink },
+  variants: { menu, nav },
 });

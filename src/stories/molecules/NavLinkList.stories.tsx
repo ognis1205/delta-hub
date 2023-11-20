@@ -101,6 +101,99 @@ const items = [
   },
 ] satisfies NavLinkProps[];
 
+const navItems = [
+  {
+    href: '/item1',
+    variant: 'nav',
+    children: (
+      <HStack>
+        <Icon as={FaHome} />
+        <Text>Item1</Text>
+      </HStack>
+    ),
+  },
+  {
+    href: '/item2',
+    variant: 'nav',
+    children: (
+      <HStack>
+        <Icon as={FaInfoCircle} />
+        <Text>Item2</Text>
+      </HStack>
+    ),
+  },
+  {
+    href: '/item3',
+    variant: 'nav',
+    children: (
+      <HStack>
+        <Icon as={FaQuestionCircle} />
+        <Text>Item3</Text>
+      </HStack>
+    ),
+  },
+  {
+    href: '/item4',
+    variant: 'nav',
+    children: (
+      <HStack>
+        <Icon as={FaHome} />
+        <Text>Item4</Text>
+      </HStack>
+    ),
+  },
+  {
+    href: '/item5',
+    variant: 'nav',
+    children: (
+      <HStack>
+        <Icon as={FaInfoCircle} />
+        <Text>Item5</Text>
+      </HStack>
+    ),
+  },
+  {
+    href: '/item6',
+    variant: 'nav',
+    children: (
+      <HStack>
+        <Icon as={FaQuestionCircle} />
+        <Text>Item6</Text>
+      </HStack>
+    ),
+  },
+  {
+    href: '/item7',
+    variant: 'nav',
+    children: (
+      <HStack>
+        <Icon as={FaHome} />
+        <Text>Item7</Text>
+      </HStack>
+    ),
+  },
+  {
+    href: '/item8',
+    variant: 'nav',
+    children: (
+      <HStack>
+        <Icon as={FaInfoCircle} />
+        <Text>Item8</Text>
+      </HStack>
+    ),
+  },
+  {
+    href: '/item9',
+    variant: 'nav',
+    children: (
+      <HStack>
+        <Icon as={FaQuestionCircle} />
+        <Text>Item9</Text>
+      </HStack>
+    ),
+  },
+] satisfies NavLinkProps[];
+
 export const Item1IsActive: Story = {
   args: {
     path: '/item1',
@@ -127,6 +220,39 @@ export const Item3IsActive: Story = {
   args: {
     path: '/item3',
     items: items,
+    direction: 'row',
+    alignItems: 'center',
+    overflow: 'hidden',
+  },
+  render: (args) => <NavLinkList {...args} />,
+};
+
+export const AsNavigationItem1IsActive: Story = {
+  args: {
+    path: '/item1',
+    items: navItems,
+    direction: 'row',
+    alignItems: 'center',
+    overflow: 'hidden',
+  },
+  render: (args) => <NavLinkList {...args} />,
+};
+
+export const AsNavigationItem2IsActive: Story = {
+  args: {
+    path: '/item2',
+    items: navItems,
+    direction: 'row',
+    alignItems: 'center',
+    overflow: 'hidden',
+  },
+  render: (args) => <NavLinkList {...args} />,
+};
+
+export const AsNavigationItem3IsActive: Story = {
+  args: {
+    path: '/item3',
+    items: navItems,
     direction: 'row',
     alignItems: 'center',
     overflow: 'hidden',

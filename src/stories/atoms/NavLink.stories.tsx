@@ -13,11 +13,22 @@ const meta = {
 
 type Story = StoryObj<typeof meta>;
 
-export const InternalNavLink: Story = {
+export const InternalNavLinkDefault: Story = {
   args: {
     href: '/',
   },
   render: (args) => <NavLink {...args}>NavLink</NavLink>,
+};
+
+export const InternalNavLinkAsNavigation: Story = {
+  args: {
+    href: '/',
+  },
+  render: (args) => (
+    <NavLink {...args} variant={'nav'}>
+      NavLink
+    </NavLink>
+  ),
 };
 
 export const ExternalNavLink: Story = {

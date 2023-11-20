@@ -36,9 +36,43 @@ const items = [
   },
 ];
 
+const navItems = [
+  {
+    href: '/',
+    popover: 'Home',
+    'aria-label': 'Home',
+    variant: 'nav',
+    icon: <FaHome />,
+  },
+  {
+    href: '/',
+    popover: 'Info',
+    'aria-label': 'Info',
+    variant: 'nav',
+    icon: <FaInfoCircle />,
+  },
+  {
+    href: '/',
+    popover: 'Question',
+    'aria-label': 'Question',
+    variant: 'nav',
+    icon: <FaQuestionCircle />,
+  },
+];
+
 export const Default: Story = {
   args: {
     items: items,
+    direction: 'row',
+    alignItems: 'center',
+    flexGrow: 1,
+  },
+  render: (args) => <NavIconList {...args} />,
+};
+
+export const AsNavigation: Story = {
+  args: {
+    items: navItems,
     direction: 'row',
     alignItems: 'center',
     flexGrow: 1,

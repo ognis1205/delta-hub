@@ -4,15 +4,27 @@
  */
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 
-const router = defineStyle({
+const menu = defineStyle({
   textDecoration: 'none',
-  color: 'AntiFlashWhite.900',
+  color: 'SonicSilver.700',
   _hover: {
     textDecoration: 'none',
     color: 'SonicSilver.900',
   },
 });
 
+const nav = defineStyle({
+  textDecoration: 'none',
+  color: 'SonicSilver.500',
+  _hover: {
+    textDecoration: 'none',
+    color: 'SonicSilver.700',
+  },
+});
+
 export const theme = defineStyleConfig({
-  variants: { router },
+  defaultProps: {
+    variant: 'menu',
+  },
+  variants: { menu, nav },
 });
