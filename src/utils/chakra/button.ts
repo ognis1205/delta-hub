@@ -15,13 +15,14 @@ const menu = defineStyle({
 
 const nav = defineStyle({
   background: 'AntiFlashWhite.500',
-  color: 'SonicSilver.500',
-  border: '1px AntiFlashWhite.600',
+  color: 'SonicSilver.600',
+  border: '1px',
+  borderColor: 'AntiFlashWhite.600',
   boxShadow:
     'rgba(31, 35, 40, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset',
   _hover: {
     background: 'AntiFlashWhite.600',
-    color: 'SonicSilver.700',
+    color: 'SonicSilver.800',
   },
 });
 

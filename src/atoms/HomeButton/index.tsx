@@ -12,6 +12,7 @@ export type Size = '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full';
 
 export type Props = Omit<ImageProps, keyof Pick<ImageProps, 'boxSize'>> & {
   size?: Size;
+  isDisabled?: boolean;
 };
 
 const sizes = {
@@ -25,7 +26,14 @@ const sizes = {
   full: '100%',
 } satisfies Record<Size, string>;
 
-export const Component: FC<Props> = ({ size = 'md', ...props }: Props) => (
+export const Component: FC<Props> = ({ size = 'md', isDisabled = false, ...props }: Props) => isDisabled ? (
+  <Image
+    {...props}
+    src={'/images/logo.png'}
+    h={sizes[size]}
+    alt={'Home button'}
+  />
+) : (
   <Link as={NextLink} href={'/'}>
     <Image
       {...props}
