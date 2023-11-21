@@ -4,20 +4,23 @@
  */
 'use client';
 
-//import { BrowserRouter } from 'react-router-dom';
 import { CacheProvider } from '@chakra-ui/next-js';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { SessionProvider } from 'next-auth/react';
 import { FC } from 'react';
 
+import { theme as boxTheme } from '@/utils/chakra/box';
 import { theme as breadcrumbTheme } from '@/utils/chakra/breadcrumb';
 import { theme as buttonTheme } from '@/utils/chakra/button';
 import { theme as linkTheme } from '@/utils/chakra/link';
+import { theme as menuTheme } from '@/utils/chakra/menu';
 
 const components = {
+  Box: boxTheme,
   Breadcrumb: breadcrumbTheme,
   Button: buttonTheme,
   Link: linkTheme,
+  Menu: menuTheme,
 };
 
 const colors = {
@@ -101,9 +104,7 @@ type Props = {
 const Providers: FC<Props> = ({ children }: Props) => (
   <SessionProvider>
     <CacheProvider>
-      {/*<BrowserRouter>*/}
       <ChakraProvider theme={theme}>{children}</ChakraProvider>
-      {/*</BrowserRouter>*/}
     </CacheProvider>
   </SessionProvider>
 );
