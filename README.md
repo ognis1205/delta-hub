@@ -1,4 +1,4 @@
-Delta Catalog Client
+DeltaHub
 ==============================
 
 This repository is used for a sandbox around oauth 2.0 for now. The actual UI is being implemented in another

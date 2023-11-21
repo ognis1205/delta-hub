@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Nav Drawer molecule.
+ * @fileoverview Defines Main Drawer molecule.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -65,4 +65,4 @@ export const Component: FC<Props> = ({
   );
 };
 
-Component.displayName = 'NavDrawer';
+Component.displayName = 'MainDrawer';

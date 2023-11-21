@@ -33,14 +33,14 @@ export const Component: FC<Props> = ({ title, children, ...props }: Props) => (
         enter: { opacity: 1, x: 0, y: 0 },
         exit: { opacity: 0, x: -0, y: 20 },
       }}
-      transition={{ duration: 0.4, type: 'easeInOut' }}
+      transition={{ duration: 0.6, type: 'easeInOut' }}
       style={{ position: 'relative' }}
     >
       {title && (
         <Head>
-          <title>{`${title} - Delta Catalog`}</title>
-          <meta name={'twitter:title'} content={`${title} - Delta Catalog`} />
-          <meta property={'og:title'} content={`${title} - Delta Catalog`} />
+          <title>{`${title} - DeltaHub`}</title>
+          <meta name={'twitter:title'} content={`${title} - DeltaHub`} />
+          <meta property={'og:title'} content={`${title} - DeltaHub`} />
         </Head>
       )}
       <Box {...props}>{children}</Box>

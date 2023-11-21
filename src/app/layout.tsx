@@ -10,8 +10,8 @@ import Providers from '@/app/providers';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Delta Catalog',
-  description: 'Simple Yet Powerful Data Platform for Everyone',
+  title: 'DeltaHub',
+  description: 'Data Sharing Platform for Everyone',
 };
 
 const inter = Inter({ subsets: ['latin'] });

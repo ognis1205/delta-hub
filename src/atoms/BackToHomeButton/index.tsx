@@ -11,7 +11,7 @@ import { FC } from 'react';
 export type Props = Omit<ButtonProps, keyof Pick<ButtonProps, 'rounded'>>;
 
 export const Component: FC<Props> = (props: Props) => (
-  <Button {...props} href={'/'} rounded={'full'} as={Link}>
+  <Button {...props} href={'/'} rounded={'full'} as={Link} variant={'nav'}>
     Back to home
   </Button>
 );

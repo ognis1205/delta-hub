@@ -21,7 +21,7 @@ export const Component: FC<Props> = (props: Props) => (
     <Stack spacing={2}>
       <Heading size={'lg'}>Oops! Something went wrong</Heading>
       <Text fontSize={'md'}>
-        This page didn&apos;t load Delta Catalog correctly.
+        This page didn&apos;t load DeltaHub correctly.
       </Text>
     </Stack>
     <Stack spacing={2}>

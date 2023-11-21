@@ -22,7 +22,7 @@ export const Component: FC<Props> = (props: Props) => {
     });
 
   return (
-    <Button onClick={login} {...props}>
+    <Button onClick={login} {...props} variant={'nav'}>
       <GithubIcon w={7} h={7} mr={2} />
       <Text fontSize={'sm'}>Continue with GitHub</Text>
     </Button>
