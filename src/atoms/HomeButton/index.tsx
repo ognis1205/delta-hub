@@ -26,22 +26,27 @@ const sizes = {
   full: '100%',
 } satisfies Record<Size, string>;
 
-export const Component: FC<Props> = ({ size = 'md', isDisabled = false, ...props }: Props) => isDisabled ? (
-  <Image
-    {...props}
-    src={'/images/logo.png'}
-    h={sizes[size]}
-    alt={'Home button'}
-  />
-) : (
-  <Link as={NextLink} href={'/'}>
+export const Component: FC<Props> = ({
+  size = 'md',
+  isDisabled = false,
+  ...props
+}: Props) =>
+  isDisabled ? (
     <Image
       {...props}
       src={'/images/logo.png'}
       h={sizes[size]}
       alt={'Home button'}
     />
-  </Link>
-);
+  ) : (
+    <Link as={NextLink} href={'/'}>
+      <Image
+        {...props}
+        src={'/images/logo.png'}
+        h={sizes[size]}
+        alt={'Home button'}
+      />
+    </Link>
+  );
 
 Component.displayName = 'HomeButton';

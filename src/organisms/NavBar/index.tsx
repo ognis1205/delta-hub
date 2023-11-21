@@ -11,8 +11,6 @@ export type Props = BoxProps & {
   children: ReactNode;
 };
 
-export const Component: FC<Props> = ({ children, ...props }: Props) => (
-  <></>
-);
+export const Component: FC<Props> = ({ children, ...props }: Props) => <></>;
 
 Component.displayName = 'NavBar';
