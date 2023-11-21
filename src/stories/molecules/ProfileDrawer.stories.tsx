@@ -30,4 +30,17 @@ export const Default: Story = {
   render: (args) => <ProfileDrawer {...args} />,
 };
 
+export const NoSource: Story = {
+  args: {
+    placement: 'left',
+    size: 'sm',
+    name: 'John Doe',
+    header: <Text>Header</Text>,
+    body: <Text>Body</Text>,
+    footer: <Copyright fontSize={'xs'} color={'SonicSilver.500'} />,
+    'aria-label': 'Open drawer',
+  },
+  render: (args) => <ProfileDrawer {...args} />,
+};
+
 export default meta;

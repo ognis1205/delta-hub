@@ -10,10 +10,12 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { SessionProvider } from 'next-auth/react';
 import { FC } from 'react';
 
+import { theme as breadcrumbTheme } from '@/utils/chakra/breadcrumb';
 import { theme as buttonTheme } from '@/utils/chakra/button';
 import { theme as linkTheme } from '@/utils/chakra/link';
 
 const components = {
+  Breadcrumb: breadcrumbTheme,
   Button: buttonTheme,
   Link: linkTheme,
 };

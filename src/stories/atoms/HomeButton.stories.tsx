@@ -18,6 +18,13 @@ export const Default: Story = {
   render: (args) => <HomeButton {...args} />,
 };
 
+export const SizeExtraSmall: Story = {
+  args: {
+    size: 'xs',
+  },
+  render: (args) => <HomeButton {...args} />,
+};
+
 export const SizeSmall: Story = {
   args: {
     size: 'sm',

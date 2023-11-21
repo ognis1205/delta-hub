@@ -1,5 +1,5 @@
 {
-  "name": "ya-delta-catalog",
+  "name": "delta-hub",
   "version": "0.1.0",
   "private": true,
   "scripts": {

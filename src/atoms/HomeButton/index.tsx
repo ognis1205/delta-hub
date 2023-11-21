@@ -16,21 +16,23 @@ export type Props = Omit<ImageProps, keyof Pick<ImageProps, 'boxSize'>> & {
 
 const sizes = {
   '2xs': '1rem',
-  'xs': '1.5rem',
-  'sm': '2rem',
-  'md': '3rem',
-  'lg': '4rem',
-  'xl': '6rem',
+  xs: '1.5rem',
+  sm: '2rem',
+  md: '3rem',
+  lg: '4rem',
+  xl: '6rem',
   '2xl': '8rem',
-  'full': '100%',
+  full: '100%',
 } satisfies Record<Size, string>;
 
-export const Component: FC<Props> = ({
-  size = 'md',
-  ...props
-}: Props) => (
+export const Component: FC<Props> = ({ size = 'md', ...props }: Props) => (
   <Link as={NextLink} href={'/'}>
-    <Image {...props} src={'/images/logo.png'} h={sizes[size]} alt={'Home button'} />
+    <Image
+      {...props}
+      src={'/images/logo.png'}
+      h={sizes[size]}
+      alt={'Home button'}
+    />
   </Link>
 );
 
