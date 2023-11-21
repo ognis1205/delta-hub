@@ -5,9 +5,9 @@
 'use client';
 
 import { Stack, Divider, HStack, Icon, Text } from '@chakra-ui/react';
+import { FC } from 'react';
 import { FaHome, FaShareAlt } from 'react-icons/fa';
 import { IoTelescopeOutline } from 'react-icons/io5';
-import { FC } from 'react';
 
 import { Component as MenuItem } from '@/atoms/MenuItem';
 
