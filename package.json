@@ -22,7 +22,7 @@
     "framer-motion": "^10.16.5",
     "js-file-download": "^0.4.12",
     "next": "13.5.4",
-    "next-auth": "^4.23.2",
+    "next-auth": "^4.24.5",
     "react": "^18",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
