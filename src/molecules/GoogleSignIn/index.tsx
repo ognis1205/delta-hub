@@ -8,7 +8,7 @@ import { Button, ButtonProps, Text } from '@chakra-ui/react';
 import { signIn } from 'next-auth/react';
 import { FC } from 'react';
 
-import { Component as GoogleIcon } from '@/atoms/GoogleIcon';
+import { Component as Icon } from '@/atoms/Icon';
 
 export type Props = Omit<
   ButtonProps,
@@ -23,7 +23,7 @@ export const Component: FC<Props> = (props: Props) => {
 
   return (
     <Button onClick={login} {...props} variant={'nav'}>
-      <GoogleIcon w={7} h={7} mr={2} />
+      <Icon iconName={'google'} w={7} h={7} mr={2} />
       <Text fontSize={'sm'}>Continue with Google</Text>
     </Button>
   );
