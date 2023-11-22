@@ -6,7 +6,6 @@ import { Component as NavLogo } from '@/atoms/NavLogo';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-
 const meta = {
   title: 'NavLogo',
   component: NavLogo,
