@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Nav Link List molecule.
+ * @fileoverview Defines Tab Items molecule.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -106,7 +106,7 @@ export const Component: FC<Props> = ({ path, items, ...props }: Props) => {
           <PopoverTrigger>
             <IconButton
               size={'sm'}
-              aria-label={'Navigation Link Menu'}
+              aria-label={'Tab menu'}
               icon={<PiDotsThreeBold />}
             />
           </PopoverTrigger>
@@ -124,4 +124,4 @@ export const Component: FC<Props> = ({ path, items, ...props }: Props) => {
   );
 };
 
-Component.displayName = 'NavLinkList';
+Component.displayName = 'TabItems';

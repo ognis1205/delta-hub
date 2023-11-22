@@ -1,16 +1,16 @@
 /**
- * @fileoverview Defines @/molecules/NavLinkList story.
+ * @fileoverview Defines @/molecules/TabItems story.
  * @copyright Shingo OKAWA 2023
  */
-import { Component as NavLinkList } from '@/molecules/NavLinkList';
+import { Component as TabItems } from '@/molecules/TabItems';
 
 import type { Props as TabItemProps } from '@/atoms/TabItem';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'NavLinkList',
-  component: NavLinkList,
-} satisfies Meta<typeof NavLinkList>;
+  title: 'TabItems',
+  component: TabItems,
+} satisfies Meta<typeof TabItems>;
 
 type Story = StoryObj<typeof meta>;
 
@@ -67,7 +67,7 @@ export const Item1IsActive: Story = {
     path: '/item1',
     items: items,
   },
-  render: (args) => <NavLinkList {...args} />,
+  render: (args) => <TabItems {...args} />,
 };
 
 export const Item2IsActive: Story = {
@@ -75,7 +75,7 @@ export const Item2IsActive: Story = {
     path: '/item2',
     items: items,
   },
-  render: (args) => <NavLinkList {...args} />,
+  render: (args) => <TabItems {...args} />,
 };
 
 export const Item3IsActive: Story = {
@@ -83,7 +83,7 @@ export const Item3IsActive: Story = {
     path: '/item3',
     items: items,
   },
-  render: (args) => <NavLinkList {...args} />,
+  render: (args) => <TabItems {...args} />,
 };
 
 export default meta;
