@@ -9,6 +9,7 @@ import { FC } from 'react';
 
 import { Component as NavLogo } from '@/atoms/NavLogo';
 import { Component as NavPath } from '@/atoms/NavPath';
+import { Component as NavSearch } from '@/atoms/NavSearch';
 import { Component as MenuDrawer } from '@/molecules/MenuDrawer';
 import { Component as NavItems } from '@/molecules/NavItems';
 import { Component as ProfileDrawer } from '@/molecules/ProfileDrawer';
@@ -118,6 +119,7 @@ export const Component: FC<Props> = ({
         <NavPath path={path} fontSize={'sm'} />
       </HStack>
       <HStack spacing={4} alignItems={'center'}>
+        <NavSearch />
         <NavItems items={navItems} />
         <ProfileDrawer
           placement={'right'}

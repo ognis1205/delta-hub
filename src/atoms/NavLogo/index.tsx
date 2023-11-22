@@ -20,4 +20,4 @@ export const Component: FC<Props> = (props: Props) => (
   </Link>
 );
 
-Component.displayName = 'NAvLogo';
+Component.displayName = 'NavLogo';
