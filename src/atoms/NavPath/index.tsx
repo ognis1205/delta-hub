@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Breadcrumbs molecule.
+ * @fileoverview Defines Nav Path atom.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -33,4 +33,4 @@ export const Component: FC<Props> = ({ path, ...props }: Props) => {
   );
 };
 
-Component.displayName = 'Breadcrumbs';
+Component.displayName = 'NavPath';

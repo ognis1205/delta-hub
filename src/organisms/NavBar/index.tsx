@@ -13,7 +13,7 @@ import { MdMenu } from 'react-icons/md';
 
 import { Component as Copyright } from '@/atoms/Copyright';
 import { Component as NavLogo } from '@/atoms/NavLogo';
-import { Component as Breadcrumbs } from '@/molecules/Breadcrumbs';
+import { Component as NavPath } from '@/atoms/NavPath';
 import {
   Component as MainDrawer,
   Props as MainDrawerProps,
@@ -27,6 +27,7 @@ import {
 } from '@/molecules/ProfileDrawer';
 import { Component as ProfileMenuBody } from '@/molecules/ProfileMenuBody';
 import { Component as ProfileMenuHeader } from '@/molecules/ProfileMenuHeader';
+
 
 const mainMenuProps = {
   placement: 'left' as const,
@@ -96,7 +97,7 @@ export const Component: FC<Props> = ({
       <HStack spacing={4} alignItems={'center'}>
         <MainDrawer {...mainMenuProps} variant={'nav'} size={'sm'} />
         <NavLogo size={'xs'} />
-        <Breadcrumbs path={path} fontSize={'sm'} />
+        <NavPath path={path} fontSize={'sm'} />
       </HStack>
       <HStack spacing={4} alignItems={'center'}>
         <NavIconList

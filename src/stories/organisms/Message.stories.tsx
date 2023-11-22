@@ -8,7 +8,6 @@ import { Component as Message } from '@/organisms/Message';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-
 const meta = {
   title: 'Message',
   component: Message,
