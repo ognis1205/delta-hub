@@ -2,9 +2,6 @@
  * @fileoverview Defines @/molecules/ProfileDrawer story.
  * @copyright Shingo OKAWA 2023
  */
-import { Text } from '@chakra-ui/react';
-
-import { Component as Copyright } from '@/atoms/Copyright';
 import { Component as ProfileDrawer } from '@/molecules/ProfileDrawer';
 
 import type { Meta, StoryObj } from '@storybook/react';
@@ -16,15 +13,44 @@ const meta = {
 
 type Story = StoryObj<typeof meta>;
 
+const items = [
+  {
+    href: '/',
+    name: 'Your profile',
+    iconName: 'profile' as const,
+  },
+  {
+    href: '/',
+    name: 'Edit status',
+    iconName: 'editStatus' as const,
+  },
+  'divider' as const,
+  {
+    href: '/',
+    name: 'Your catalogs',
+    iconName: 'catalog' as const,
+  },
+  {
+    href: '/',
+    name: 'Your stars',
+    iconName: 'star' as const,
+  },
+  'divider' as const,
+  {
+    href: '/',
+    name: 'Settings',
+    iconName: 'gear' as const,
+  },
+];
+
 export const Default: Story = {
   args: {
     placement: 'left',
     src: '/images/no-image.png',
     size: 'sm',
-    name: 'John Doe',
-    header: <Text>Header</Text>,
-    body: <Text>Body</Text>,
-    footer: <Copyright fontSize={'xs'} color={'SonicSilver.500'} />,
+    id: 'ognis1205',
+    name: 'Shingo OKAWA',
+    items: items,
     'aria-label': 'Open drawer',
   },
   render: (args) => <ProfileDrawer {...args} />,
@@ -34,10 +60,9 @@ export const NoSource: Story = {
   args: {
     placement: 'left',
     size: 'sm',
-    name: 'John Doe',
-    header: <Text>Header</Text>,
-    body: <Text>Body</Text>,
-    footer: <Copyright fontSize={'xs'} color={'SonicSilver.500'} />,
+    id: 'ognis1205',
+    name: 'Shingo OKAWA',
+    items: items,
     'aria-label': 'Open drawer',
   },
   render: (args) => <ProfileDrawer {...args} />,

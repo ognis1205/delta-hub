@@ -7,17 +7,11 @@
 import { Flex, HStack } from '@chakra-ui/react';
 import { FC } from 'react';
 
-import { Component as Copyright } from '@/atoms/Copyright';
 import { Component as NavLogo } from '@/atoms/NavLogo';
 import { Component as NavPath } from '@/atoms/NavPath';
 import { Component as MenuDrawer } from '@/molecules/MenuDrawer';
 import { Component as NavItems } from '@/molecules/NavItems';
-import {
-  Component as ProfileDrawer,
-  Props as ProfileDrawerProps,
-} from '@/molecules/ProfileDrawer';
-import { Component as ProfileMenuBody } from '@/molecules/ProfileMenuBody';
-import { Component as ProfileMenuHeader } from '@/molecules/ProfileMenuHeader';
+import { Component as ProfileDrawer } from '@/molecules/ProfileDrawer';
 
 export type Props = {
   path: string;
@@ -69,12 +63,35 @@ const navItems = [
   },
 ];
 
-const profileMenuProps = {
-  placement: 'right' as const,
-  body: <ProfileMenuBody />,
-  footer: <Copyright fontSize={'xs'} color={'SonicSilver.500'} />,
-  'aria-label': 'Open profile menu',
-} satisfies Partial<ProfileDrawerProps>;
+const profileItems = [
+  {
+    href: '/',
+    name: 'Your profile',
+    iconName: 'profile' as const,
+  },
+  {
+    href: '/',
+    name: 'Edit status',
+    iconName: 'editStatus' as const,
+  },
+  'divider' as const,
+  {
+    href: '/',
+    name: 'Your catalogs',
+    iconName: 'catalog' as const,
+  },
+  {
+    href: '/',
+    name: 'Your stars',
+    iconName: 'star' as const,
+  },
+  'divider' as const,
+  {
+    href: '/',
+    name: 'Settings',
+    iconName: 'gear' as const,
+  },
+];
 
 export const Component: FC<Props> = ({
   path,
@@ -103,10 +120,13 @@ export const Component: FC<Props> = ({
       <HStack spacing={4} alignItems={'center'}>
         <NavItems items={navItems} />
         <ProfileDrawer
-          {...profileMenuProps}
-          variant={'nav'}
+          placement={'right'}
+          items={profileItems}
           size={'sm'}
-          header={<ProfileMenuHeader id={id} name={name} src={profileSrc} />}
+          id={id}
+          name={name}
+          src={profileSrc}
+          aria-label={'Open profile'}
         />
       </HStack>
     </Flex>
