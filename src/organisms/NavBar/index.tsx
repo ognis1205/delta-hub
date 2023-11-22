@@ -4,7 +4,7 @@
  */
 'use client';
 
-import { Flex, HStack } from '@chakra-ui/react';
+import { Flex, HStack, VStack } from '@chakra-ui/react';
 import { FC } from 'react';
 
 import { Component as NavLogo } from '@/atoms/NavLogo';
@@ -13,6 +13,7 @@ import { Component as NavSearch } from '@/atoms/NavSearch';
 import { Component as MenuDrawer } from '@/molecules/MenuDrawer';
 import { Component as NavItems } from '@/molecules/NavItems';
 import { Component as ProfileDrawer } from '@/molecules/ProfileDrawer';
+import { Component as TabItems } from '@/molecules/TabItems';
 
 export type Props = {
   path: string;
@@ -94,6 +95,24 @@ const profileItems = [
   },
 ];
 
+const tabItems = [
+  {
+    href: '/overview',
+    iconName: 'overview' as const,
+    name: 'Overview',
+  },
+  {
+    href: '/catalogs',
+    iconName: 'catalog' as const,
+    name: 'Catalogs',
+  },
+  {
+    href: '/stars',
+    iconName: 'star' as const,
+    name: 'Stars',
+  },
+];
+
 export const Component: FC<Props> = ({
   path,
   id,
@@ -101,37 +120,51 @@ export const Component: FC<Props> = ({
   profileSrc = undefined,
 }: Props) => {
   return (
-    <Flex
-      h={14}
-      p={2}
-      bg={'AntiFlashWhite.500'}
-      alignItems={'center'}
-      justifyContent={'space-between'}
-    >
-      <HStack spacing={4} alignItems={'center'}>
-        <MenuDrawer
-          placement={'left'}
-          items={menuItems}
-          size={'sm'}
-          aria-label={'Open menu'}
-        />
-        <NavLogo size={'xs'} />
-        <NavPath path={path} fontSize={'sm'} />
-      </HStack>
-      <HStack spacing={4} alignItems={'center'}>
-        <NavSearch />
-        <NavItems items={navItems} />
-        <ProfileDrawer
-          placement={'right'}
-          items={profileItems}
-          size={'sm'}
-          id={id}
-          name={name}
-          src={profileSrc}
-          aria-label={'Open profile'}
-        />
-      </HStack>
-    </Flex>
+    <VStack spacing={0} align="stretch">
+      <Flex
+        h={14}
+        p={2}
+        bg={'AntiFlashWhite.500'}
+        alignItems={'center'}
+        justifyContent={'space-between'}
+      >
+        <HStack spacing={4} alignItems={'center'}>
+          <MenuDrawer
+            placement={'left'}
+            items={menuItems}
+            size={'sm'}
+            aria-label={'Open menu'}
+          />
+          <NavLogo size={'xs'} />
+          <NavPath path={path} fontSize={'sm'} />
+        </HStack>
+        <HStack spacing={4} alignItems={'center'}>
+          <NavSearch />
+          <NavItems items={navItems} />
+          <ProfileDrawer
+            placement={'right'}
+            items={profileItems}
+            size={'sm'}
+            id={id}
+            name={name}
+            src={profileSrc}
+            aria-label={'Open profile'}
+          />
+        </HStack>
+      </Flex>
+      <Flex
+        px={2}
+        pb={0}
+        bg={'AntiFlashWhite.500'}
+        alignItems={'center'}
+        justifyContent={'space-between'}
+        borderBottom={1}
+        borderStyle={'solid'}
+        borderColor={'AntiFlashWhite.600'}
+      >
+        <TabItems path={'/overview'} items={tabItems} />
+      </Flex>
+    </VStack>
   );
 };
 

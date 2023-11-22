@@ -4,13 +4,7 @@
  */
 'use client';
 
-import {
-  Button,
-  ButtonProps,
-  Flex,
-  HStack,
-  Box,
-} from '@chakra-ui/react';
+import { Button, ButtonProps, Flex, HStack, Box } from '@chakra-ui/react';
 import { FC } from 'react';
 
 import { Component as Icon } from '@/atoms/Icon';
