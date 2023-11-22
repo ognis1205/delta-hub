@@ -11,7 +11,7 @@ import { GoPlus } from 'react-icons/go';
 import { IoFileTrayOutline } from 'react-icons/io5';
 import { MdMenu } from 'react-icons/md';
 
-import { Component as HomeButton } from '@/atoms/HomeButton';
+import { Component as NavLogo } from '@/atoms/NavLogo';
 import { Component as Breadcrumbs } from '@/molecules/Breadcrumbs';
 import { Component as Copyright } from '@/molecules/Copyright';
 import {
@@ -95,7 +95,7 @@ export const Component: FC<Props> = ({
     >
       <HStack spacing={4} alignItems={'center'}>
         <MainDrawer {...mainMenuProps} variant={'nav'} size={'sm'} />
-        <HomeButton size={'xs'} />
+        <NavLogo size={'xs'} />
         <Breadcrumbs path={path} fontSize={'sm'} />
       </HStack>
       <HStack spacing={4} alignItems={'center'}>

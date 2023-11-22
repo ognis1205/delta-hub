@@ -5,8 +5,8 @@
 import { PiGithubLogoFill, PiGoogleLogoFill } from 'react-icons/pi';
 
 const icons = {
-  github: PiGithubLogoFill, 
-  google: PiGoogleLogoFill, 
+  github: PiGithubLogoFill,
+  google: PiGoogleLogoFill,
 };
 
 export type IconName = keyof typeof icons;

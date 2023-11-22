@@ -12,8 +12,10 @@ export type Props = IconProps & {
   iconName: IconName;
 };
 
-export const Component = forwardRef<Props, typeof Icon>(({ iconName, ...props }, ref) => (
-  <Icon ref={ref} {...props} as={iconAs(iconName)} />
-));
+export const Component = forwardRef<Props, typeof Icon>(
+  ({ iconName, ...props }, ref) => (
+    <Icon ref={ref} {...props} as={iconAs(iconName)} />
+  ),
+);
 
 Component.displayName = 'GitHubIcon';

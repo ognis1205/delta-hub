@@ -7,13 +7,13 @@
 import { Box } from '@chakra-ui/react';
 import { FC } from 'react';
 
-import { Component as HomeButton } from '@/atoms/HomeButton';
+import { Component as Logo } from '@/atoms/Logo';
 
 export type Props = Record<string, never>;
 
 export const Component: FC<Props> = () => (
   <Box display={'flex'} alignItems={'center'}>
-    <HomeButton isDisabled size={'sm'} />
+    <Logo size={'sm'} />
   </Box>
 );
 
