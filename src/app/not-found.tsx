@@ -7,8 +7,9 @@
 import { Container, Flex } from '@chakra-ui/react';
 import { NextPage } from 'next';
 
-import { Component as BackToHome } from '@/organisms/BackToHome';
+import { Component as LinkButton } from '@/atoms/LinkButton';
 import { Component as MainPanel } from '@/organisms/MainPanel';
+import { Component as Message } from '@/organisms/Message';
 import { Component as NotFoundArt } from '@/organisms/NotFoundArt';
 
 const Page: NextPage<Record<string, never>> = () => (
@@ -28,7 +29,13 @@ const Page: NextPage<Record<string, never>> = () => (
         h={'100vh'}
         w={{ base: '100%', md: '40%' }}
       >
-        <BackToHome as={Container} p={8} spacing={6} maxW={'xl'} />
+        <Message
+          as={Container}
+          title={'Oops! Something went wrong'}
+          message={"This page didn't load DeltaHub correctly."}
+        >
+          <LinkButton href={'/'}>Back to home</LinkButton>
+        </Message>
       </Flex>
     </Flex>
   </MainPanel>

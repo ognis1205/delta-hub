@@ -7,8 +7,10 @@
 import { Container, Flex } from '@chakra-ui/react';
 import { NextPage } from 'next';
 
-import { Component as LoginForm } from '@/organisms/LoginForm';
+import { Component as GithubSignIn } from '@/molecules/GithubSignIn';
+import { Component as GoogleSignIn } from '@/molecules/GoogleSignIn';
 import { Component as MainPanel } from '@/organisms/MainPanel';
+import { Component as Message } from '@/organisms/Message';
 import { Component as WelcomeArt } from '@/organisms/WelcomeArt';
 
 const Page: NextPage<Record<string, never>> = () => (
@@ -28,7 +30,14 @@ const Page: NextPage<Record<string, never>> = () => (
         h={'100vh'}
         w={{ base: '100%', md: '40%' }}
       >
-        <LoginForm as={Container} p={8} spacing={6} maxW={'xl'} />
+        <Message
+          as={Container}
+          title={'Log in to your account'}
+          message={'Start sharing your thoughts and data'}
+        >
+          <GoogleSignIn />
+          <GithubSignIn />
+        </Message>
       </Flex>
     </Flex>
   </MainPanel>

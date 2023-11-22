@@ -36,7 +36,11 @@ const Component: FC<Props> = ({ links }: Props) => {
             alignSelf={'center'}
             letterSpacing={'tight'}
           >
-            <Image boxSize={[50, 50, 50, 75, 75]} src={'/images/logo.png'} alt={'Logo'} />
+            <Image
+              boxSize={[50, 50, 50, 75, 75]}
+              src={'/images/logo.png'}
+              alt={'Logo'}
+            />
           </Heading>
           <Flex
             flexDir={['row', 'row', 'column', 'column', 'column']}
