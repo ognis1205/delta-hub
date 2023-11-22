@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Copyright molecule.
+ * @fileoverview Defines Copyright atom.
  * @copyright Shingo OKAWA 2023
  */
 'use client';

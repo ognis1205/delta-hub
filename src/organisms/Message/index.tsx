@@ -29,7 +29,9 @@ export const Component: FC<Props> = ({
       <Heading size={'lg'}>{title}</Heading>
       <Text fontSize={'md'}>{message}</Text>
     </Stack>
-    <Stack spacing={2}>{children}</Stack>
+    <Stack m={2} spacing={2}>
+      {children}
+    </Stack>
   </Stack>
 );
 

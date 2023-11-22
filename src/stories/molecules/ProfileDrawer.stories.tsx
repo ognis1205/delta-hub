@@ -4,7 +4,7 @@
  */
 import { Text } from '@chakra-ui/react';
 
-import { Component as Copyright } from '@/molecules/Copyright';
+import { Component as Copyright } from '@/atoms/Copyright';
 import { Component as ProfileDrawer } from '@/molecules/ProfileDrawer';
 
 import type { Meta, StoryObj } from '@storybook/react';

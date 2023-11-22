@@ -11,9 +11,9 @@ import { GoPlus } from 'react-icons/go';
 import { IoFileTrayOutline } from 'react-icons/io5';
 import { MdMenu } from 'react-icons/md';
 
+import { Component as Copyright } from '@/atoms/Copyright';
 import { Component as NavLogo } from '@/atoms/NavLogo';
 import { Component as Breadcrumbs } from '@/molecules/Breadcrumbs';
-import { Component as Copyright } from '@/molecules/Copyright';
 import {
   Component as MainDrawer,
   Props as MainDrawerProps,

@@ -5,7 +5,7 @@
 import { Text } from '@chakra-ui/react';
 import { MdMenu } from 'react-icons/md';
 
-import { Component as Copyright } from '@/molecules/Copyright';
+import { Component as Copyright } from '@/atoms/Copyright';
 import { Component as MainDrawer } from '@/molecules/MainDrawer';
 
 import type { Meta, StoryObj } from '@storybook/react';

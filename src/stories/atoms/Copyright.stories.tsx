@@ -1,8 +1,8 @@
 /**
- * @fileoverview Defines @/molecules/Copyright story.
+ * @fileoverview Defines @/atoms/Copyright story.
  * @copyright Shingo OKAWA 2023
  */
-import { Component as Copyright } from '@/molecules/Copyright';
+import { Component as Copyright } from '@/atoms/Copyright';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
