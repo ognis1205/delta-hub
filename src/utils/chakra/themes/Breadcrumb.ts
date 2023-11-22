@@ -15,8 +15,13 @@ const { defineMultiStyleConfig, definePartsStyle } =
 const $decor = cssVar('breadcrumb-link-decor');
 
 const linkStyle = defineStyle({
-  [$decor.variable]: 'none',
+  transitionProperty: 'common',
+  transitionDuration: 'fast',
+  transitionTimingFunction: 'ease-out',
+  outline: 'none',
   color: 'SonicSilver.700',
+  textDecoration: $decor.reference,
+  [$decor.variable]: 'none',
   '&[aria-current]': {
     color: 'SonicSilver.900',
     fontWeight: 'bold',

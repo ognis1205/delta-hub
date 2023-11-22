@@ -9,14 +9,12 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { SessionProvider } from 'next-auth/react';
 import { FC } from 'react';
 
-import { theme as boxTheme } from '@/utils/chakra/box';
-import { theme as breadcrumbTheme } from '@/utils/chakra/breadcrumb';
-import { theme as buttonTheme } from '@/utils/chakra/button';
-import { theme as linkTheme } from '@/utils/chakra/link';
-import { theme as menuTheme } from '@/utils/chakra/menu';
+import { theme as breadcrumbTheme } from '@/utils/chakra/themes/Breadcrumb';
+import { theme as buttonTheme } from '@/utils/chakra/themes/Button';
+import { theme as linkTheme } from '@/utils/chakra/themes/Link';
+import { theme as menuTheme } from '@/utils/chakra/themes/Menu';
 
 const components = {
-  Box: boxTheme,
   Breadcrumb: breadcrumbTheme,
   Button: buttonTheme,
   Link: linkTheme,

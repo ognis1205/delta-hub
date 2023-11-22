@@ -8,7 +8,10 @@ import { Button, ButtonProps } from '@chakra-ui/react';
 import Link from 'next/link';
 import { FC } from 'react';
 
-export type Props = Omit<ButtonProps, keyof Pick<ButtonProps, 'rounded' | 'variant'>> & {
+export type Props = Omit<
+  ButtonProps,
+  keyof Pick<ButtonProps, 'rounded' | 'variant'>
+> & {
   href: string;
 };
 

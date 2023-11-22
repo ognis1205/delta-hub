@@ -25,9 +25,7 @@ export const Component: FC<Props> = (props: Props) => (
       </Text>
     </Stack>
     <Stack spacing={2}>
-      <LinkButton href={'/'}>
-        Back to home
-      </LinkButton>
+      <LinkButton href={'/'}>Back to home</LinkButton>
     </Stack>
   </Stack>
 );

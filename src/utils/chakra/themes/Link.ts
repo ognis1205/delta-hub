@@ -4,21 +4,21 @@
  */
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 
-const menu = defineStyle({
-  textDecoration: 'none',
+const variantMenu = defineStyle({
   color: 'SonicSilver.700',
+  textDecoration: 'none',
   _hover: {
-    textDecoration: 'none',
     color: 'SonicSilver.900',
+    textDecoration: 'none',
   },
 });
 
-const nav = defineStyle({
-  textDecoration: 'none',
+const variantNav = defineStyle({
   color: 'SonicSilver.500',
+  textDecoration: 'none',
   _hover: {
-    textDecoration: 'none',
     color: 'SonicSilver.700',
+    textDecoration: 'none',
   },
 });
 
@@ -26,5 +26,5 @@ export const theme = defineStyleConfig({
   defaultProps: {
     variant: 'menu',
   },
-  variants: { menu, nav },
+  variants: { menu: variantMenu, nav: variantNav },
 });
