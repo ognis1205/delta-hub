@@ -4,17 +4,24 @@
  */
 'use client';
 
-import {
-  Box,
-  Link as ChakraLink,
-  LinkProps as ChakraLinkProps,
-} from '@chakra-ui/react';
-import NextLink from 'next/link';
+import { Box, HStack, StackProps, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
-export type Props = Omit<ChakraLinkProps, 'as'>;
+import { Component as Icon, Props as IconProps } from '@/atoms/Icon';
+import { Component as Link } from '@/atoms/Link';
 
-export const Component: FC<Props> = ({ children, ...props }: Props) => (
+export type Props = StackProps & {
+  href: string;
+  iconName: IconProps['iconName'];
+  name: string;
+};
+
+export const Component: FC<Props> = ({
+  href,
+  iconName,
+  name,
+  ...props
+}: Props) => (
   <Box
     __css={{
       _hover: {
@@ -37,9 +44,12 @@ export const Component: FC<Props> = ({ children, ...props }: Props) => (
     p={2}
     rounded={'md'}
   >
-    <ChakraLink as={NextLink} {...props} variant={'menu'}>
-      {children}
-    </ChakraLink>
+    <Link href={href} variant={'tab'}>
+      <HStack {...props}>
+        <Icon iconName={iconName} />
+        <Text>{name}</Text>
+      </HStack>
+    </Link>
   </Box>
 );
 

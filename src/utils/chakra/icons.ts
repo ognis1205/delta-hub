@@ -15,6 +15,10 @@ import {
   PiBookOpenBold,
   PiStarBold,
   PiPackageBold,
+  PiBinocularsBold,
+  PiUserBold,
+  PiUserCirclePlusBold,
+  PiGearBold,
 } from 'react-icons/pi';
 
 const icons = {
@@ -29,6 +33,10 @@ const icons = {
   overview: PiBookOpenBold,
   star: PiStarBold,
   catalog: PiPackageBold,
+  explore: PiBinocularsBold,
+  profile: PiUserBold,
+  editStatus: PiUserCirclePlusBold,
+  gear: PiGearBold,
 };
 
 export type IconName = keyof typeof icons;
