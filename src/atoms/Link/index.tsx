@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Nav Link atom.
+ * @fileoverview Defines Link atom.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -28,4 +28,4 @@ export const Component: FC<Props> = ({
     </ChakraLink>
   );
 
-Component.displayName = 'NavLink';
+Component.displayName = 'Link';

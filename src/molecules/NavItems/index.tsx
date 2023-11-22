@@ -7,8 +7,8 @@
 import { Stack, StackProps } from '@chakra-ui/react';
 import { FC } from 'react';
 
+import { Component as Link } from '@/atoms/Link';
 import { Component as NavItem, Props as NavItemProps } from '@/atoms/NavItem';
-import { Component as NavLink } from '@/atoms/NavLink';
 
 type ItemProps = NavItemProps & {
   href: string;
@@ -25,9 +25,9 @@ export const Component: FC<Props> = ({ items, ...props }: Props) => (
   <Stack {...props} direction={'row'} alignItems={'center'} flexGrow={1}>
     {items.map(({ href, ...props }, i) => {
       return (
-        <NavLink key={i} href={href}>
+        <Link key={i} href={href}>
           <NavItem {...props} />
-        </NavLink>
+        </Link>
       );
     })}
   </Stack>

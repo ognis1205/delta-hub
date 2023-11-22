@@ -22,9 +22,18 @@ const variantNav = defineStyle({
   },
 });
 
+const variantTab = defineStyle({
+  color: 'SonicSilver.500',
+  textDecoration: 'none',
+  _hover: {
+    color: 'SonicSilver.700',
+    textDecoration: 'none',
+  },
+});
+
 export const theme = defineStyleConfig({
   defaultProps: {
     variant: 'menu',
   },
-  variants: { menu: variantMenu, nav: variantNav },
+  variants: { menu: variantMenu, nav: variantNav, tab: variantTab },
 });

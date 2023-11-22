@@ -12,6 +12,9 @@ import {
   PiHouseBold,
   PiInfoBold,
   PiQuestionBold,
+  PiBookOpenBold,
+  PiStarBold,
+  PiPackageBold,
 } from 'react-icons/pi';
 
 const icons = {
@@ -23,6 +26,9 @@ const icons = {
   plus: PiPlusBold,
   share: PiShareNetworkFill,
   notify: PiTrayBold,
+  overview: PiBookOpenBold,
+  star: PiStarBold,
+  catalog: PiPackageBold,
 };
 
 export type IconName = keyof typeof icons;

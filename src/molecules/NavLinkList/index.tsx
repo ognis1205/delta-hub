@@ -17,13 +17,16 @@ import {
   IconButton,
 } from '@chakra-ui/react';
 import { FC, useLayoutEffect, useRef, useState } from 'react';
-import { BsThreeDots } from 'react-icons/bs';
+import { PiDotsThreeBold } from 'react-icons/pi';
 
-import { Component as NavLink, Props as NavLinkProps } from '@/atoms/NavLink';
+import { Component as TabItem, Props as TabItemProps } from '@/atoms/TabItem';
 
-export type Props = StackProps & {
+export type Props = Omit<
+  StackProps,
+  keyof Pick<StackProps, 'direction' | 'alignItems' | 'overflow'>
+> & {
   path: string;
-  items: Omit<NavLinkProps, 'isExternal'>[];
+  items: TabItemProps[];
 };
 
 export const Component: FC<Props> = ({ path, items, ...props }: Props) => {
@@ -60,7 +63,12 @@ export const Component: FC<Props> = ({ path, items, ...props }: Props) => {
   }, []);
 
   return (
-    <Stack {...props}>
+    <Stack
+      {...props}
+      direction={'row'}
+      alignItems={'center'}
+      overflow={'hidden'}
+    >
       <Stack
         ref={ref}
         pr={1}
@@ -69,7 +77,7 @@ export const Component: FC<Props> = ({ path, items, ...props }: Props) => {
         alignItems={'center'}
         overflow={'hidden'}
       >
-        {items.map(({ href, children, ...props }, i) => {
+        {items.map(({ href, ...props }, i) => {
           return (
             <Flex
               key={i}
@@ -80,13 +88,11 @@ export const Component: FC<Props> = ({ path, items, ...props }: Props) => {
               borderStyle={href === path ? 'solid' : undefined}
               borderColor={href === path ? 'DeltaColor1.500' : undefined}
             >
-              <NavLink
+              <TabItem
                 href={href}
                 {...props}
                 color={href === path ? 'SonicSilver.900' : undefined}
-              >
-                {children}
-              </NavLink>
+              />
             </Flex>
           );
         })}
@@ -101,21 +107,15 @@ export const Component: FC<Props> = ({ path, items, ...props }: Props) => {
             <IconButton
               size={'sm'}
               aria-label={'Navigation Link Menu'}
-              icon={<BsThreeDots />}
+              icon={<PiDotsThreeBold />}
             />
           </PopoverTrigger>
           <PopoverContent w={'100%'}>
             <PopoverArrow />
             <PopoverBody p={3}>
-              {items
-                .slice(numberOfItemsDisplayed)
-                .map(({ href, children, ...props }, i) => {
-                  return (
-                    <NavLink key={i} href={href} {...props}>
-                      {children}
-                    </NavLink>
-                  );
-                })}
+              {items.slice(numberOfItemsDisplayed).map((props, i) => {
+                return <TabItem key={i} {...props} />;
+              })}
             </PopoverBody>
           </PopoverContent>
         </Popover>

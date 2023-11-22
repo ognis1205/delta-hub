@@ -2,12 +2,9 @@
  * @fileoverview Defines @/molecules/NavLinkList story.
  * @copyright Shingo OKAWA 2023
  */
-import { Text, Icon, HStack } from '@chakra-ui/react';
-import { FaHome, FaInfoCircle, FaQuestionCircle } from 'react-icons/fa';
-
 import { Component as NavLinkList } from '@/molecules/NavLinkList';
 
-import type { Props as NavLinkProps } from '@/atoms/NavLink';
+import type { Props as TabItemProps } from '@/atoms/TabItem';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
@@ -20,187 +17,55 @@ type Story = StoryObj<typeof meta>;
 const items = [
   {
     href: '/item1',
-    children: (
-      <HStack>
-        <Icon as={FaHome} />
-        <Text>Item1</Text>
-      </HStack>
-    ),
+    iconName: 'overview',
+    name: 'Item1',
   },
   {
     href: '/item2',
-    children: (
-      <HStack>
-        <Icon as={FaInfoCircle} />
-        <Text>Item2</Text>
-      </HStack>
-    ),
+    iconName: 'catalog',
+    name: 'Item2',
   },
   {
     href: '/item3',
-    children: (
-      <HStack>
-        <Icon as={FaQuestionCircle} />
-        <Text>Item3</Text>
-      </HStack>
-    ),
+    iconName: 'star',
+    name: 'Item3',
   },
   {
     href: '/item4',
-    children: (
-      <HStack>
-        <Icon as={FaHome} />
-        <Text>Item4</Text>
-      </HStack>
-    ),
+    iconName: 'overview',
+    name: 'Item4',
   },
   {
     href: '/item5',
-    children: (
-      <HStack>
-        <Icon as={FaInfoCircle} />
-        <Text>Item5</Text>
-      </HStack>
-    ),
+    iconName: 'catalog',
+    name: 'Item5',
   },
   {
     href: '/item6',
-    children: (
-      <HStack>
-        <Icon as={FaQuestionCircle} />
-        <Text>Item6</Text>
-      </HStack>
-    ),
+    iconName: 'star',
+    name: 'Item6',
   },
   {
     href: '/item7',
-    children: (
-      <HStack>
-        <Icon as={FaHome} />
-        <Text>Item7</Text>
-      </HStack>
-    ),
+    iconName: 'overview',
+    name: 'Item7',
   },
   {
     href: '/item8',
-    children: (
-      <HStack>
-        <Icon as={FaInfoCircle} />
-        <Text>Item8</Text>
-      </HStack>
-    ),
+    iconName: 'catalog',
+    name: 'Item8',
   },
   {
     href: '/item9',
-    children: (
-      <HStack>
-        <Icon as={FaQuestionCircle} />
-        <Text>Item9</Text>
-      </HStack>
-    ),
+    iconName: 'star',
+    name: 'Item9',
   },
-] satisfies NavLinkProps[];
-
-const navItems = [
-  {
-    href: '/item1',
-    variant: 'nav',
-    children: (
-      <HStack>
-        <Icon as={FaHome} />
-        <Text>Item1</Text>
-      </HStack>
-    ),
-  },
-  {
-    href: '/item2',
-    variant: 'nav',
-    children: (
-      <HStack>
-        <Icon as={FaInfoCircle} />
-        <Text>Item2</Text>
-      </HStack>
-    ),
-  },
-  {
-    href: '/item3',
-    variant: 'nav',
-    children: (
-      <HStack>
-        <Icon as={FaQuestionCircle} />
-        <Text>Item3</Text>
-      </HStack>
-    ),
-  },
-  {
-    href: '/item4',
-    variant: 'nav',
-    children: (
-      <HStack>
-        <Icon as={FaHome} />
-        <Text>Item4</Text>
-      </HStack>
-    ),
-  },
-  {
-    href: '/item5',
-    variant: 'nav',
-    children: (
-      <HStack>
-        <Icon as={FaInfoCircle} />
-        <Text>Item5</Text>
-      </HStack>
-    ),
-  },
-  {
-    href: '/item6',
-    variant: 'nav',
-    children: (
-      <HStack>
-        <Icon as={FaQuestionCircle} />
-        <Text>Item6</Text>
-      </HStack>
-    ),
-  },
-  {
-    href: '/item7',
-    variant: 'nav',
-    children: (
-      <HStack>
-        <Icon as={FaHome} />
-        <Text>Item7</Text>
-      </HStack>
-    ),
-  },
-  {
-    href: '/item8',
-    variant: 'nav',
-    children: (
-      <HStack>
-        <Icon as={FaInfoCircle} />
-        <Text>Item8</Text>
-      </HStack>
-    ),
-  },
-  {
-    href: '/item9',
-    variant: 'nav',
-    children: (
-      <HStack>
-        <Icon as={FaQuestionCircle} />
-        <Text>Item9</Text>
-      </HStack>
-    ),
-  },
-] satisfies NavLinkProps[];
+] satisfies TabItemProps[];
 
 export const Item1IsActive: Story = {
   args: {
     path: '/item1',
     items: items,
-    direction: 'row',
-    alignItems: 'center',
-    overflow: 'hidden',
   },
   render: (args) => <NavLinkList {...args} />,
 };
@@ -209,9 +74,6 @@ export const Item2IsActive: Story = {
   args: {
     path: '/item2',
     items: items,
-    direction: 'row',
-    alignItems: 'center',
-    overflow: 'hidden',
   },
   render: (args) => <NavLinkList {...args} />,
 };
@@ -220,42 +82,6 @@ export const Item3IsActive: Story = {
   args: {
     path: '/item3',
     items: items,
-    direction: 'row',
-    alignItems: 'center',
-    overflow: 'hidden',
-  },
-  render: (args) => <NavLinkList {...args} />,
-};
-
-export const AsNavigationItem1IsActive: Story = {
-  args: {
-    path: '/item1',
-    items: navItems,
-    direction: 'row',
-    alignItems: 'center',
-    overflow: 'hidden',
-  },
-  render: (args) => <NavLinkList {...args} />,
-};
-
-export const AsNavigationItem2IsActive: Story = {
-  args: {
-    path: '/item2',
-    items: navItems,
-    direction: 'row',
-    alignItems: 'center',
-    overflow: 'hidden',
-  },
-  render: (args) => <NavLinkList {...args} />,
-};
-
-export const AsNavigationItem3IsActive: Story = {
-  args: {
-    path: '/item3',
-    items: navItems,
-    direction: 'row',
-    alignItems: 'center',
-    overflow: 'hidden',
   },
   render: (args) => <NavLinkList {...args} />,
 };
