@@ -8,9 +8,9 @@ import { Container, Flex } from '@chakra-ui/react';
 import { NextPage } from 'next';
 
 import { Component as LinkButton } from '@/atoms/LinkButton';
+import { Component as Illustration } from '@/organisms/Illustration';
 import { Component as MainPanel } from '@/organisms/MainPanel';
 import { Component as Message } from '@/organisms/Message';
-import { Component as NotFoundArt } from '@/organisms/NotFoundArt';
 
 const Page: NextPage<Record<string, never>> = () => (
   <MainPanel title={'Not Found'}>
@@ -21,7 +21,11 @@ const Page: NextPage<Record<string, never>> = () => (
         h={'100vh'}
         w={{ base: '0%', md: '60%' }}
       >
-        <NotFoundArt display={{ base: 'none', md: 'flex' }} />
+        <Illustration
+          src={'/images/settle-cat.svg'}
+          alt={'Not found'}
+          display={{ base: 'none', md: 'flex' }}
+        />
       </Flex>
       <Flex
         align={'center'}

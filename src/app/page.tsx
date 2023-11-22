@@ -9,9 +9,9 @@ import { NextPage } from 'next';
 
 import { Component as GithubSignIn } from '@/molecules/GithubSignIn';
 import { Component as GoogleSignIn } from '@/molecules/GoogleSignIn';
+import { Component as Illustration } from '@/organisms/Illustration';
 import { Component as MainPanel } from '@/organisms/MainPanel';
 import { Component as Message } from '@/organisms/Message';
-import { Component as WelcomeArt } from '@/organisms/WelcomeArt';
 
 const Page: NextPage<Record<string, never>> = () => (
   <MainPanel title={'Login'}>
@@ -22,7 +22,11 @@ const Page: NextPage<Record<string, never>> = () => (
         h={'100vh'}
         w={{ base: '0%', md: '60%' }}
       >
-        <WelcomeArt display={{ base: 'none', md: 'flex' }} />
+        <Illustration
+          src={'/images/welcome-cats.svg'}
+          alt={'Welcome'}
+          display={{ base: 'none', md: 'flex' }}
+        />
       </Flex>
       <Flex
         align={'center'}
