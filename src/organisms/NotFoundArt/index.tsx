@@ -7,7 +7,7 @@
 import { Box, BoxProps, AbsoluteCenter } from '@chakra-ui/react';
 import { FC } from 'react';
 
-import { Component as SettleCatImage } from '@/atoms/SettleCatImage';
+import { Component as Image } from '@/atoms/Image';
 
 export type Props = Omit<
   BoxProps,
@@ -39,7 +39,7 @@ export const Component: FC<Props> = (props: Props) => (
     bgRepeat={'no-repeat'}
   >
     <AbsoluteCenter>
-      <SettleCatImage />
+      <Image src={'/images/settle-cat.svg'} alt={'Not found'} />
     </AbsoluteCenter>
   </Box>
 );

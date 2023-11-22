@@ -7,7 +7,7 @@
 import { Stack, StackProps, Heading, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
-import { Component as BackToHomeButton } from '@/atoms/BackToHomeButton';
+import { Component as LinkButton } from '@/atoms/LinkButton';
 import { Component as LogoImage } from '@/atoms/LogoImage';
 
 export type Props = Omit<
@@ -25,7 +25,9 @@ export const Component: FC<Props> = (props: Props) => (
       </Text>
     </Stack>
     <Stack spacing={2}>
-      <BackToHomeButton />
+      <LinkButton href={'/'}>
+        Back to home
+      </LinkButton>
     </Stack>
   </Stack>
 );

@@ -5,7 +5,7 @@
 'use client';
 
 import { Flex, HStack } from '@chakra-ui/react';
-import { FC, ReactNode } from 'react';
+import { createElement, FC, ReactNode } from 'react';
 import { FaShareAlt } from 'react-icons/fa';
 import { GoPlus } from 'react-icons/go';
 import { IoFileTrayOutline } from 'react-icons/io5';
@@ -51,7 +51,8 @@ const navItems = [
     'aria-label': 'Create share',
     variant: 'nav',
     size: 'sm',
-    icon: <GoPlus />,
+    //    icon: <GoPlus />,
+    icon: createElement(GoPlus),
   },
   {
     href: '/',
@@ -78,7 +79,12 @@ const profileMenuProps = {
   'aria-label': 'Open profile menu',
 } satisfies Partial<ProfileDrawerProps>;
 
-export const Component: FC<Props> = ({ path, id, name, profileSrc = undefined }: Props) => {
+export const Component: FC<Props> = ({
+  path,
+  id,
+  name,
+  profileSrc = undefined,
+}: Props) => {
   return (
     <Flex
       h={14}
@@ -99,9 +105,12 @@ export const Component: FC<Props> = ({ path, id, name, profileSrc = undefined }:
           alignItems={'center'}
           flexGrow={1}
         />
-        <ProfileDrawer {...profileMenuProps} variant={'nav'} size={'sm'} header={
-          <ProfileMenuHeader id={id} name={name} src={profileSrc} />
-        }/>
+        <ProfileDrawer
+          {...profileMenuProps}
+          variant={'nav'}
+          size={'sm'}
+          header={<ProfileMenuHeader id={id} name={name} src={profileSrc} />}
+        />
       </HStack>
     </Flex>
   );
