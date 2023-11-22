@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Nav Icon atom.
+ * @fileoverview Defines Nav Item atom.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -16,14 +16,24 @@ import {
 } from '@chakra-ui/react';
 import { FC } from 'react';
 
-export type Props = IconButtonProps & {
+import { IconName, iconOf } from '@/utils/chakra/icons';
+
+export type Props = Omit<
+  IconButtonProps,
+  keyof Pick<IconButtonProps, 'icon'>
+> & {
+  iconName: IconName;
   popover: string;
 };
 
-export const Component: FC<Props> = ({ popover, ...props }: Props) => (
+export const Component: FC<Props> = ({
+  iconName,
+  popover,
+  ...props
+}: Props) => (
   <Popover trigger={'hover'}>
     <PopoverTrigger>
-      <IconButton {...props} />
+      <IconButton {...props} icon={iconOf(iconName)} />
     </PopoverTrigger>
     <PopoverContent w={'100%'} color={'white'} bg={'Russian.800'}>
       <PopoverArrow bg={'Russian.800'} />
@@ -34,4 +44,4 @@ export const Component: FC<Props> = ({ popover, ...props }: Props) => (
   </Popover>
 );
 
-Component.displayName = 'NavIcon';
+Component.displayName = 'NavItem';

@@ -5,10 +5,7 @@
 'use client';
 
 import { Flex, HStack } from '@chakra-ui/react';
-import { createElement, FC, ReactNode } from 'react';
-import { FaShareAlt } from 'react-icons/fa';
-import { GoPlus } from 'react-icons/go';
-import { IoFileTrayOutline } from 'react-icons/io5';
+import { FC } from 'react';
 import { MdMenu } from 'react-icons/md';
 
 import { Component as Copyright } from '@/atoms/Copyright';
@@ -27,7 +24,6 @@ import {
 } from '@/molecules/ProfileDrawer';
 import { Component as ProfileMenuBody } from '@/molecules/ProfileMenuBody';
 import { Component as ProfileMenuHeader } from '@/molecules/ProfileMenuHeader';
-
 
 const mainMenuProps = {
   placement: 'left' as const,
@@ -52,8 +48,7 @@ const navItems = [
     'aria-label': 'Create share',
     variant: 'nav',
     size: 'sm',
-    //    icon: <GoPlus />,
-    icon: createElement(GoPlus),
+    iconName: 'plus' as const,
   },
   {
     href: '/',
@@ -61,7 +56,7 @@ const navItems = [
     'aria-label': 'Share requests',
     variant: 'nav',
     size: 'sm',
-    icon: <FaShareAlt />,
+    iconName: 'share' as const,
   },
   {
     href: '/',
@@ -69,7 +64,7 @@ const navItems = [
     'aria-label': 'Notifications',
     variant: 'nav',
     size: 'sm',
-    icon: <IoFileTrayOutline />,
+    iconName: 'notify' as const,
   },
 ];
 

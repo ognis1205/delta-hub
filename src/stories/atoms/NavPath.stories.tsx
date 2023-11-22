@@ -6,7 +6,6 @@ import { Component as NavPath } from '@/atoms/NavPath';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-
 const meta = {
   title: 'NavPath',
   component: NavPath,

@@ -1,17 +1,15 @@
 /**
- * @fileoverview Defines @/atoms/NavIcon story.
+ * @fileoverview Defines @/atoms/NavItem story.
  * @copyright Shingo OKAWA 2023
  */
-import { FaHome } from 'react-icons/fa';
-
-import { Component as NavIcon } from '@/atoms/NavIcon';
+import { Component as NavItem } from '@/atoms/NavItem';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'NavIcon',
-  component: NavIcon,
-} satisfies Meta<typeof NavIcon>;
+  title: 'NavItem',
+  component: NavItem,
+} satisfies Meta<typeof NavItem>;
 
 type Story = StoryObj<typeof meta>;
 
@@ -19,18 +17,18 @@ export const Default: Story = {
   args: {
     popover: 'Popover',
     'aria-label': 'Icon',
-    icon: <FaHome />,
+    iconName: 'home',
   },
-  render: (args) => <NavIcon {...args} />,
+  render: (args) => <NavItem {...args} />,
 };
 
 export const AsNavigation: Story = {
   args: {
     popover: 'Popover',
     'aria-label': 'Icon',
-    icon: <FaHome />,
+    iconName: 'home',
   },
-  render: (args) => <NavIcon {...args} variant={'nav'} />,
+  render: (args) => <NavItem {...args} variant={'nav'} />,
 };
 
 export default meta;

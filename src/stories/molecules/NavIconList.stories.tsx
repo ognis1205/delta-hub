@@ -2,8 +2,6 @@
  * @fileoverview Defines @/molecules/NavIconList story.
  * @copyright Shingo OKAWA 2023
  */
-import { FaHome, FaInfoCircle, FaQuestionCircle } from 'react-icons/fa';
-
 import { Component as NavIconList } from '@/molecules/NavIconList';
 
 import type { Meta, StoryObj } from '@storybook/react';
@@ -20,19 +18,19 @@ const items = [
     href: '/',
     popover: 'Home',
     'aria-label': 'Home',
-    icon: <FaHome />,
+    iconName: 'home' as const,
   },
   {
     href: '/',
     popover: 'Info',
     'aria-label': 'Info',
-    icon: <FaInfoCircle />,
+    iconName: 'info' as const,
   },
   {
     href: '/',
     popover: 'Question',
     'aria-label': 'Question',
-    icon: <FaQuestionCircle />,
+    iconName: 'question' as const,
   },
 ];
 
@@ -42,21 +40,21 @@ const navItems = [
     popover: 'Home',
     'aria-label': 'Home',
     variant: 'nav',
-    icon: <FaHome />,
+    iconName: 'home' as const,
   },
   {
     href: '/',
     popover: 'Info',
     'aria-label': 'Info',
     variant: 'nav',
-    icon: <FaInfoCircle />,
+    iconName: 'info' as const,
   },
   {
     href: '/',
     popover: 'Question',
     'aria-label': 'Question',
     variant: 'nav',
-    icon: <FaQuestionCircle />,
+    iconName: 'question' as const,
   },
 ];
 
