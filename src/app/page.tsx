@@ -7,8 +7,7 @@
 import { Container, Flex } from '@chakra-ui/react';
 import { NextPage } from 'next';
 
-import { Component as GithubSignIn } from '@/molecules/GithubSignIn';
-import { Component as GoogleSignIn } from '@/molecules/GoogleSignIn';
+import { Component as SocialLogin } from '@/molecules/SocialLogin';
 import { Component as Illustration } from '@/organisms/Illustration';
 import { Component as MainPanel } from '@/organisms/MainPanel';
 import { Component as Message } from '@/organisms/Message';
@@ -39,8 +38,8 @@ const Page: NextPage<Record<string, never>> = () => (
           title={'Log in to your account'}
           message={'Start sharing your thoughts and data'}
         >
-          <GoogleSignIn />
-          <GithubSignIn />
+          <SocialLogin provider={'google'} />
+          <SocialLogin provider={'github'} />
         </Message>
       </Flex>
     </Flex>

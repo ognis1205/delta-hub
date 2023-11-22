@@ -3,11 +3,11 @@
  * @copyright Shingo OKAWA 2023
  */
 import { Component as LinkButton } from '@/atoms/LinkButton';
-import { Component as GithubSignIn } from '@/molecules/GithubSignIn';
-import { Component as GoogleSignIn } from '@/molecules/GoogleSignIn';
+import { Component as SocialLogin } from '@/molecules/SocialLogin';
 import { Component as Message } from '@/organisms/Message';
 
 import type { Meta, StoryObj } from '@storybook/react';
+
 
 const meta = {
   title: 'Message',
@@ -35,8 +35,8 @@ export const Login: Story = {
   },
   render: (args) => (
     <Message {...args}>
-      <GoogleSignIn />
-      <GithubSignIn />
+      <SocialLogin provider={'google'} />
+      <SocialLogin provider={'github'} />
     </Message>
   ),
 };
