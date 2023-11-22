@@ -6,17 +6,11 @@
 
 import { Flex, HStack } from '@chakra-ui/react';
 import { FC } from 'react';
-import { MdMenu } from 'react-icons/md';
 
 import { Component as Copyright } from '@/atoms/Copyright';
 import { Component as NavLogo } from '@/atoms/NavLogo';
 import { Component as NavPath } from '@/atoms/NavPath';
-import {
-  Component as MainDrawer,
-  Props as MainDrawerProps,
-} from '@/molecules/MainDrawer';
-import { Component as MainMenuBody } from '@/molecules/MainMenuBody';
-import { Component as MainMenuHeader } from '@/molecules/MainMenuHeader';
+import { Component as MenuDrawer } from '@/molecules/MenuDrawer';
 import { Component as NavItems } from '@/molecules/NavItems';
 import {
   Component as ProfileDrawer,
@@ -25,21 +19,31 @@ import {
 import { Component as ProfileMenuBody } from '@/molecules/ProfileMenuBody';
 import { Component as ProfileMenuHeader } from '@/molecules/ProfileMenuHeader';
 
-const mainMenuProps = {
-  placement: 'left' as const,
-  icon: <MdMenu />,
-  header: <MainMenuHeader />,
-  body: <MainMenuBody />,
-  footer: <Copyright fontSize={'xs'} color={'SonicSilver.500'} />,
-  'aria-label': 'Open main menu',
-} as MainDrawerProps;
-
 export type Props = {
   path: string;
   id: string;
   name: string;
   profileSrc?: string;
 };
+
+const menuItems = [
+  {
+    href: '/',
+    name: 'Home',
+    iconName: 'home' as const,
+  },
+  {
+    href: '/',
+    name: 'Share requests',
+    iconName: 'share' as const,
+  },
+  'divider' as const,
+  {
+    href: '/',
+    name: 'Explore',
+    iconName: 'explore' as const,
+  },
+];
 
 const navItems = [
   {
@@ -87,7 +91,12 @@ export const Component: FC<Props> = ({
       justifyContent={'space-between'}
     >
       <HStack spacing={4} alignItems={'center'}>
-        <MainDrawer {...mainMenuProps} variant={'nav'} size={'sm'} />
+        <MenuDrawer
+          placement={'left'}
+          items={menuItems}
+          size={'sm'}
+          aria-label={'Open menu'}
+        />
         <NavLogo size={'xs'} />
         <NavPath path={path} fontSize={'sm'} />
       </HStack>

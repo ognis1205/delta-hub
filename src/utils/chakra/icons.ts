@@ -19,6 +19,7 @@ import {
   PiUserBold,
   PiUserCirclePlusBold,
   PiGearBold,
+  PiListBold,
 } from 'react-icons/pi';
 
 const icons = {
@@ -37,6 +38,7 @@ const icons = {
   profile: PiUserBold,
   editStatus: PiUserCirclePlusBold,
   gear: PiGearBold,
+  menu: PiListBold,
 };
 
 export type IconName = keyof typeof icons;
