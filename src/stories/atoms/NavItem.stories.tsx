@@ -13,22 +13,31 @@ const meta = {
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Plus: Story = {
   args: {
-    popover: 'Popover',
-    'aria-label': 'Icon',
-    iconName: 'home',
+    popover: 'Plus',
+    'aria-label': 'Plus',
+    iconName: 'plus',
   },
   render: (args) => <NavItem {...args} />,
 };
 
-export const AsNavigation: Story = {
+export const Share: Story = {
   args: {
-    popover: 'Popover',
-    'aria-label': 'Icon',
-    iconName: 'home',
+    popover: 'Share',
+    'aria-label': 'Share',
+    iconName: 'share',
   },
-  render: (args) => <NavItem {...args} variant={'nav'} />,
+  render: (args) => <NavItem {...args} />,
+};
+
+export const Notify: Story = {
+  args: {
+    popover: 'Notify',
+    'aria-label': 'Notify',
+    iconName: 'notify',
+  },
+  render: (args) => <NavItem {...args} />,
 };
 
 export default meta;

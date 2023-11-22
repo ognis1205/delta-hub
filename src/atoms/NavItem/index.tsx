@@ -33,7 +33,7 @@ export const Component: FC<Props> = ({
 }: Props) => (
   <Popover trigger={'hover'}>
     <PopoverTrigger>
-      <IconButton {...props} icon={iconOf(iconName)} />
+      <IconButton {...props} icon={iconOf(iconName)} variant={'nav'} />
     </PopoverTrigger>
     <PopoverContent w={'100%'} color={'white'} bg={'Russian.800'}>
       <PopoverArrow bg={'Russian.800'} />

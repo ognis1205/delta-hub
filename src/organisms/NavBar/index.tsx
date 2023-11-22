@@ -17,7 +17,7 @@ import {
 } from '@/molecules/MainDrawer';
 import { Component as MainMenuBody } from '@/molecules/MainMenuBody';
 import { Component as MainMenuHeader } from '@/molecules/MainMenuHeader';
-import { Component as NavIconList } from '@/molecules/NavIconList';
+import { Component as NavItems } from '@/molecules/NavItems';
 import {
   Component as ProfileDrawer,
   Props as ProfileDrawerProps,
@@ -46,7 +46,6 @@ const navItems = [
     href: '/',
     popover: 'Create share',
     'aria-label': 'Create share',
-    variant: 'nav',
     size: 'sm',
     iconName: 'plus' as const,
   },
@@ -54,7 +53,6 @@ const navItems = [
     href: '/',
     popover: 'Share requests',
     'aria-label': 'Share requests',
-    variant: 'nav',
     size: 'sm',
     iconName: 'share' as const,
   },
@@ -62,7 +60,6 @@ const navItems = [
     href: '/',
     popover: 'Notifications',
     'aria-label': 'Notifications',
-    variant: 'nav',
     size: 'sm',
     iconName: 'notify' as const,
   },
@@ -95,12 +92,7 @@ export const Component: FC<Props> = ({
         <NavPath path={path} fontSize={'sm'} />
       </HStack>
       <HStack spacing={4} alignItems={'center'}>
-        <NavIconList
-          items={navItems}
-          direction={'row'}
-          alignItems={'center'}
-          flexGrow={1}
-        />
+        <NavItems items={navItems} />
         <ProfileDrawer
           {...profileMenuProps}
           variant={'nav'}

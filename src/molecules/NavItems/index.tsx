@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Nav Icon List molecule.
+ * @fileoverview Defines Nav Items molecule.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -14,12 +14,15 @@ type ItemProps = NavItemProps & {
   href: string;
 };
 
-export type Props = StackProps & {
+export type Props = Omit<
+  StackProps,
+  keyof Pick<StackProps, 'direction' | 'alignItems' | 'flexGrow'>
+> & {
   items: ItemProps[];
 };
 
 export const Component: FC<Props> = ({ items, ...props }: Props) => (
-  <Stack {...props}>
+  <Stack {...props} direction={'row'} alignItems={'center'} flexGrow={1}>
     {items.map(({ href, ...props }, i) => {
       return (
         <NavLink key={i} href={href}>
@@ -30,4 +33,4 @@ export const Component: FC<Props> = ({ items, ...props }: Props) => (
   </Stack>
 );
 
-Component.displayName = 'NavIconList';
+Component.displayName = 'NavItems';
