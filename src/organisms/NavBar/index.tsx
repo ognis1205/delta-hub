@@ -46,21 +46,21 @@ const navItems = [
     href: '/',
     popover: 'Create share',
     'aria-label': 'Create share',
-    size: 'sm',
+    size: 'md',
     iconName: 'plus' as const,
   },
   {
     href: '/',
     popover: 'Share requests',
     'aria-label': 'Share requests',
-    size: 'sm',
+    size: 'md',
     iconName: 'share' as const,
   },
   {
     href: '/',
     popover: 'Notifications',
     'aria-label': 'Notifications',
-    size: 'sm',
+    size: 'md',
     iconName: 'notify' as const,
   },
 ];
@@ -123,7 +123,8 @@ export const Component: FC<Props> = ({
     <VStack spacing={0} align="stretch">
       <Flex
         h={14}
-        p={2}
+        px={5}
+        py={4}
         bg={'AntiFlashWhite.500'}
         alignItems={'center'}
         justifyContent={'space-between'}
@@ -132,11 +133,11 @@ export const Component: FC<Props> = ({
           <MenuDrawer
             placement={'left'}
             items={menuItems}
-            size={'sm'}
+            size={'md'}
             aria-label={'Open menu'}
           />
-          <NavLogo size={'xs'} />
-          <NavPath path={path} fontSize={'sm'} />
+          <NavLogo size={'sm'} />
+          <NavPath path={path} fontSize={'md'} />
         </HStack>
         <HStack spacing={4} alignItems={'center'}>
           <NavSearch />
@@ -153,8 +154,8 @@ export const Component: FC<Props> = ({
         </HStack>
       </Flex>
       <Flex
-        px={2}
-        pb={0}
+        px={5}
+        py={0}
         bg={'AntiFlashWhite.500'}
         alignItems={'center'}
         justifyContent={'space-between'}

@@ -20,6 +20,7 @@ import {
   DrawerContent,
   Stack,
   Divider,
+  Heading,
 } from '@chakra-ui/react';
 import { FC } from 'react';
 import { PiXBold, PiListBold } from 'react-icons/pi';
@@ -63,6 +64,9 @@ export const Component: FC<Props> = ({ placement, items, ...props }: Props) => {
             <HStack>
               <Box display={'flex'} alignItems={'center'}>
                 <Logo size={'sm'} />
+                <Heading size={'sm'} ml={2}>
+                  DeltaHub
+                </Heading>
               </Box>
               <Spacer />
               <IconButton

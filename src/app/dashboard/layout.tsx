@@ -15,6 +15,7 @@ import { Share } from '@/containers/Share';
 import { Left } from '@/layouts/Left';
 import { Main } from '@/layouts/Main';
 import { Right } from '@/layouts/Right';
+import { Component as NavBar } from '@/organisms/NavBar';
 
 const links = [
   {
@@ -52,44 +53,47 @@ const Layout: FC<Props> = ({ children }: Props) => {
   const { data: session } = useSession();
 
   return (
-    <Flex
-      h={[null, null, '100vh']}
-      maxW="2000px"
-      flexDir={['column', 'column', 'row']}
-      overflow="hidden"
-    >
+    <>
+      <NavBar id={'ognis1205'} name={'Shingo OKAWA'} path={'/this/is/a/test'} />
       <Flex
-        w={['100%', '100%', '10%', '15%', '15%']}
-        flexDir={'column'}
-        alignItems={'center'}
-        backgroundColor={'deltaColor2.900'}
-        color={'white'}
+        h={[null, null, '100vh']}
+        maxW="2000px"
+        flexDir={['column', 'column', 'row']}
+        overflow="hidden"
       >
-        <Navigate links={links} />
-      </Flex>
-      <Main>{children}</Main>
-      <Right>
-        <Search notifies={2} />
-        <Profile
-          image={
+        <Flex
+          w={['100%', '100%', '10%', '15%', '15%']}
+          flexDir={'column'}
+          alignItems={'center'}
+          backgroundColor={'deltaColor2.900'}
+          color={'white'}
+        >
+          <Navigate links={links} />
+        </Flex>
+        <Main>{children}</Main>
+        <Right>
+          <Search notifies={2} />
+          <Profile
+            image={
             session && session.user
-              ? session.user.image
-              : '/images/no-image.png'
-          }
-          name={session && session.user ? session.user.name : 'N/A'}
-          email={session && session.user ? session.user.email : 'N/A'}
-          shares={343}
-          recipients={13}
-        />
-        <Share
-          avatars={Array(5).fill(
-            session && session.user
+            ? session.user.image
+            : '/images/no-image.png'
+            }
+            name={session && session.user ? session.user.name : 'N/A'}
+            email={session && session.user ? session.user.email : 'N/A'}
+            shares={343}
+            recipients={13}
+          />
+          <Share
+            avatars={Array(5).fill(
+              session && session.user
               ? session.user.image
               : '/images/no-image.png',
-          )}
-        />
-      </Right>
-    </Flex>
+            )}
+          />
+        </Right>
+      </Flex>
+    </>
   );
 };
 
