@@ -25,6 +25,7 @@ import {
   PiMapPinBold,
   PiEnvelopeBold,
   PiLinkBold,
+  PiUsersBold,
 } from 'react-icons/pi';
 
 const icons = {
@@ -49,6 +50,7 @@ const icons = {
   map: PiMapPinBold,
   email: PiEnvelopeBold,
   link: PiLinkBold,
+  connection: PiUsersBold,
 };
 
 export type IconName = keyof typeof icons;
