@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines root layout.
+ * @fileoverview Defines Root layout.
  * @copyright Shingo OKAWA 2023
  */
 import { Inter } from 'next/font/google';

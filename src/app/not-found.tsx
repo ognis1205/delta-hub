@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines 404 page.
+ * @fileoverview Defines Not Found page.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -45,6 +45,6 @@ const Page: NextPage<Record<string, never>> = () => (
   </MainPanel>
 );
 
-Page.displayName = 'NotFound';
+Page.displayName = 'NotFoundPage';
 
 export default Page;
