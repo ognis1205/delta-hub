@@ -18,6 +18,23 @@ export const Default: Story = {
     id: 'ognis1205',
     name: 'Shingo OKAWA',
     path: '/this/is/a/test',
+    tabItems: [
+      {
+        href: '/home',
+        iconName: 'overview' as const,
+        name: 'Overview',
+      },
+      {
+        href: '/home/catalogs',
+        iconName: 'catalog' as const,
+        name: 'Catalogs',
+      },
+      {
+        href: '/home/stars',
+        iconName: 'star' as const,
+        name: 'Stars',
+      },
+    ],
   },
   render: (args) => <NavBar {...args} />,
 };

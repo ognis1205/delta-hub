@@ -15,37 +15,39 @@ export type Props = BoxProps & {
 };
 
 export const Component: FC<Props> = ({ title, children, ...props }: Props) => (
-  <AnimatePresence
-    mode={'wait'}
-    initial={true}
-    onExitComplete={() => {
-      if (typeof window !== 'undefined') {
-        window.scrollTo({ top: 0 });
-      }
-    }}
-  >
-    <motion.section
-      initial={'hidden'}
-      animate={'enter'}
-      exit={'exit'}
-      variants={{
-        hidden: { opacity: 0, x: 0, y: 30 },
-        enter: { opacity: 1, x: 0, y: 0 },
-        exit: { opacity: 0, x: 0, y: 30 },
+  <Box {...props}>
+    <AnimatePresence
+      mode={'wait'}
+      initial={true}
+      onExitComplete={() => {
+        if (typeof window !== 'undefined') {
+          window.scrollTo({ top: 0 });
+        }
       }}
-      transition={{ duration: 0.6, type: 'easeInOut' }}
-      style={{ position: 'relative' }}
     >
-      {title && (
-        <Head>
-          <title>{`${title} - DeltaHub`}</title>
-          <meta name={'twitter:title'} content={`${title} - DeltaHub`} />
-          <meta property={'og:title'} content={`${title} - DeltaHub`} />
-        </Head>
-      )}
-      <Box {...props}>{children}</Box>
-    </motion.section>
-  </AnimatePresence>
+      <motion.div
+        initial={'hidden'}
+        animate={'enter'}
+        exit={'exit'}
+        variants={{
+          hidden: { opacity: 0, x: 0, y: 30 },
+          enter: { opacity: 1, x: 0, y: 0 },
+          exit: { opacity: 0, x: 0, y: 30 },
+        }}
+        transition={{ duration: 0.6, type: 'easeInOut' }}
+        style={{ position: 'relative' }}
+      >
+        {title && (
+          <Head>
+            <title>{`${title} - DeltaHub`}</title>
+            <meta name={'twitter:title'} content={`${title} - DeltaHub`} />
+            <meta property={'og:title'} content={`${title} - DeltaHub`} />
+          </Head>
+        )}
+        {children}
+      </motion.div>
+    </AnimatePresence>
+  </Box>
 );
 
 Component.displayName = 'MainPane';

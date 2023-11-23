@@ -15,12 +15,31 @@ import { Share } from '@/containers/Share';
 import { Left } from '@/layouts/Left';
 import { Main } from '@/layouts/Main';
 import { Right } from '@/layouts/Right';
+import { Component as LeftPane } from '@/organisms/LeftPane';
 import { Component as MainPane } from '@/organisms/MainPane';
 import { Component as NavBar } from '@/organisms/NavBar';
 
 type Props = {
   children: ReactNode;
 };
+
+const tabItems = [
+  {
+    href: '/home',
+    iconName: 'overview' as const,
+    name: 'Overview',
+  },
+  {
+    href: '/home/catalogs',
+    iconName: 'catalog' as const,
+    name: 'Catalogs',
+  },
+  {
+    href: '/home/stars',
+    iconName: 'star' as const,
+    name: 'Stars',
+  },
+];
 
 const Layout: FC<Props> = ({ children }: Props) => {
   const { data: session } = useSession();
@@ -31,50 +50,24 @@ const Layout: FC<Props> = ({ children }: Props) => {
     <>
       <NavBar
         id={
-          session && session.user
-            ? session.user.email.split('@')[0]
-            : 'Not Available'
+        session && session.user
+        ? session.user.email.split('@')[0]
+        : 'Not Available'
         }
         name={session && session.user ? session.user.name : 'Not Available'}
         profileSrc={session && session.user ? session.user.image : undefined}
         path={pathname}
+        tabItems={tabItems}
       />
       <Flex
-        h={[null, null, '100vh']}
-        maxW="1280px"
-        flexDir={['column', 'column', 'row']}
-        overflow="hidden"
+        m={'auto'}
+        maxW={'1280px'}
+        flexDir={{base: 'column', md: 'row'}}
       >
-        <Flex
-          w={['100%', '100%', '10%', '15%', '15%']}
-          flexDir={'column'}
-          alignItems={'center'}
-          backgroundColor={'deltaColor2.900'}
-        >
-          <Box>Left panel</Box>
-        </Flex>
-        <MainPane title={'Home'}>{children}</MainPane>
-        <Right>
-          <Search notifies={2} />
-          <Profile
-            image={
-              session && session.user
-                ? session.user.image
-                : '/images/no-image.png'
-            }
-            name={session && session.user ? session.user.name : 'N/A'}
-            email={session && session.user ? session.user.email : 'N/A'}
-            shares={343}
-            recipients={13}
-          />
-          <Share
-            avatars={Array(5).fill(
-              session && session.user
-                ? session.user.image
-                : '/images/no-image.png',
-            )}
-          />
-        </Right>
+        <LeftPane w={{base: '100%', sm: '220px', md: '256px', xl: '296px'}}>
+          Left Pane
+        </LeftPane>
+        <MainPane minW={0} flexGrow={1} title={'Home'}>{children}</MainPane>
       </Flex>
     </>
   );

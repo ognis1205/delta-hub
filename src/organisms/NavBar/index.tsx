@@ -13,13 +13,14 @@ import { Component as NavSearch } from '@/atoms/NavSearch';
 import { Component as MenuDrawer } from '@/molecules/MenuDrawer';
 import { Component as NavItems } from '@/molecules/NavItems';
 import { Component as ProfileDrawer } from '@/molecules/ProfileDrawer';
-import { Component as TabItems } from '@/molecules/TabItems';
+import { Component as TabItems, Props as TabItemsProps } from '@/molecules/TabItems';
 
 export type Props = {
   path: string;
   id: string;
   name: string;
   profileSrc?: string;
+  tabItems: TabItemsProps['items'];
 };
 
 const menuItems = [
@@ -95,29 +96,12 @@ const profileItems = [
   },
 ];
 
-const tabItems = [
-  {
-    href: '/overview',
-    iconName: 'overview' as const,
-    name: 'Overview',
-  },
-  {
-    href: '/catalogs',
-    iconName: 'catalog' as const,
-    name: 'Catalogs',
-  },
-  {
-    href: '/stars',
-    iconName: 'star' as const,
-    name: 'Stars',
-  },
-];
-
 export const Component: FC<Props> = ({
   path,
   id,
   name,
   profileSrc = undefined,
+  tabItems,
 }: Props) => {
   return (
     <VStack spacing={0} align="stretch">
@@ -154,7 +138,7 @@ export const Component: FC<Props> = ({
         </HStack>
       </Flex>
       <Flex
-        px={5}
+        px={6}
         py={0}
         bg={'gray.50'}
         alignItems={'center'}
@@ -163,7 +147,7 @@ export const Component: FC<Props> = ({
         borderStyle={'solid'}
         borderColor={'gray.200'}
       >
-        <TabItems path={'/overview'} items={tabItems} />
+        <TabItems path={path} items={tabItems} />
       </Flex>
     </VStack>
   );
