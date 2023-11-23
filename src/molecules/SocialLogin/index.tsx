@@ -33,7 +33,7 @@ const capitalize = (provider: Provider) => {
 export const Component: FC<Props> = ({ provider, ...props }: Props) => {
   const login = () =>
     signIn(provider as string, {
-      callbackUrl: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/dashboard`,
+      callbackUrl: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/home`,
     });
 
   return (

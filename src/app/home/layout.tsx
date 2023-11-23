@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Dashboard layout.
+ * @fileoverview Defines Home layout.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -53,7 +53,7 @@ const Layout: FC<Props> = ({ children }: Props) => {
         >
           <Box>Left panel</Box>
         </Flex>
-        <MainPanel title={'Dashboard'}>{children}</MainPanel>
+        <MainPanel title={'Home'}>{children}</MainPanel>
         <Right>
           <Search notifies={2} />
           <Profile
@@ -80,6 +80,6 @@ const Layout: FC<Props> = ({ children }: Props) => {
   );
 };
 
-Layout.displayName = 'DashboardLayout';
+Layout.displayName = 'HomeLayout';
 
 export default Layout;

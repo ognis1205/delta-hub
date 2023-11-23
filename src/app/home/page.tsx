@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines dashboard.
+ * @fileoverview Defines Home page.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -88,6 +88,6 @@ const Page: NextPage<Record<string, never>> = () => {
   );
 };
 
-Page.displayName = 'Home';
+Page.displayName = 'HomePage';
 
 export default Page;
