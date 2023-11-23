@@ -50,9 +50,9 @@ const Layout: FC<Props> = ({ children }: Props) => {
     <>
       <NavBar
         id={
-        session && session.user
-        ? session.user.email.split('@')[0]
-        : 'Not Available'
+          session && session.user
+            ? session.user.email.split('@')[0]
+            : 'Not Available'
         }
         name={session && session.user ? session.user.name : 'Not Available'}
         profileSrc={session && session.user ? session.user.image : undefined}
@@ -61,13 +61,17 @@ const Layout: FC<Props> = ({ children }: Props) => {
       />
       <Flex
         m={'auto'}
+        py={10}
+        px={10}
         maxW={'1280px'}
-        flexDir={{base: 'column', md: 'row'}}
+        flexDir={{ base: 'column', md: 'row' }}
       >
-        <LeftPane w={{base: '100%', sm: '220px', md: '256px', xl: '296px'}}>
+        <LeftPane w={{ base: '100%', sm: '220px', md: '256px', xl: '296px' }}>
           Left Pane
         </LeftPane>
-        <MainPane minW={0} flexGrow={1} title={'Home'}>{children}</MainPane>
+        <MainPane minW={0} flexGrow={1} title={'Home'}>
+          {children}
+        </MainPane>
       </Flex>
     </>
   );

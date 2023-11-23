@@ -4,6 +4,15 @@
  */
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 
+const variantMain = defineStyle({
+  color: 'Russian.700',
+  textDecoration: 'none',
+  _hover: {
+    color: 'Russian.900',
+    textDecoration: 'none',
+  },
+});
+
 const variantMenu = defineStyle({
   color: 'Russian.700',
   textDecoration: 'none',
@@ -33,7 +42,12 @@ const variantTab = defineStyle({
 
 export const theme = defineStyleConfig({
   defaultProps: {
-    variant: 'menu',
+    variant: 'main',
   },
-  variants: { menu: variantMenu, nav: variantNav, tab: variantTab },
+  variants: {
+    main: variantMain,
+    menu: variantMenu,
+    nav: variantNav,
+    tab: variantTab,
+  },
 });

@@ -14,10 +14,7 @@ export type Props = BoxProps & {
 
 export const Component: FC<Props> = ({ children, ...props }: Props) => (
   <Box {...props}>
-    <AnimatePresence
-      mode={'wait'}
-      initial={true}
-    >
+    <AnimatePresence mode={'wait'} initial={true}>
       <motion.div
         initial={'hidden'}
         animate={'enter'}

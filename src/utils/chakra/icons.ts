@@ -22,6 +22,9 @@ import {
   PiListBold,
   PiMagnifyingGlassBold,
   PiCaretCircleDoubleRightBold,
+  PiMapPinBold,
+  PiEnvelopeBold,
+  PiLinkBold,
 } from 'react-icons/pi';
 
 const icons = {
@@ -43,6 +46,9 @@ const icons = {
   menu: PiListBold,
   search: PiMagnifyingGlassBold,
   caretRight: PiCaretCircleDoubleRightBold,
+  map: PiMapPinBold,
+  email: PiEnvelopeBold,
+  link: PiLinkBold,
 };
 
 export type IconName = keyof typeof icons;

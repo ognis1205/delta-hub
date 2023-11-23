@@ -13,7 +13,10 @@ import { Component as NavSearch } from '@/atoms/NavSearch';
 import { Component as MenuDrawer } from '@/molecules/MenuDrawer';
 import { Component as NavItems } from '@/molecules/NavItems';
 import { Component as ProfileDrawer } from '@/molecules/ProfileDrawer';
-import { Component as TabItems, Props as TabItemsProps } from '@/molecules/TabItems';
+import {
+  Component as TabItems,
+  Props as TabItemsProps,
+} from '@/molecules/TabItems';
 
 export type Props = {
   path: string;

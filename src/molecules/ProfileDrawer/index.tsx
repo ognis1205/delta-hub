@@ -87,6 +87,7 @@ export const Component: FC<Props> = ({
                 aria-label={'Close drawer'}
                 icon={<PiXBold />}
                 onClick={onClose}
+                variant={'menu'}
               />
             </HStack>
           </DrawerHeader>

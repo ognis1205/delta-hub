@@ -4,6 +4,23 @@
  */
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 
+const variantMain = defineStyle({
+  color: 'SonicSilver.600',
+  bg: 'gray.50',
+  border: '1px',
+  borderColor: 'AntiFlashWhite.600',
+  boxShadow:
+    'rgba(31, 35, 40, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset',
+  _hover: {
+    color: 'SonicSilver.800',
+    bg: 'gray.100',
+  },
+  _active: {
+    color: 'SonicSilver.800',
+    bg: 'gray.200',
+  },
+});
+
 const variantMenu = defineStyle({
   color: 'SonicSilver.700',
   bg: 'transparent',
@@ -53,7 +70,12 @@ const variantTab = defineStyle({
 
 export const theme = defineStyleConfig({
   defaultProps: {
-    variant: 'menu',
+    variant: 'main',
   },
-  variants: { menu: variantMenu, nav: variantNav, tab: variantTab },
+  variants: {
+    main: variantMain,
+    menu: variantMenu,
+    nav: variantNav,
+    tab: variantTab,
+  },
 });
