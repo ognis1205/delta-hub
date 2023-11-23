@@ -1,5 +1,5 @@
 /**
- * @fileoverview Defines Main Panel organism.
+ * @fileoverview Defines Main Pane organism.
  * @copyright Shingo OKAWA 2023
  */
 'use client';
@@ -24,14 +24,14 @@ export const Component: FC<Props> = ({ title, children, ...props }: Props) => (
       }
     }}
   >
-    <motion.article
+    <motion.section
       initial={'hidden'}
       animate={'enter'}
       exit={'exit'}
       variants={{
-        hidden: { opacity: 0, x: 0, y: 20 },
+        hidden: { opacity: 0, x: 0, y: 30 },
         enter: { opacity: 1, x: 0, y: 0 },
-        exit: { opacity: 0, x: -0, y: 20 },
+        exit: { opacity: 0, x: 0, y: 30 },
       }}
       transition={{ duration: 0.6, type: 'easeInOut' }}
       style={{ position: 'relative' }}
@@ -44,8 +44,8 @@ export const Component: FC<Props> = ({ title, children, ...props }: Props) => (
         </Head>
       )}
       <Box {...props}>{children}</Box>
-    </motion.article>
+    </motion.section>
   </AnimatePresence>
 );
 
-Component.displayName = 'MainPanel';
+Component.displayName = 'MainPane';

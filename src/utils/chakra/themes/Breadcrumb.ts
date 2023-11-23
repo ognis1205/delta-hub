@@ -19,18 +19,18 @@ const linkStyle = defineStyle({
   transitionDuration: 'fast',
   transitionTimingFunction: 'ease-out',
   outline: 'none',
-  color: 'SonicSilver.700',
+  color: 'Russian.700',
   textDecoration: $decor.reference,
   [$decor.variable]: 'none',
   '&[aria-current]': {
-    color: 'SonicSilver.900',
+    color: 'Russian.900',
     fontWeight: 'bold',
   },
   '&:not([aria-current=page])': {
     cursor: 'pointer',
     _hover: {
       [$decor.variable]: 'none',
-      color: 'SonicSilver.900',
+      color: 'Russian.900',
     },
     _focusVisible: {
       boxShadow: 'outline',

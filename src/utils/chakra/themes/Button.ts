@@ -9,28 +9,28 @@ const variantMenu = defineStyle({
   bg: 'transparent',
   _hover: {
     color: 'SonicSilver.900',
-    bg: 'AntiFlashWhite.200',
+    bg: 'gray.50',
   },
   _active: {
     color: 'SonicSilver.900',
-    bg: 'AntiFlashWhite.300',
+    bg: 'gray.100',
   },
 });
 
 const variantNav = defineStyle({
   color: 'SonicSilver.600',
-  bg: 'AntiFlashWhite.500',
+  bg: 'gray.50',
   border: '1px',
   borderColor: 'AntiFlashWhite.600',
   boxShadow:
     'rgba(31, 35, 40, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset',
   _hover: {
     color: 'SonicSilver.800',
-    bg: 'AntiFlashWhite.600',
+    bg: 'gray.100',
   },
   _active: {
     color: 'SonicSilver.800',
-    bg: 'AntiFlashWhite.700',
+    bg: 'gray.200',
   },
 });
 

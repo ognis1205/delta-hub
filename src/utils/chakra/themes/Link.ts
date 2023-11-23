@@ -5,28 +5,28 @@
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 
 const variantMenu = defineStyle({
-  color: 'SonicSilver.700',
+  color: 'Russian.700',
   textDecoration: 'none',
   _hover: {
-    color: 'SonicSilver.900',
+    color: 'Russian.900',
     textDecoration: 'none',
   },
 });
 
 const variantNav = defineStyle({
-  color: 'SonicSilver.500',
+  color: 'Russian.700',
   textDecoration: 'none',
   _hover: {
-    color: 'SonicSilver.700',
+    color: 'Russian.900',
     textDecoration: 'none',
   },
 });
 
 const variantTab = defineStyle({
-  color: 'SonicSilver.500',
+  color: 'Russian.700',
   textDecoration: 'none',
   _hover: {
-    color: 'SonicSilver.700',
+    color: 'Russian.900',
     textDecoration: 'none',
   },
 });

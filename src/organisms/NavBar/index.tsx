@@ -125,7 +125,7 @@ export const Component: FC<Props> = ({
         h={14}
         px={5}
         py={4}
-        bg={'AntiFlashWhite.500'}
+        bg={'gray.50'}
         alignItems={'center'}
         justifyContent={'space-between'}
       >
@@ -156,12 +156,12 @@ export const Component: FC<Props> = ({
       <Flex
         px={5}
         py={0}
-        bg={'AntiFlashWhite.500'}
+        bg={'gray.50'}
         alignItems={'center'}
         justifyContent={'space-between'}
         borderBottom={1}
         borderStyle={'solid'}
-        borderColor={'AntiFlashWhite.600'}
+        borderColor={'gray.200'}
       >
         <TabItems path={'/overview'} items={tabItems} />
       </Flex>

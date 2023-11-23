@@ -15,18 +15,18 @@ const { defineMultiStyleConfig, definePartsStyle } =
 const $bg = cssVar('menu-bg');
 
 const baseStyleItem = defineStyle({
-  color: 'SonicSilver.700',
+  color: 'Russian.700',
   _focus: {
-    [$bg.variable]: 'AntiFlashWhite.200',
-    color: 'SonicSilver.900',
+    [$bg.variable]: 'gray.50',
+    color: 'Russian.900',
   },
   _active: {
-    [$bg.variable]: 'AntiFlashWhite.300',
-    color: 'SonicSilver.900',
+    [$bg.variable]: 'gray.100',
+    color: 'Russian.900',
   },
   _expanded: {
-    [$bg.variable]: 'AntiFlashWhite.200',
-    color: 'SonicSilver.900',
+    [$bg.variable]: 'gray.50',
+    color: 'Russian.900',
   },
   _disabled: {
     opacity: 0.4,

@@ -22,35 +22,35 @@ export const Component: FC<Props> = ({
   name,
   ...props
 }: Props) => (
-  <Box
-    __css={{
-      _hover: {
-        background: 'AntiFlashWhite.200',
-      },
-      _focus: {
-        background: 'AntiFlashWhite.200',
-      },
-      _active: {
-        background: 'AntiFlashWhite.300',
-      },
-      _expanded: {
-        background: 'AntiFlashWhite.200',
-      },
-      _disabled: {
-        opacity: 0.4,
-        cursor: 'not-allowed',
-      },
-    }}
-    p={2}
-    rounded={'md'}
-  >
-    <Link href={href} variant={'tab'}>
+  <Link href={href} variant={'tab'}>
+    <Box
+      __css={{
+        _hover: {
+          background: 'gray.50',
+        },
+        _focus: {
+          background: 'gray.50',
+        },
+        _active: {
+          background: 'gray.100',
+        },
+        _expanded: {
+          background: 'gray.50',
+        },
+        _disabled: {
+          opacity: 0.4,
+          cursor: 'not-allowed',
+        },
+      }}
+      p={2}
+      rounded={'md'}
+    >
       <HStack {...props}>
         <Icon iconName={iconName} />
         <Text>{name}</Text>
       </HStack>
-    </Link>
-  </Box>
+    </Box>
+  </Link>
 );
 
 Component.displayName = 'MenuItem';

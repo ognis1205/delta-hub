@@ -9,11 +9,11 @@ import { NextPage } from 'next';
 
 import { Component as SocialLogin } from '@/molecules/SocialLogin';
 import { Component as Illustration } from '@/organisms/Illustration';
-import { Component as MainPanel } from '@/organisms/MainPanel';
+import { Component as MainPane } from '@/organisms/MainPane';
 import { Component as Message } from '@/organisms/Message';
 
 const Page: NextPage<Record<string, never>> = () => (
-  <MainPanel title={'Login'}>
+  <MainPane title={'Login'}>
     <Flex flexDir={'row'}>
       <Flex
         align={'center'}
@@ -43,7 +43,7 @@ const Page: NextPage<Record<string, never>> = () => (
         </Message>
       </Flex>
     </Flex>
-  </MainPanel>
+  </MainPane>
 );
 
 Page.displayName = 'Home';

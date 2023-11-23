@@ -15,7 +15,7 @@ import { Share } from '@/containers/Share';
 import { Left } from '@/layouts/Left';
 import { Main } from '@/layouts/Main';
 import { Right } from '@/layouts/Right';
-import { Component as MainPanel } from '@/organisms/MainPanel';
+import { Component as MainPane } from '@/organisms/MainPane';
 import { Component as NavBar } from '@/organisms/NavBar';
 
 type Props = {
@@ -41,7 +41,7 @@ const Layout: FC<Props> = ({ children }: Props) => {
       />
       <Flex
         h={[null, null, '100vh']}
-        maxW="2000px"
+        maxW="1280px"
         flexDir={['column', 'column', 'row']}
         overflow="hidden"
       >
@@ -53,7 +53,7 @@ const Layout: FC<Props> = ({ children }: Props) => {
         >
           <Box>Left panel</Box>
         </Flex>
-        <MainPanel title={'Home'}>{children}</MainPanel>
+        <MainPane title={'Home'}>{children}</MainPane>
         <Right>
           <Search notifies={2} />
           <Profile
