@@ -77,7 +77,6 @@ export const Component: FC<Props> = ({
         ))}
       </AvatarGroup>
     </Flex>
-    <Divider />
   </Stack>
 );
 

@@ -9,7 +9,6 @@ import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { FC, ReactNode } from 'react';
 
-import { Search } from '@/components/Search';
 import { Share } from '@/containers/Share';
 import { Component as LeftPane } from '@/organisms/LeftPane';
 import { Component as MainPane } from '@/organisms/MainPane';
