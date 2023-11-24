@@ -7,9 +7,7 @@
 import {
   Stack,
   StackProps,
-  Heading,
   Text,
-  Avatar,
   Divider,
   Button,
 } from '@chakra-ui/react';
@@ -26,7 +24,6 @@ export type Props = Omit<
   imgSrc: string;
   id: string;
   name: string;
-  message: string;
   following: number;
   followers: number;
   address: string;
@@ -38,7 +35,6 @@ export const Component: FC<Props> = ({
   imgSrc,
   id,
   name,
-  message,
   following,
   followers,
   address,
@@ -51,14 +47,16 @@ export const Component: FC<Props> = ({
       id={id}
       name={name}
       avatarSrc={imgSrc}
-      flexDir={{ base: 'row', sm: 'column' }}
+      flexDir={{ base: 'row', md: 'column' }}
       alignItems={'center'}
-      avatarSize={{ base: 'xl', sm: 'full' }}
+      avatarSize={'xl'}
       fontSize={'xl'}
+      textAlignItmes={'start'}
+      textGap={0}
     />
     <Divider />
     <Stack spacing={2}>
-      <Button variant={'nav'} w={'100%'}>
+      <Button variant={'nav'} my={2} w={'100%'} size={'sm'}>
         <Text fontWeight={'bold'}>Edit profile</Text>
       </Button>
       <ProfileConnections followers={followers} following={following} />

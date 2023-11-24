@@ -4,20 +4,17 @@
  */
 'use client';
 
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Stack } from '@chakra-ui/react';
 import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { FC, ReactNode } from 'react';
 
 import { Search } from '@/components/Search';
-import { Profile } from '@/containers/Profile';
 import { Share } from '@/containers/Share';
-import { Left } from '@/layouts/Left';
-import { Main } from '@/layouts/Main';
-import { Right } from '@/layouts/Right';
 import { Component as LeftPane } from '@/organisms/LeftPane';
 import { Component as MainPane } from '@/organisms/MainPane';
 import { Component as NavBar } from '@/organisms/NavBar';
+import { Component as Profile } from '@/organisms/Profile';
 
 type Props = {
   children: ReactNode;
@@ -59,20 +56,34 @@ const Layout: FC<Props> = ({ children }: Props) => {
         path={pathname}
         tabItems={tabItems}
       />
-      <Flex
+      <Stack
         m={'auto'}
         py={10}
         px={10}
         maxW={'1280px'}
         flexDir={{ base: 'column', md: 'row' }}
+        spacing={4}
       >
-        <LeftPane w={{ base: '100%', sm: '220px', md: '256px', xl: '296px' }}>
-          Left Pane
+        <LeftPane w={{ base: '100%', md: '256px', xl: '296px' }}>
+          <Profile
+            imgSrc={session && session.user ? session.user.image : undefined}
+            id={
+              session && session.user
+                ? session.user.email.split('@')[0]
+                : 'Not Available'
+            }
+            name={session && session.user ? session.user.name : 'Not Available'}
+            followers={24}
+            following={20}
+            address={'Tokyo, Japan'}
+            email={'shingo.okawa.g.h.c@gmail.com'}
+            link={'https://ognis1205.github.io'}
+          />
         </LeftPane>
         <MainPane minW={0} flexGrow={1} title={'Home'}>
           {children}
         </MainPane>
-      </Flex>
+      </Stack>
     </>
   );
 };
