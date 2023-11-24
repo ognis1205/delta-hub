@@ -10,7 +10,7 @@ import { FC } from 'react';
 export type Props = Omit<TextProps, keyof Pick<TextProps, 'color'>>;
 
 export const Component: FC<Props> = ({ children, ...props }: Props) => (
-  <Text {...props} color={'gray'}>
+  <Text {...props} color={'Russian.700'}>
     {children}
   </Text>
 );
