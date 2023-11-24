@@ -11,10 +11,13 @@ import {
   Text,
   Avatar,
   Divider,
+  Button,
 } from '@chakra-ui/react';
 import { FC } from 'react';
 
-import { Component as ProfileName } from '@/atoms/ProfileName';
+import { Component as ProfileConnections } from '@/atoms/ProfileConnections';
+import { Component as ProfileHeader } from '@/atoms/ProfileHeader';
+import { Component as ProfileItem } from '@/atoms/ProfileItem';
 
 export type Props = Omit<
   StackProps,
@@ -24,6 +27,11 @@ export type Props = Omit<
   id: string;
   name: string;
   message: string;
+  following: number;
+  followers: number;
+  address: string;
+  email: string;
+  link: string;
 };
 
 export const Component: FC<Props> = ({
@@ -31,17 +39,32 @@ export const Component: FC<Props> = ({
   id,
   name,
   message,
+  following,
+  followers,
+  address,
+  email,
+  link,
   ...props
 }: Props) => (
   <Stack align={'left'} {...props}>
-    <Stack flexDir={{ base: 'row', sm: 'column' }} alignItems={'center'}>
-      <Avatar src={imgSrc} name={name} size={{ base: 'xl', sm: 'full' }} />
-      <ProfileName id={id} name={name} />
-    </Stack>
+    <ProfileHeader
+      id={id}
+      name={name}
+      avatarSrc={imgSrc}
+      flexDir={{ base: 'row', sm: 'column' }}
+      alignItems={'center'}
+      avatarSize={{ base: 'xl', sm: 'full' }}
+      fontSize={'xl'}
+    />
     <Divider />
     <Stack spacing={2}>
-      <Heading size={'lg'}>Title</Heading>
-      <Text fontSize={'md'}>{message}</Text>
+      <Button variant={'nav'} w={'100%'}>
+        <Text fontWeight={'bold'}>Edit profile</Text>
+      </Button>
+      <ProfileConnections followers={followers} following={following} />
+      <ProfileItem iconName={'map'} value={address} />
+      <ProfileItem iconName={'email'} value={email} />
+      <ProfileItem iconName={'link'} value={link} />
     </Stack>
   </Stack>
 );
