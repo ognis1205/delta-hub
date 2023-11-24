@@ -15,11 +15,7 @@ export type Props = StackProps & {
   href: string;
 };
 
-export const Component: FC<Props> = ({
-  name,
-  href,
-  ...props
-}: Props) => (
+export const Component: FC<Props> = ({ name, href, ...props }: Props) => (
   <HStack {...props}>
     <Icon iconName={'catalog'} />
     <Link href={href} variant={'catalog'}>
