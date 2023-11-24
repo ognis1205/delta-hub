@@ -9,7 +9,10 @@ import { FC } from 'react';
 
 import { Component as Icon } from '@/atoms/Icon';
 
-export type Props = Omit<StackProps, keyof Pick<StackProps, 'color' | 'spacing'>> & {
+export type Props = Omit<
+  StackProps,
+  keyof Pick<StackProps, 'color' | 'spacing'>
+> & {
   stars: number;
   shares: number;
 };
