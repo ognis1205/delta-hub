@@ -2,8 +2,6 @@
  * @fileoverview Defines @/atoms/TimelineItem story.
  * @copyright Shingo OKAWA 2023
  */
-import { Link } from '@chakra-ui/react';
-
 import { Component as TimelineItem } from '@/atoms/TimelineItem';
 
 import type { Meta, StoryObj } from '@storybook/react';
@@ -17,35 +15,40 @@ type Story = StoryObj<typeof meta>;
 
 export const Share: Story = {
   args: {
-    iconName: 'share',
+    activity: {
+      kind: 'share' as const,
+      detail: {
+        numCatalog: 3,
+        numPeople: 2,
+      },
+    },
   },
-  render: (args) => (
-    <TimelineItem {...args}>
-      Shared catalog <Link>test</Link> with <Link>cat1</Link>
-    </TimelineItem>
-  ),
+  render: (args) => <TimelineItem {...args} />,
 };
 
 export const Request: Story = {
   args: {
-    iconName: 'request',
+    activity: {
+      kind: 'request' as const,
+      detail: {
+        numCatalog: 3,
+        numPeople: 11,
+      },
+    },
   },
-  render: (args) => (
-    <TimelineItem {...args}>
-      Requested to share catalog <Link>test</Link> from <Link>cat1</Link>
-    </TimelineItem>
-  ),
+  render: (args) => <TimelineItem {...args} />,
 };
 
 export const Create: Story = {
   args: {
-    iconName: 'create',
+    activity: {
+      kind: 'create' as const,
+      detail: {
+        numCatalog: 2,
+      },
+    },
   },
-  render: (args) => (
-    <TimelineItem {...args}>
-      Created new catalog <Link>test</Link>
-    </TimelineItem>
-  ),
+  render: (args) => <TimelineItem {...args} />,
 };
 
 export default meta;

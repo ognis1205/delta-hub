@@ -27,6 +27,7 @@ export type Props = {
 };
 
 const menuItems = [
+  'divider' as const,
   {
     href: '/',
     name: 'Home',
@@ -70,6 +71,7 @@ const navItems = [
 ];
 
 const profileItems = [
+  'divider' as const,
   {
     href: '/',
     name: 'Your profile',
