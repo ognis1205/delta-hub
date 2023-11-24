@@ -10,6 +10,10 @@ import {
   Text,
   Divider,
   Button,
+  Heading,
+  Flex,
+  AvatarGroup,
+  Avatar,
 } from '@chakra-ui/react';
 import { FC } from 'react';
 
@@ -64,6 +68,16 @@ export const Component: FC<Props> = ({
       <ProfileItem iconName={'email'} value={email} />
       <ProfileItem iconName={'link'} value={link} />
     </Stack>
+    <Divider />
+    <Heading my={2} size='sm'>Collaborators</Heading>
+    <Flex>
+      <AvatarGroup size={'md'} max={3}>
+        {[1,2,3,4].map((id, i) => (
+          <Avatar key={i} src={`/images/cat${id}.jpg`} />
+        ))}
+      </AvatarGroup>
+    </Flex>
+    <Divider />
   </Stack>
 );
 
