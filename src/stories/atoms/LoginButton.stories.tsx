@@ -1,15 +1,15 @@
 /**
- * @fileoverview Defines @/molecules/SocialLogin story.
+ * @fileoverview Defines @/atoms/LoginButton story.
  * @copyright Shingo OKAWA 2023
  */
-import { Component as SocialLogin } from '@/molecules/SocialLogin';
+import { Component as LoginButton } from '@/atoms/LoginButton';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'SocialLogin',
-  component: SocialLogin,
-} satisfies Meta<typeof SocialLogin>;
+  title: 'LoginButton',
+  component: LoginButton,
+} satisfies Meta<typeof LoginButton>;
 
 type Story = StoryObj<typeof meta>;
 
@@ -17,14 +17,14 @@ export const Google: Story = {
   args: {
     provider: 'google',
   },
-  render: (args) => <SocialLogin {...args} />,
+  render: (args) => <LoginButton {...args} />,
 };
 
 export const GitHub: Story = {
   args: {
     provider: 'github',
   },
-  render: (args) => <SocialLogin {...args} />,
+  render: (args) => <LoginButton {...args} />,
 };
 
 export default meta;

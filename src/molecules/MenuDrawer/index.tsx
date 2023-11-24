@@ -6,7 +6,6 @@
 
 import {
   useDisclosure,
-  Box,
   IconButton,
   IconButtonProps,
   HStack,
@@ -20,13 +19,12 @@ import {
   DrawerContent,
   Stack,
   Divider,
-  Heading,
 } from '@chakra-ui/react';
 import { FC } from 'react';
 import { PiXBold, PiListBold } from 'react-icons/pi';
 
 import { Component as Copyright } from '@/atoms/Copyright';
-import { Component as Logo } from '@/atoms/Logo';
+import { Component as MenuHeader } from '@/atoms/MenuHeader';
 import {
   Component as MenuItem,
   Props as MenuItemProps,
@@ -62,12 +60,12 @@ export const Component: FC<Props> = ({ placement, items, ...props }: Props) => {
         <DrawerContent>
           <DrawerHeader>
             <HStack>
-              <Box display={'flex'} alignItems={'center'}>
-                <Logo size={'sm'} />
-                <Heading size={'sm'} ml={2}>
-                  DeltaHub
-                </Heading>
-              </Box>
+              <MenuHeader
+                flexDir={'row'}
+                alignItems={'center'}
+                logoSize={'sm'}
+                titleSize={'sm'}
+              />
               <Spacer />
               <IconButton
                 aria-label={'Close drawer'}

@@ -6,14 +6,11 @@
 
 import {
   useDisclosure,
-  Box,
   Avatar,
   AvatarProps,
   IconButton,
   Stack,
   HStack,
-  VStack,
-  Text,
   Spacer,
   Drawer,
   DrawerProps,
@@ -32,6 +29,7 @@ import {
   Component as MenuItem,
   Props as MenuItemProps,
 } from '@/atoms/MenuItem';
+import { Component as ProfileHeader } from '@/atoms/ProfileHeader';
 
 export type Item = 'divider' | MenuItemProps;
 
@@ -71,17 +69,17 @@ export const Component: FC<Props> = ({
         <DrawerContent>
           <DrawerHeader>
             <HStack>
-              <Box display={'flex'} alignItems={'center'}>
-                <Avatar size={'sm'} name={name} src={src} />
-                <VStack ml={2} gap={0} alignItems={'start'}>
-                  <Text fontSize={'sm'} fontWeight={'bold'}>
-                    {id}
-                  </Text>
-                  <Text fontSize={'sm'} color={'SonicSilver.700'}>
-                    {name}
-                  </Text>
-                </VStack>
-              </Box>
+              <ProfileHeader
+                id={id}
+                name={name}
+                flexDir={'row'}
+                alignItems={'center'}
+                avatarSrc={src}
+                avatarSize={'sm'}
+                fontSize={'sm'}
+                textAlignItmes={'start'}
+                textGap={0}
+              />
               <Spacer />
               <IconButton
                 aria-label={'Close drawer'}

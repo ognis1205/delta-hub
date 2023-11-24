@@ -3,7 +3,7 @@
  * @copyright Shingo OKAWA 2023
  */
 import { Component as LinkButton } from '@/atoms/LinkButton';
-import { Component as SocialLogin } from '@/molecules/SocialLogin';
+import { Component as LoginButton } from '@/atoms/LoginButton';
 import { Component as Message } from '@/organisms/Message';
 
 import type { Meta, StoryObj } from '@storybook/react';
@@ -34,8 +34,8 @@ export const Login: Story = {
   },
   render: (args) => (
     <Message {...args}>
-      <SocialLogin provider={'google'} />
-      <SocialLogin provider={'github'} />
+      <LoginButton provider={'google'} />
+      <LoginButton provider={'github'} />
     </Message>
   ),
 };
