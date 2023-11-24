@@ -39,7 +39,15 @@ export const Component: FC<Props> = ({
   shares,
   ...props
 }: Props) => (
-  <Card {...props} p={2}>
+  <Card
+    {...props}
+    p={2}
+    border={'1px'}
+    borderColor={'AntiFlashWhite.600'}
+    boxShadow={
+      'rgba(31, 35, 40, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset'
+    }
+  >
     <CardHeader p={0}>
       <CatalogCardHeader name={name} href={href} />
     </CardHeader>
