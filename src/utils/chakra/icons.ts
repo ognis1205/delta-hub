@@ -26,6 +26,9 @@ import {
   PiEnvelopeBold,
   PiLinkBold,
   PiUsersBold,
+  PiArrowsOutLineVerticalBold,
+  PiPaperPlaneTiltBold,
+  PiPawPrintBold,
 } from 'react-icons/pi';
 
 const icons = {
@@ -51,6 +54,9 @@ const icons = {
   email: PiEnvelopeBold,
   link: PiLinkBold,
   connection: PiUsersBold,
+  expand: PiArrowsOutLineVerticalBold,
+  request: PiPaperPlaneTiltBold,
+  create: PiPawPrintBold,
 };
 
 export type IconName = keyof typeof icons;
