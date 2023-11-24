@@ -4,7 +4,7 @@
  */
 'use client';
 
-import { Text, Flex, Divider, IconButton, Heading } from '@chakra-ui/react';
+import { Flex, Divider, IconButton, Heading } from '@chakra-ui/react';
 import { NextPage } from 'next';
 
 import { Statistics } from '@/containers/Statistics';

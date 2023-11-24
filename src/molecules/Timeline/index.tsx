@@ -37,7 +37,7 @@ export const Component: FC<Props> = ({
   <VStack {...props} textAlign={'start'} align={'start'}>
     <Box zIndex={5} w={'100%'}>
       <TimelineHeader month={month} year={year} my={5} />
-      <Box>
+      <Box px={5}>
         {items.map((item, i) => {
           return (
             <TimelineItem

@@ -4,12 +4,11 @@
  */
 'use client';
 
-import { Box, Stack } from '@chakra-ui/react';
+import { Stack } from '@chakra-ui/react';
 import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { FC, ReactNode } from 'react';
 
-import { Share } from '@/containers/Share';
 import { Component as LeftPane } from '@/organisms/LeftPane';
 import { Component as MainPane } from '@/organisms/MainPane';
 import { Component as NavBar } from '@/organisms/NavBar';
@@ -79,7 +78,7 @@ const Layout: FC<Props> = ({ children }: Props) => {
             link={'https://ognis1205.github.io'}
           />
         </LeftPane>
-        <MainPane minW={0} flexGrow={1} title={'Home'}>
+        <MainPane minW={0} flexGrow={1} title={'Home'} px={5}>
           {children}
         </MainPane>
       </Stack>

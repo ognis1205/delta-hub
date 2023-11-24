@@ -40,6 +40,15 @@ const variantTab = defineStyle({
   },
 });
 
+const variantCatalog = defineStyle({
+  color: 'DeltaColor1.500',
+  textDecoration: 'none',
+  _hover: {
+    color: 'DeltaColor1.500',
+    textDecoration: 'underline',
+  },
+});
+
 export const theme = defineStyleConfig({
   defaultProps: {
     variant: 'main',
@@ -49,5 +58,6 @@ export const theme = defineStyleConfig({
     menu: variantMenu,
     nav: variantNav,
     tab: variantTab,
+    catalog: variantCatalog,
   },
 });
