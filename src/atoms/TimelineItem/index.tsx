@@ -40,18 +40,36 @@ export type Activity = {
   detail: ActivityDetail;
 };
 
+const catalogToPlural = (n: number) => {
+  if (n <= 1) {
+    return `${n} catalog`;
+  }
+  return `${n} catalogs`;
+};
+
+const personToPlural = (n: number) => {
+  if (n <= 1) {
+    return `${n} person`;
+  }
+  return `${n} people`;
+};
+
 const textize = (activity: Activity) => {
   switch (activity.kind) {
     case 'share':
-      return `Shared ${activity.detail.numCatalog ?? 0} catalog(s) with ${
-        activity.detail.numPeople ?? 0
-      } people(person)`;
+      return `Shared ${catalogToPlural(
+        activity.detail.numCatalog ?? 0,
+      )} with ${personToPlural(
+        (activity.detail as ShareDetail).numPeople ?? 0,
+      )}`;
     case 'request':
-      return `Requested ${activity.detail.numCatalog ?? 0} catalog(s) from ${
-        activity.detail.numPeople ?? 0
-      } people(person)`;
+      return `Requested ${catalogToPlural(
+        activity.detail.numCatalog ?? 0,
+      )} from ${personToPlural(
+        (activity.detail as ShareDetail).numPeople ?? 0,
+      )}`;
     case 'create':
-      return `Created ${activity.detail.numCatalog ?? 0} new catalog(s)`;
+      return `Created ${catalogToPlural(activity.detail.numCatalog ?? 0)}`;
     default:
       return 'N/A';
   }
@@ -67,7 +85,7 @@ export const Component: FC<Props> = ({
   skipTrail = false,
   ...props
 }: Props) => (
-  <Flex minH={20}>
+  <Flex minH={!skipTrail ? 20 : undefined}>
     <Flex flexDir={'column'} alignItems={'center'} mr={2} pos={'relative'}>
       <IconButton
         icon={iconOf(activity.kind)}

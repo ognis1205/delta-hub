@@ -4,16 +4,72 @@
  */
 'use client';
 
-import { Heading, Text, Flex } from '@chakra-ui/react';
+import { Text, Flex, Divider, IconButton, Heading } from '@chakra-ui/react';
 import { NextPage } from 'next';
-import { useSession } from 'next-auth/react';
 
-import { Recipients } from '@/containers/Recipients';
 import { Statistics } from '@/containers/Statistics';
+import { Component as Timeline } from '@/molecules/Timeline';
+import { iconOf } from '@/utils/chakra/icons';
+
+const november = [
+  {
+    activity: {
+      kind: 'share' as const,
+      detail: {
+        numCatalog: 3,
+        numPeople: 2,
+      },
+    },
+  },
+  {
+    activity: {
+      kind: 'request' as const,
+      detail: {
+        numCatalog: 3,
+        numPeople: 11,
+      },
+    },
+  },
+  {
+    activity: {
+      kind: 'create' as const,
+      detail: {
+        numCatalog: 2,
+      },
+    },
+  },
+];
+
+const october = [
+  {
+    activity: {
+      kind: 'share' as const,
+      detail: {
+        numCatalog: 4,
+        numPeople: 1,
+      },
+    },
+  },
+  {
+    activity: {
+      kind: 'request' as const,
+      detail: {
+        numCatalog: 2,
+        numPeople: 7,
+      },
+    },
+  },
+  {
+    activity: {
+      kind: 'create' as const,
+      detail: {
+        numCatalog: 0,
+      },
+    },
+  },
+];
 
 const Page: NextPage<Record<string, never>> = () => {
-  const { data: session } = useSession();
-
   const labels = [
     'Sep. 29',
     'Sep. 30',
@@ -33,57 +89,28 @@ const Page: NextPage<Record<string, never>> = () => {
 
   const data = [17, 30, 22, 27, 25, 26, 39, 23, 19, 22, 13, 25, 16, 39];
 
-  const recipients = [
-    {
-      imgSrc:
-        session && session.user ? session.user.image : '/images/no-image.png',
-      name: session && session.user ? session.user.name : 'N/A',
-      date: 'Oct 12, 2023 at 18:00pm',
-      share: 'Test Share 1',
-      email: session && session.user ? session.user.email : 'N/A',
-    },
-    {
-      imgSrc:
-        session && session.user ? session.user.image : '/images/no-image.png',
-      name: session && session.user ? session.user.name : 'N/A',
-      date: 'Oct 12, 2023 at 18:00pm',
-      share: 'Test Share 1',
-      email: session && session.user ? session.user.email : 'N/A',
-    },
-    {
-      imgSrc:
-        session && session.user ? session.user.image : '/images/no-image.png',
-      name: session && session.user ? session.user.name : 'N/A',
-      date: 'Oct 12, 2023 at 18:00pm',
-      share: 'Test Share 1',
-      email: session && session.user ? session.user.email : 'N/A',
-    },
-  ];
-
   return (
     <>
-      <Heading
-        as={'h2'}
-        size={'lg'}
-        fontWeight="normal"
-        mb={4}
-        letterSpacing="tight"
-      >
-        Welcome back,&nbsp;
-        {session && session.user && (
-          <Flex display="inline-flex" fontWeight="bold">
-            {session.user.name}
-          </Flex>
-        )}
+      <Heading my={2} size="sm">
+        Catalog
       </Heading>
-      <Text color="gray" fontSize="sm">
-        Your Shares
-      </Text>
-      <Text fontWeight="bold" fontSize="lg">
-        {data.reduce((acc, x) => acc + x, 0)}&nbsp;[#]
-      </Text>
       <Statistics data={data} labels={labels} />
-      <Recipients monthYear={'Oct 2023'} recipients={recipients} />
+      <Divider />
+      <Heading my={2} size="sm">
+        Activity
+      </Heading>
+      <Timeline month={'November'} year={'2023'} items={november} />
+      <Timeline month={'October'} year={'2023'} items={october} />
+      <Flex align={'center'}>
+        <Divider />
+        <IconButton
+          icon={iconOf('more')}
+          size={'sm'}
+          isRound={true}
+          aria-label={'Show more activities'}
+        />
+        <Divider />
+      </Flex>
     </>
   );
 };

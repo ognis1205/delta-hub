@@ -16,7 +16,7 @@ import { FC } from 'react';
 
 export type Props = BoxProps & {
   month: string;
-  yeat: string;
+  year: string;
 };
 
 export const Component: FC<Props> = ({ month, year, ...props }: Props) => (

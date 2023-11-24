@@ -29,6 +29,7 @@ import {
   PiArrowsOutLineVerticalBold,
   PiPaperPlaneTiltBold,
   PiPawPrintBold,
+  PiCaretDownBold,
 } from 'react-icons/pi';
 
 const icons = {
@@ -57,6 +58,7 @@ const icons = {
   expand: PiArrowsOutLineVerticalBold,
   request: PiPaperPlaneTiltBold,
   create: PiPawPrintBold,
+  more: PiCaretDownBold,
 };
 
 export type IconName = keyof typeof icons;
