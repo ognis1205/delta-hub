@@ -4,20 +4,52 @@
  */
 'use client';
 
-import {
-  Flex,
-  Divider,
-  IconButton,
-  Heading,
-  SimpleGrid,
-} from '@chakra-ui/react';
+import { Flex, Divider, IconButton, Heading } from '@chakra-ui/react';
 import { NextPage } from 'next';
 
-import { Component as CatalogCard } from '@/molecules/CatalogCard';
 import { Component as Timeline } from '@/molecules/Timeline';
+import { Component as Catalogs } from '@/organisms/Catalogs';
 import { iconOf } from '@/utils/chakra/icons';
 
-const november = [
+const catalogs = [
+  {
+    name: 'scientific-data',
+    href: '/',
+    description: 'Scientific data for university students',
+    stars: 51,
+    shares: 5,
+  },
+  {
+    name: 'covid',
+    href: '/',
+    description: 'Official daily counts of COVID-19 cases',
+    stars: 151,
+    shares: 1115,
+  },
+  {
+    name: 'scientific-data',
+    href: '/',
+    description: 'Scientific data for university students',
+    stars: 51,
+    shares: 5,
+  },
+  {
+    name: 'covid',
+    href: '/',
+    description: 'Official daily counts of COVID-19 cases',
+    stars: 151,
+    shares: 1115,
+  },
+  {
+    name: 'scientific-data',
+    href: '/',
+    description: 'Scientific data for university students',
+    stars: 51,
+    shares: 5,
+  },
+];
+
+const novActivity = [
   {
     activity: {
       kind: 'share' as const,
@@ -46,7 +78,7 @@ const november = [
   },
 ];
 
-const october = [
+const octActivity = [
   {
     activity: {
       kind: 'share' as const,
@@ -78,50 +110,14 @@ const october = [
 const Page: NextPage<Record<string, never>> = () => (
   <>
     <Heading my={2} size={'sm'}>
-      Catalog
+      Catalogs
     </Heading>
-    <SimpleGrid columns={{ base: 1, md: 2 }} p={5} spacing={5}>
-      <CatalogCard
-        name={'scientific-data'}
-        href={'/'}
-        description={'Scientific data for university students'}
-        stars={51}
-        shares={5}
-      />
-      <CatalogCard
-        name={'covid'}
-        href={'/'}
-        description={'Official daily counts of COVID-19 cases'}
-        stars={151}
-        shares={1115}
-      />
-      <CatalogCard
-        name={'scientific-data'}
-        href={'/'}
-        description={'Scientific data for university students'}
-        stars={51}
-        shares={5}
-      />
-      <CatalogCard
-        name={'covid'}
-        href={'/'}
-        description={'Official daily counts of COVID-19 cases'}
-        stars={151}
-        shares={1115}
-      />
-      <CatalogCard
-        name={'scientific-data'}
-        href={'/'}
-        description={'Scientific data for university students'}
-        stars={51}
-        shares={5}
-      />
-    </SimpleGrid>
+    <Catalogs columns={{ base: 1, lg: 2 }} p={5} spacing={5} items={catalogs} />
     <Heading my={2} size={'sm'}>
       Activity
     </Heading>
-    <Timeline month={'November'} year={'2023'} items={november} />
-    <Timeline month={'October'} year={'2023'} items={october} />
+    <Timeline month={'November'} year={'2023'} items={novActivity} />
+    <Timeline month={'October'} year={'2023'} items={octActivity} />
     <Flex align={'center'}>
       <Divider />
       <IconButton
