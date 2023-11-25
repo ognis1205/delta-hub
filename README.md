@@ -1,9 +1,11 @@
 DeltaHub
 ==============================
 
-This repository is used for a sandbox around oauth 2.0 for now. The actual UI is being implemented in another
-repository. I will replace the whole source code here with the actual implementation in the near future.
-The authentication flow of `yet-another-delta-sharing-rs` will be completely different from the original one.
+<p float="left" align="center">
+  <img src="./dev/images/screen.gif" width="300px">
+</p>
+
+A platform and cloud-based service for data sharing based on delta-sharing-rs using Next.js and TypeScript.
 
 Delta Catalog Configuration
 ==============================
