@@ -114,7 +114,7 @@ const Page: NextPage<Record<string, never>> = () => (
     </Heading>
     <Catalogs columns={{ base: 1, lg: 2 }} p={5} spacing={5} items={catalogs} />
     <Heading my={2} size={'sm'}>
-      Activity
+      Activities
     </Heading>
     <Timeline month={'November'} year={'2023'} items={novActivity} />
     <Timeline month={'October'} year={'2023'} items={octActivity} />
