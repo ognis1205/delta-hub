@@ -7,7 +7,7 @@ DeltaHub
 
 A platform and cloud-based service for data sharing based on delta-sharing-rs using Next.js and TypeScript.
 
-Delta Catalog Configuration
+DeltaHub Configuration
 ==============================
 
 | Name                     | Environment Variable   | Required | Description                                                                      |
