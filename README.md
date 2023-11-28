@@ -2,10 +2,17 @@ DeltaHub
 ==============================
 
 <p float="left" align="center">
-  <img src="./dev/images/screen.gif" width="450px">
+  <img src="./dev/images/logo.png" width="225px">
 </p>
 
 A platform and cloud-based service for data sharing based on delta-sharing-rs using Next.js and TypeScript.
+
+Screenshot
+==============================
+
+<p float="left" align="center">
+  <img src="./dev/images/screen.gif" width="450px">
+</p>
 
 DeltaHub Configuration
 ==============================
