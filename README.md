@@ -14,6 +14,43 @@ Screenshot
   <img src="./dev/images/screen.gif" width="450px">
 </p>
 
+Atomic Design
+==============================
+
+We have adopted the [Atomic Design Methodology](https://atomicdesign.bradfrost.com/) for structuring UI components, but some modifications are required.
+The original methodology primarily emphasizes a bottom-up approach starting from basic HTML tags. However, in our case,
+we use Chakra UI components as our foundational elements, equivalent to atoms in the original methodology.
+
+The following list explains the guide-line how to structure of your components' hierarchy
+
+ - Atoms
+
+According to the original methodology, atoms should correspond to Chakra UI components, so there seems to be no need to
+implement atomic components in this project. However, we redefine atoms as undecomposable components in the context of
+the project. For example, a component that consists of one icon element and one line of text, such as menu items, should be
+considered a molecule from the perspective of the original methodology. Still, we treat it as an atom since we don't 
+decompose it in our implementation. Of course, the atomic components from the Chakra UI are also considered and treated
+as atoms.
+
+ - Molecules
+
+Molecules are constructed from the atoms as explained in the previous section. A typical example of a molecule is a container
+component, such as lists and tables. Molecules do not differ from the original methodology, except for the underlying atoms.
+
+ - Organisms
+
+Organisms correspond to the so-called "areas" on a web page. For example, header area, footer area, main pane, left pane, and form areas.
+
+ - Templates
+ 
+Templates correspond to the [layouts](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts) of [Next.js](https://nextjs.org/).
+Hence, we don't prepare any designated directories for the templates' implementations.
+
+ - Pages
+ 
+Templates correspond to the [pages](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts) of [Next.js](https://nextjs.org/).
+Hence, we don't prepare any designated directories for the pages' implementations.
+
 DeltaHub Configuration
 ==============================
 
