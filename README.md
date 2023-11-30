@@ -41,15 +41,10 @@ component, such as lists and tables. Molecules do not differ from the original m
 
 Organisms correspond to the so-called "areas" on a web page. For example, header area, footer area, main pane, left pane, and form areas.
 
- - Templates
+ - Templates / Pages
  
-Templates correspond to the [layouts](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts) of [Next.js](https://nextjs.org/).
-Hence, we don't prepare any designated directories for the templates' implementations.
-
- - Pages
- 
-Templates correspond to the [pages](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts) of [Next.js](https://nextjs.org/).
-Hence, we don't prepare any designated directories for the pages' implementations.
+Templates and pages correspond to the [layouts and pages](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts) of [Next.js](https://nextjs.org/).
+Hence, we don't prepare any designated directories for the templates' and/or pages' implementations.
 
 DeltaHub Configuration
 ==============================
