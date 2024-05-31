@@ -50,15 +50,16 @@ Hence, we don't prepare any designated directories for the templates' and/or pag
 DeltaHub Configuration
 ==============================
 
-| Name                     | Environment Variable   | Required | Description                                                                      |
-|:------------------------:|:----------------------:|:--------:|----------------------------------------------------------------------------------|
-| `nextauth_url`           | NEXTAUTH_URL           | yes      | Your canonical URL                                                               |
-| `nextauth_secret`        | NEXTAUTH_SECRET        | yes      | Your NextAuth JWT encryption secret                                              |
-| `google_client_id`       | GOOGLE_CLIENT_ID       | yes      | Google API client ID for OIDC                                                    |
-| `google_client_secret`   | GOOGLE_CLIENT_SECRET   | yes      | Google API client secret for OIDC                                                |
-| `github_client_id`       | GITHUB_CLIENT_ID       | yes      | GitHub API client ID for OIDC                                                    |
-| `github_client_secret`   | GITHUB_CLIENT_SECRET   | yes      | GitHub API client secret for OIDC                                                |
-| `delta_sharing_base_url` | DELTA_SHARING_BASE_URL | yes      | Delta Sharing RS Backend URL                                                     |
+| Name                       | Environment Variable     | Required | Description                                                                                               |
+|:--------------------------:|:------------------------:|:--------:|-----------------------------------------------------------------------------------------------------------|
+| `nextauth_url`             | NEXTAUTH_URL             | yes      | Your canonical URL                                                                                        |
+| `next_public_nextauth_url` | NEXT_PUBLIC_NEXTAUTH_URL | yes      | Your canonical URL which will be used for client side rendering (This should be the same as NEXTAUTH_URL) |
+| `nextauth_secret`          | NEXTAUTH_SECRET          | yes      | Your NextAuth JWT encryption secret                                                                       |
+| `google_client_id`         | GOOGLE_CLIENT_ID         | yes      | Google API client ID for OIDC                                                                             |
+| `google_client_secret`     | GOOGLE_CLIENT_SECRET     | yes      | Google API client secret for OIDC                                                                         |
+| `github_client_id`         | GITHUB_CLIENT_ID         | yes      | GitHub API client ID for OIDC                                                                             |
+| `github_client_secret`     | GITHUB_CLIENT_SECRET     | yes      | GitHub API client secret for OIDC                                                                         |
+| `delta_sharing_base_url`   | DELTA_SHARING_BASE_URL   | yes      | Delta Sharing RS Backend URL                                                                              |
 
 Obtaining Authentication Credentials
 ==============================
