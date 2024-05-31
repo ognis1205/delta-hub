@@ -5,8 +5,10 @@ DeltaHub
   <img src="./docs/images/logo.png" width="225px">
 </p>
 
-A platform and cloud-based service for data sharing based on delta-sharing-rs using Next.js and TypeScript.
-Please refer to the [Project Improvement Proposal](./docs/README.md).
+A platform and cloud-based data sharing service based on the Delta Sharing protocol. It's neither a data catalog
+nor a data repository, nor a data marketplace. DeltaHub is a service focused solely on data sharing.
+It provides only the minimum governance features necessary for data sharing, but allows users to easily search and
+share the data they bring.
 
 Screenshot
 ==============================
