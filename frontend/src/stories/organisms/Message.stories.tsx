@@ -1,6 +1,8 @@
 /**
  * @fileoverview Defines @/organisms/Message story.
- * @copyright Shingo OKAWA 2023
+ * @author Shingo OKAWA <shingo.okawa.g.h.c@gmail.com>
+ * @copyright Copyright (C) 2024 Shingo OKAWA and a number of other contributors
+ * @license Apache-2.0
  */
 import { Component as LinkButton } from '@/atoms/LinkButton';
 import { Component as LoginButton } from '@/atoms/LoginButton';

@@ -1,6 +1,8 @@
 /**
  * @fileoverview Defines utility functions.
- * @copyright Shingo OKAWA 2023
+ * @author Shingo OKAWA <shingo.okawa.g.h.c@gmail.com>
+ * @copyright Copyright (C) 2024 Shingo OKAWA and a number of other contributors
+ * @license Apache-2.0
  */
 export type ChainedWhen<T, R> = {
   on: <A>(pred: (v: T) => boolean, fn: () => A) => ChainedWhen<T, R | A>;
