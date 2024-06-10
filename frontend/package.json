@@ -1,6 +1,7 @@
 {
   "name": "delta-hub",
   "version": "0.1.0",
+  "description": "A platform and cloud-based service for data sharing based on the Delta Sharing protocol",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,6 +12,22 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ognis1205/delta-hub.git"
+  },
+  "keywords": [
+    "data engineering",
+    "data sharing",
+    "delta lake",
+    "delta sharing"
+  ],
+  "author": "Shingo OKAWA <shingo.okawa.g.h.c@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ognis1205/delta-hub/issues"
+  },
+  "homepage": "https://github.com/ognis1205/delta-hub",
   "dependencies": {
     "@chakra-ui/next-js": "^2.1.5",
     "@chakra-ui/react": "^2.8.1",

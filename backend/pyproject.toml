@@ -1,13 +1,27 @@
 [tool.poetry]
 name = "delta-hub"
 version = "0.1.0"
-description = ""
+description = "A platform and cloud-based service for data sharing based on the Delta Sharing protocol"
+license = "Apache-2.0"
 authors = ["Shingo OKAWA <shingo.okawa.g.h.c@gmail.com>"]
+maintainers = ["Shingo OKAWA <shingo.okawa.g.h.c@gmail.com>"]
 readme = "README.md"
+homepage = "https://github.com/ognis1205/delta-hub"
+repository = "https://github.com/ognis1205/delta-hub"
+keywords = [
+  "data engineering",
+  "data sharing",
+  "delta lake",
+  "delta sharing"
+]
+classifiers = [
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Framework :: FastAPI"
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-
 
 [build-system]
 requires = ["poetry-core"]
