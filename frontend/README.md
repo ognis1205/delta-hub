@@ -1,5 +1,7 @@
-Delta Hub Frontend (TypeScript / Next.js Extended Delta Sharing Server Implementation)
+Delta Hub Frontend
 ==============================
+
+A TypeScript/Next.js extended Delta Sharing server BFF implementation.
 
 Starting the Development Server
 ==============================
