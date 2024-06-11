@@ -1,3 +1,14 @@
+Delta Hub Frontend (TypeScript / Next.js Extended Delta Sharing Server Implementation)
+==============================
+
+Starting the Development Server
+==============================
+
+```bash
+ $ npm run build
+ $ npm start
+```
+
 Atomic Design
 ==============================
 

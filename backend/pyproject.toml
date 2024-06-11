@@ -3,8 +3,12 @@ name = "delta-hub"
 version = "0.1.0"
 description = "A platform and cloud-based service for data sharing based on the Delta Sharing protocol"
 license = "Apache-2.0"
-authors = ["Shingo OKAWA <shingo.okawa.g.h.c@gmail.com>"]
-maintainers = ["Shingo OKAWA <shingo.okawa.g.h.c@gmail.com>"]
+authors = [
+  "Shingo OKAWA <shingo.okawa.g.h.c@gmail.com>"
+]
+maintainers = [
+  "Shingo OKAWA <shingo.okawa.g.h.c@gmail.com>"
+]
 readme = "README.md"
 homepage = "https://github.com/ognis1205/delta-hub"
 repository = "https://github.com/ognis1205/delta-hub"
@@ -15,14 +19,67 @@ keywords = [
   "delta sharing"
 ]
 classifiers = [
+  "Development Status :: 1 - Planning",
+  "Environment :: Web Environment",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Education",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+  "Typing :: Typed",
   "Framework :: FastAPI"
 ]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+fastapi = "^0.111.0"
+uvicorn = "^0.30.1"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^3.2.3"
+black = "^24.4.2"
+isort = "^5.13.2"
+pytest = "^8.2.2"
+pyproject-flake8 = "^7.0.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+target-version = [
+  "py311",
+  "py312"
+]
+line-length = 120
+
+[tool.isort]
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+known_local_folder=["config",]
+
+[tool.flake8]
+max-line-length = 120
+max-complexity = 18
+ignore = "E203,E266,W503,"
+
+[tool.pylint.main]
+disable = [
+    "missing-docstring",
+    "too-many-branches", "too-many-return-statements", "too-many-ancestors",
+    "too-few-public-methods",
+    "fixme",
+]
+ignore="tests"
+max-line-length = 120
+
+[tool.pytest.ini_options]
+pythonpath = "."
+testpaths = ["tests",]

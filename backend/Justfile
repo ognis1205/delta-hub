@@ -1,0 +1,14 @@
+# Lists all availabe commands
+default:
+    @just --list
+
+# Conducts formatting, linting, type checking, and unit tests
+test:
+    poetry run isort .
+    poetry run black .
+    poetry run pylint --recursive=y .
+    poetry run pytest
+
+# Starts development server
+start:
+    @poetry run uvicorn app:api
