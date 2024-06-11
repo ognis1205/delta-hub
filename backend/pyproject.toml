@@ -40,6 +40,7 @@ classifiers = [
 python = "^3.11"
 fastapi = "^0.111.0"
 uvicorn = "^0.30.1"
+mypy = "^1.10.0"
 
 [tool.poetry.group.dev.dependencies]
 pylint = "^3.2.3"
@@ -65,20 +66,23 @@ multi_line_output = 3
 include_trailing_comma = true
 known_local_folder=["config",]
 
-[tool.flake8]
-max-line-length = 120
-max-complexity = 18
-ignore = "E203,E266,W503,"
-
 [tool.pylint.main]
 disable = [
     "missing-docstring",
-    "too-many-branches", "too-many-return-statements", "too-many-ancestors",
+    "too-many-branches",
+    "too-many-return-statements",
+    "too-many-ancestors",
     "too-few-public-methods",
     "fixme",
 ]
 ignore="tests"
 max-line-length = 120
+
+[tool.mypy]
+python_version = "3.11"
+no_strict_optional = true
+ignore_missing_imports = true
+check_untyped_defs = true
 
 [tool.pytest.ini_options]
 pythonpath = "."
