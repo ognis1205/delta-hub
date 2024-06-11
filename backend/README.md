@@ -1,4 +1,4 @@
-# Delta Hub Backend
+Delta Hub Backend
 ==============================
 
 A Python/FastAPI extended Delta Sharing server Backend implementation.
