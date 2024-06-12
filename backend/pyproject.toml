@@ -46,7 +46,6 @@ pylint = "^3.2.3"
 black = "^24.4.2"
 isort = "^5.13.2"
 pytest = "^8.2.2"
-pyproject-flake8 = "^7.0.0"
 mypy = "^1.10.0"
 
 [build-system]
