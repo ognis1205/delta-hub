@@ -4,11 +4,16 @@ default:
 
 # Conducts formatting, linting, type checking, and unit tests
 test:
-    poetry run isort .
-    poetry run black .
-    poetry run pylint --recursive=y .
-    poetry run mypy .
-    poetry run pytest
+    @echo "\033[0;32mINFO\033[0m:\tFormatting imports to sort them alphabetically."
+    @poetry run isort .
+    @echo "\033[0;32mINFO\033[0m:\tFormatting source code to conform to the PEP 8 style guide."
+    @poetry run black .
+    @echo "\033[0;32mINFO\033[0m:\tChecking source code quality."
+    @poetry run pylint --recursive=y .
+    @echo "\033[0;32mINFO\033[0m:\tChecking the types of source code."
+    @poetry run mypy .
+    @echo "\033[0;32mINFO\033[0m:\tRunning unit tests."
+    @poetry run pytest
 
 # Starts development server
 start:
